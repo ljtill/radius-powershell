@@ -24,10 +24,10 @@ _Please note these artifacts are under development and subject to change._
 | Environment     | rad env delete              | Remove-RadiusEnvironment         |
 | Environment     | rad env switch              | Set-RadiusEnvironment            |
 | Environment     | rad env set                 | Update-RadiusEnvironment         |
-| Resource Groups | rad group list              | Get-RadiusResourceGroup          |
-| Resource Groups | rad group create            | New-RadiusResourceGroup          |
-| Resource Groups | rad group delete            | Remove-RadiusResourceGroup       |
-| Resource Groups | rad group switch            | Set-RadiusResourceGroup          |
+| Resource Group  | rad group list              | Get-RadiusResourceGroup          |
+| Resource Group  | rad group create            | New-RadiusResourceGroup          |
+| Resource Group  | rad group delete            | Remove-RadiusResourceGroup       |
+| Resource Group  | rad group switch            | Set-RadiusResourceGroup          |
 | Initialize      | rad init                    | Initialize-Radius                |
 | Install         | rad install kubernetes      | Install-RadiusKubernetes         |
 | Uninstall       | rad uninstall kubernetes    | Uninstall-RadiusKubernetes       |
