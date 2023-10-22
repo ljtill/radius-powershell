@@ -1,0 +1,39 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Invoke",
+            "Noun": "Radius",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "run",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Invoke-Radius",
+                    "Description": "Run an application specified by a Bicep file",
+                    "OriginalCommand": "rad run"
+                }
+            ]
+        }
+    ]
+}

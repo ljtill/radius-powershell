@@ -1,0 +1,180 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Get",
+            "Noun": "RadiusEnvironment",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "env",
+                "list",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusEnvironment",
+                    "Description": "List environments",
+                    "OriginalCommand": "rad env list"
+                }
+            ]
+        },
+        {
+            "Verb": "New",
+            "Noun": "RadiusEnvironment",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "env",
+                "create",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "New-RadiusEnvironment",
+                    "Description": "Create a new Radius Environment",
+                    "OriginalCommand": "rad env create"
+                }
+            ]
+        },
+        {
+            "Verb": "Remove",
+            "Noun": "RadiusEnvironment",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "env",
+                "delete",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Remove-RadiusEnvironment",
+                    "Description": "Delete environment",
+                    "OriginalCommand": "rad env delete"
+                }
+            ]
+        },
+        {
+            "Verb": "Set",
+            "Noun": "RadiusEnvironment",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "env",
+                "switch",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Set-RadiusEnvironment",
+                    "Description": "Switch the current environment",
+                    "OriginalCommand": "rad env switch"
+                }
+            ]
+        },
+        {
+            "Verb": "Update",
+            "Noun": "RadiusEnvironment",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "env",
+                "update",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Update-RadiusEnvironment",
+                    "Description": "Update environment configuration",
+                    "OriginalCommand": "rad env update"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Initialize",
+            "Noun": "Radius",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "init",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Initialize-Radius",
+                    "Description": "Initialize Radius",
+                    "OriginalCommand": "rad init"
+                }
+            ]
+        }
+    ]
+}

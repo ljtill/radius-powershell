@@ -1,0 +1,145 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Get",
+            "Noun": "RadiusResourceGroup",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "group",
+                "list",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusResourceGroup",
+                    "Description": "List resource groups within current/specified workspace",
+                    "OriginalCommand": "rad group list"
+                }
+            ]
+        },
+        {
+            "Verb": "New",
+            "Noun": "RadiusResourceGroup",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "group",
+                "create",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "New-RadiusResourceGroup",
+                    "Description": "List resource groups within current/specified workspace",
+                    "OriginalCommand": "rad group create"
+                }
+            ]
+        },
+        {
+            "Verb": "Remove",
+            "Noun": "RadiusResourceGroup",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "group",
+                "delete",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Remove-RadiusResourceGroup",
+                    "Description": "Delete a resource group",
+                    "OriginalCommand": "rad group delete"
+                }
+            ]
+        },
+        {
+            "Verb": "Set",
+            "Noun": "RadiusResourceGroup",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "group",
+                "switch",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Set-RadiusResourceGroup",
+                    "Description": "Switch default resource group scope",
+                    "OriginalCommand": "rad group switch"
+                }
+            ]
+        }
+    ]
+}

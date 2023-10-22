@@ -1,0 +1,110 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Install",
+            "Noun": "RadiusBicep",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "bicep",
+                "download",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Install-RadiusBicep",
+                    "Description": "Download the bicep compiler",
+                    "OriginalCommand": "rad bicep download"
+                }
+            ]
+        },
+        {
+            "Verb": "Uninstall",
+            "Noun": "RadiusBicep",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "bicep",
+                "delete",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Uninstall-RadiusBicep",
+                    "Description": "Delete installed Bicep compiler",
+                    "OriginalCommand": "rad bicep delete"
+                }
+            ]
+        },
+        {
+            "Verb": "Publish",
+            "Noun": "RadiusBicep",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "bicep",
+                "publish",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Publish-RadiusBicep",
+                    "Description": "Publish a Bicep file to an OCI registry",
+                    "OriginalCommand": "rad bicep publish"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Get",
+            "Noun": "RadiusRecipe",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "recipe",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusRecipe",
+                    "Description": "List recipes",
+                    "OriginalCommand": "rad recipe list"
+                }
+            ]
+        },
+        {
+            "Verb": "Register",
+            "Noun": "RadiusRecipe",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "recipe",
+                "register",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Register-RadiusRecipe",
+                    "Description": "Add a recipe to an environment",
+                    "OriginalCommand": "rad recipe register"
+                }
+            ]
+        },
+        {
+            "Verb": "Unregister",
+            "Noun": "RadiusRecipe",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "recipe",
+                "unregister",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Unregister-RadiusRecipe",
+                    "Description": "Unregister a recipe from an environment",
+                    "OriginalCommand": "rad recipe unregister"
+                }
+            ]
+        }
+    ]
+}
