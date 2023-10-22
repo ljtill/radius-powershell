@@ -22,9 +22,10 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "*",
+                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0
+                    "OriginalPosition": 0,
+                    "Mandatory": false
                 }
             ],
             "Examples": [
@@ -57,9 +58,10 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "*",
+                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0
+                    "OriginalPosition": 0,
+                    "Mandatory": false
                 }
             ],
             "Examples": [
@@ -92,9 +94,10 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "*",
+                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0
+                    "OriginalPosition": 0,
+                    "Mandatory": false
                 }
             ],
             "Examples": [

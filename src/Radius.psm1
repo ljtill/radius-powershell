@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/22/2023 23:03:48
+# Generated at: 10/22/2023 23:40:06
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -44,8 +44,8 @@ function Get-RadiusApplication
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -156,7 +156,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f562087872804465071d391a0f28190d
+TraceId:  b1d49ffadc2888accf50c49b25991aa6
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -184,8 +184,8 @@ function Get-RadiusApplicationConnections
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -296,7 +296,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  796908867967fc5138e8dfc0ed9a5892
+TraceId:  ebf211dbec4041e5b4fbf4202c98b2d4
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -324,8 +324,8 @@ function Get-RadiusApplicationStatus
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -436,7 +436,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8bc238e89f0b4c0163b6c69eb027c2a1
+TraceId:  369fb00bbe70cea05ea71c92bafee658
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -464,8 +464,8 @@ function Set-RadiusApplication
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -576,7 +576,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ae0177c7124a9e897f5b3d908317095d
+TraceId:  0742b58b44ba3673c6ad05b90190199d
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -604,8 +604,8 @@ function Remove-RadiusApplication
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -715,7 +715,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f7ecc42dc909366794902b860a16df34
+TraceId:  cc0e98e61cbf7912262c43cfe29bbe3c
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -743,8 +743,8 @@ function Install-RadiusBicep
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -855,7 +855,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  63e74aa0f3183e62ac72f27f4c65a5ad
+TraceId:  91144b1545bb9aa192580e18cf9ead92
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -883,8 +883,8 @@ function Uninstall-RadiusBicep
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -995,7 +995,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  0cb1019b40bbc775dc0e5fce24778a71
+TraceId:  d9ce65ab7ef3a199dd84c20bebc2eaa2
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1023,8 +1023,8 @@ function Publish-RadiusBicep
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -1135,7 +1135,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  c4d1898e840bf57cb8bc91e8ef71e471
+TraceId:  4560fe385a439c31b2c497116d456f1b
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1163,8 +1163,8 @@ function Get-RadiusCredential
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -1275,7 +1275,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  0062a4f60b6dafebea3648bbbbc01772
+TraceId:  be49fd6b7cc36125f2c5ff6d30a9b859
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1303,8 +1303,8 @@ function Register-RadiusCredential
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -1415,7 +1415,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d55b889500d6661c58aedde1f7dc59aa
+TraceId:  721b1c9caf7043804ea1afa16826f562
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1443,8 +1443,8 @@ function Unregister-RadiusCredential
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -1555,7 +1555,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  91a437188be7014718dde3c5c7e9f9c6
+TraceId:  487d6857132f081b6d690293977a3ac9
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1583,8 +1583,8 @@ function Debug-Radius
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -1694,7 +1694,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5b6dfc00d79cb54c3e26ecba81e3f0f9
+TraceId:  ae34246415e33b1b6d9dd14ae9e8bddd
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1722,8 +1722,8 @@ function New-RadiusDeployment
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -1833,7 +1833,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  2c0d339c48814684706574ac202e4df2
+TraceId:  7bb8b1849352214bd21062d18c0aceb3
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1861,8 +1861,8 @@ function Get-RadiusEnvironment
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -1973,7 +1973,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  78dac377b6f3eaf2c5b60a450e4ade9e
+TraceId:  25bbf9944ddebf1e7e90e412a9c117ce
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2001,8 +2001,8 @@ function New-RadiusEnvironment
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -2113,7 +2113,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5c22d0bd1f77741a21cf64906bd0d95e
+TraceId:  9d91f05e50ef8dc20911726353479917
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2141,8 +2141,8 @@ function Remove-RadiusEnvironment
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -2253,7 +2253,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f68505031d4c9d253230f2c09b594b46
+TraceId:  1ab1fb41a18052da29dba22c4c8ef145
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2281,8 +2281,8 @@ function Set-RadiusEnvironment
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -2393,7 +2393,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5a566770f80d2a679c06ff396dbcbdbf
+TraceId:  c85a6997368e9539adfd7201475e15b6
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2421,8 +2421,8 @@ function Update-RadiusEnvironment
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -2533,7 +2533,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4a8ecc7258c61bcd317e7be2685fc97a
+TraceId:  83cf484d167a1e371c62aa8038669e01
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2561,8 +2561,8 @@ function Get-RadiusResourceGroup
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -2673,7 +2673,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  cbda65bc86808364ec9d396e3cb0f8ab
+TraceId:  64afec00322d0d5cb650111af6ef6420
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2701,8 +2701,8 @@ function New-RadiusResourceGroup
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -2813,7 +2813,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ff96a8e5876204614595b629f2efe5cf
+TraceId:  4572cf92e52a96f63e12ad785cfa7313
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2841,8 +2841,8 @@ function Remove-RadiusResourceGroup
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -2953,7 +2953,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9655301177eccd2a9f552fa00b15d4c5
+TraceId:  16a7bd7f30ec9e4af0d73bd649b5c443
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2981,8 +2981,8 @@ function Set-RadiusResourceGroup
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -3093,7 +3093,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9d47c584deea4d1cd6a0040d13fce2bb
+TraceId:  1f906117f0df6d98c848f2aa6d7c391f
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3121,8 +3121,8 @@ function Initialize-Radius
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -3232,7 +3232,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a0f41326a0aa867ccd04fa463588dc29
+TraceId:  bb3e7a2d792dfde35ec08c29cacd8ae9
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3260,8 +3260,8 @@ function Install-RadiusKubernetes
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -3372,7 +3372,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4ac7ecf8b669af68874c51bd23498828
+TraceId:  927e83af99e8e011c0615a1d596425e5
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3400,8 +3400,8 @@ function Get-RadiusRecipe
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -3511,7 +3511,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  19bf3a4fa781c3adb6a513f82ff7908c
+TraceId:  393626c30040e65c322c112521266f74
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3539,8 +3539,8 @@ function Register-RadiusRecipe
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -3651,7 +3651,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4b2dd870e3432ff016d4ef2f3581dfca
+TraceId:  13e0171e19c4be93d034c584c9572d3c
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3679,8 +3679,8 @@ function Unregister-RadiusRecipe
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -3791,7 +3791,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  69c8752ff71ad3f7517bcd6ad3090842
+TraceId:  8f82a379117ea37115ade6bf70971d6d
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3819,8 +3819,8 @@ function Get-RadiusResource
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -3931,7 +3931,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  dec7372622339f926d98927c6cdd0289
+TraceId:  58c981e6996d358cbc1b65cb0228d6d5
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3959,8 +3959,8 @@ function Remove-RadiusResource
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -4071,7 +4071,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  18be9e2e97a33704d206f427b1820103
+TraceId:  3e23c8137e70209bf57369c83f6888d0
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4099,8 +4099,8 @@ function Get-RadiusResourceLogs
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -4211,7 +4211,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8c0808d55cb3156e678bcac623092709
+TraceId:  97e0a3e47e0582205ef65cdaca494303
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4239,8 +4239,8 @@ function Invoke-Radius
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -4350,7 +4350,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  63013b2172302d5bd05f1e64cb42057f
+TraceId:  ad1bced4f2904fecf33d79b37bae3348
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4378,8 +4378,8 @@ function Uninstall-RadiusKubernetes
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -4490,7 +4490,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9992caa4eadf0a973a1e3ce472982763
+TraceId:  5d8bbc169c1501838569afc1ddb0a8ff
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4518,8 +4518,8 @@ function Get-RadiusVersion
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -4629,7 +4629,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d4b68b923d0a2f57e019cb40a222a01e
+TraceId:  8532c4df43254227351d98b6af9c0098
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4657,8 +4657,8 @@ function Get-RadiusWorkspace
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -4769,7 +4769,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  2a1d1304888510f864f08941c354977f
+TraceId:  5301a59d61ce1a88b1f6c0988bf1f8e9
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4797,8 +4797,8 @@ function New-RadiusWorkspace
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -4909,7 +4909,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  eb156443d1f9484d1016b54f41e245ea
+TraceId:  70b026868417c52e1107103894119a4c
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4937,8 +4937,8 @@ function Remove-RadiusWorkspace
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -5049,7 +5049,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  945d3ae0c24c8f457e1fbfce9c333f27
+TraceId:  d3f817b32b6e446429237e10c7898208
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -5077,8 +5077,8 @@ function Set-RadiusWorkspace
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="*")]
-[string]$Config = "*"
+[PSDefaultValue(Value="")]
+[string]$Config
     )
 
 BEGIN {
@@ -5189,7 +5189,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8b1aa4ec42c00c724ee00beced4c2a31
+TraceId:  e3943995bef5fabee8ffec5edcdcdabe
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
