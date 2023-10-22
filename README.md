@@ -4,8 +4,6 @@ _Please note these artifacts are under development and subject to change._
 
 ---
 
-## Commands (`./src/commands`)
-
 | Area            | Original Command            | Command                          |
 | --------------- | --------------------------- | -------------------------------- |
 | Application     | rad application list        | Get-RadiusApplication            |
