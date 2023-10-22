@@ -6,5 +6,12 @@
             "modules": "Microsoft.PowerShell.Crescendo"
         },
         "ghcr.io/ljtill/features/rad:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.powershell"
+            ]
+        }
     }
 }
