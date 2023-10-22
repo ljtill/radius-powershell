@@ -1,0 +1,145 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Get",
+            "Noun": "RadiusWorkspace",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "workspace",
+                "list",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusWorkspace",
+                    "Description": "List local workspaces",
+                    "OriginalCommand": "rad workspace list"
+                }
+            ]
+        },
+        {
+            "Verb": "New",
+            "Noun": "RadiusWorkspace",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "workspace",
+                "create",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "New-RadiusWorkspace",
+                    "Description": "Create a workspace",
+                    "OriginalCommand": "rad workspace create"
+                }
+            ]
+        },
+        {
+            "Verb": "Remove",
+            "Noun": "RadiusWorkspace",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "workspace",
+                "delete",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Remove-RadiusWorkspace",
+                    "Description": "Delete local workspaces",
+                    "OriginalCommand": "rad workspace delete"
+                }
+            ]
+        },
+        {
+            "Verb": "Set",
+            "Noun": "RadiusWorkspace",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "workspace",
+                "switch",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Set-RadiusWorkspace",
+                    "Description": "Switch current workspace",
+                    "OriginalCommand": "rad workspace switch"
+                }
+            ]
+        }
+    ]
+}

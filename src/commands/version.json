@@ -1,0 +1,39 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Get",
+            "Noun": "RadiusVersion",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "version",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusVersion",
+                    "Description": "Prints the versions of the rad cli",
+                    "OriginalCommand": "rad version"
+                }
+            ]
+        }
+    ]
+}

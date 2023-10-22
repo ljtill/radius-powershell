@@ -1,0 +1,40 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Uninstall",
+            "Noun": "RadiusKubernetes",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "uninstall",
+                "kubernetes",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Uninstall-RadiusKubernetes",
+                    "Description": "Uninstalls Radius onto a Kubernetes cluster",
+                    "OriginalCommand": "rad uninstall kubernetes"
+                }
+            ]
+        }
+    ]
+}

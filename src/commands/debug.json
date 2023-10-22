@@ -1,0 +1,39 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Debug",
+            "Noun": "Radius",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "debug-logs",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Debug-Radius",
+                    "Description": "Capture logs from Radius control plane for debugging and diagnostics.",
+                    "OriginalCommand": "rad debug-logs"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,110 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Get",
+            "Noun": "RadiusResource",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "resource",
+                "list",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusResource",
+                    "Description": "Lists resources",
+                    "OriginalCommand": "rad resource list"
+                }
+            ]
+        },
+        {
+            "Verb": "Remove",
+            "Noun": "RadiusResource",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "resource",
+                "delete",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Remove-RadiusResource",
+                    "Description": "Delete a Radius resource",
+                    "OriginalCommand": "rad resource delete"
+                }
+            ]
+        },
+        {
+            "Verb": "Get",
+            "Noun": "RadiusResourceLogs",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "resource",
+                "logs",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusResourceLogs",
+                    "Description": "Read logs from a running containers resourc",
+                    "OriginalCommand": "rad resource logs"
+                }
+            ]
+        }
+    ]
+}

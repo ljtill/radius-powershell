@@ -1,0 +1,179 @@
+{
+    "$schema": "https://aka.ms/PowerShell/Crescendo/Schemas/2022-06",
+    "commands": [
+        {
+            "Verb": "Get",
+            "Noun": "RadiusApplication",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "application",
+                "list",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusApplication",
+                    "Description": "List Radius Applications",
+                    "OriginalCommand": "rad application list"
+                }
+            ]
+        },
+        {
+            "Verb": "Get",
+            "Noun": "RadiusApplicationConnections",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "application",
+                "connections",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusApplicationConnections",
+                    "Description": "Shows the Connections for Radius Application",
+                    "OriginalCommand": "rad application connections"
+                }
+            ]
+        },
+        {
+            "Verb": "Get",
+            "Noun": "RadiusApplicationStatus",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "application",
+                "status",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusApplicationStatus",
+                    "Description": "Show Radius Application status",
+                    "OriginalCommand": "rad application status"
+                }
+            ]
+        },
+        {
+            "Verb": "Set",
+            "Noun": "RadiusApplication",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "application",
+                "switch",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Set-RadiusApplication",
+                    "Description": "Switch the default Radius Application",
+                    "OriginalCommand": "rad application switch"
+                }
+            ]
+        },
+        {
+            "Verb": "Remove",
+            "Noun": "RadiusApplication",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "application",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "*",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Remove-RadiusApplication",
+                    "Description": "Delete Radius Application",
+                    "OriginalCommand": "rad application delete"
+                }
+            ]
+        }
+    ]
+}
