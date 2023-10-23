@@ -54,6 +54,66 @@
             ]
         },
         {
+            "Verb": "Get",
+            "Noun": "RadiusWorkspaceDetail",
+            "OriginalName": "rad",
+            "OriginalCommandElements": [
+                "workspace",
+                "show",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusWorkspaceDetail",
+                    "Description": "Show local workspace",
+                    "OriginalCommand": "rad workspace show"
+                }
+            ]
+        },
+        {
             "Verb": "New",
             "Noun": "RadiusWorkspaceKubernetes",
             "OriginalName": "rad",
@@ -73,6 +133,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
@@ -158,6 +226,14 @@
             "NoInvocation": false,
             "Parameters": [
                 {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
                     "Name": "Config",
                     "OriginalName": "--config",
                     "DefaultValue": "",
@@ -174,13 +250,13 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Confirm",
+                    "Name": "Yes",
                     "OriginalName": "--yes",
                     "DefaultValue": "",
-                    "ParameterType": "boolean",
+                    "ParameterType": "switch",
                     "OriginalPosition": 0,
                     "Mandatory": false
-                },
+                }
             ],
             "OutputHandlers": [
                 {
@@ -199,7 +275,7 @@
             ]
         },
         {
-            "Verb": "Set",
+            "Verb": "Switch",
             "Noun": "RadiusWorkspace",
             "OriginalName": "rad",
             "OriginalCommandElements": [
@@ -217,6 +293,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
@@ -244,7 +328,7 @@
             ],
             "Examples": [
                 {
-                    "Command": "Set-RadiusWorkspace",
+                    "Command": "Switch-RadiusWorkspace",
                     "Description": "Switch current workspace",
                     "OriginalCommand": "rad workspace switch"
                 }

@@ -20,6 +20,14 @@
             "NoInvocation": false,
             "Parameters": [
                 {
+                    "Name": "File",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
                     "Name": "Config",
                     "OriginalName": "--config",
                     "DefaultValue": "",

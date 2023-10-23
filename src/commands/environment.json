@@ -70,6 +70,82 @@
             ]
         },
         {
+            "Verb": "Get",
+            "Noun": "RadiusEnvironmentDetail",
+            "OriginalName": "rad",
+            "OriginalCommandElements": [
+                "env",
+                "show",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Environment",
+                    "OriginalName": "--environment",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusEnvironmentDetail",
+                    "Description": "Show environment details",
+                    "OriginalCommand": "rad env show"
+                }
+            ]
+        },
+        {
             "Verb": "New",
             "Noun": "RadiusEnvironment",
             "OriginalName": "rad",
@@ -88,6 +164,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
@@ -165,6 +249,14 @@
             "NoInvocation": false,
             "Parameters": [
                 {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
                     "Name": "Config",
                     "OriginalName": "--config",
                     "DefaultValue": "",
@@ -197,10 +289,10 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Confirm",
+                    "Name": "Yes",
                     "OriginalName": "--yes",
                     "DefaultValue": "",
-                    "ParameterType": "boolean",
+                    "ParameterType": "switch",
                     "OriginalPosition": 0,
                     "Mandatory": false
                 }
@@ -222,7 +314,7 @@
             ]
         },
         {
-            "Verb": "Set",
+            "Verb": "Switch",
             "Noun": "RadiusEnvironment",
             "OriginalName": "rad",
             "OriginalCommandElements": [
@@ -240,6 +332,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
@@ -275,7 +375,7 @@
             ],
             "Examples": [
                 {
-                    "Command": "Set-RadiusEnvironment",
+                    "Command": "Switch-RadiusEnvironment",
                     "Description": "Switch the current environment",
                     "OriginalCommand": "rad env switch"
                 }
@@ -300,6 +400,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",

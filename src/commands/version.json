@@ -34,7 +34,7 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
-                },
+                }
             ],
             "OutputHandlers": [
                 {

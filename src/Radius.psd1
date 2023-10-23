@@ -69,26 +69,32 @@ PowerShellVersion = '7.2.0'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = 'Get-RadiusApplication', 'Get-RadiusApplicationConnections', 
-               'Get-RadiusApplicationStatus', 'Set-RadiusApplication', 
+FunctionsToExport = 'Get-RadiusApplication', 'Get-RadiusApplicationDetail', 
+               'Get-RadiusApplicationConnections', 
+               'Get-RadiusApplicationConnectionsDetail', 
+               'Get-RadiusApplicationStatus', 'Switch-RadiusApplication', 
                'Remove-RadiusApplication', 'Install-RadiusBicep', 
                'Uninstall-RadiusBicep', 'Publish-RadiusBicep', 
-               'Get-RadiusCredential', 'Get-RadiusCredentialAzure', 
-               'Get-RadiusCredentialAWS', 'Register-RadiusCredentialAzure', 
-               'Register-RadiusCredentialAWS', 'Unregister-RadiusCredentialAzure', 
+               'Get-RadiusCredential', 'Get-RadiusCredentialDetail', 
+               'Get-RadiusCredentialAzure', 'Get-RadiusCredentialAWS', 
+               'Register-RadiusCredentialAzure', 'Register-RadiusCredentialAWS', 
+               'Unregister-RadiusCredentialAzure', 
                'Unregister-RadiusCredentialAWS', 'Debug-Radius', 
                'New-RadiusDeployment', 'Get-RadiusEnvironment', 
-               'New-RadiusEnvironment', 'Remove-RadiusEnvironment', 
-               'Set-RadiusEnvironment', 'Update-RadiusEnvironment', 
-               'Get-RadiusResourceGroup', 'New-RadiusResourceGroup', 
-               'Remove-RadiusResourceGroup', 'Set-RadiusResourceGroup', 
+               'Get-RadiusEnvironmentDetail', 'New-RadiusEnvironment', 
+               'Remove-RadiusEnvironment', 'Switch-RadiusEnvironment', 
+               'Update-RadiusEnvironment', 'Get-RadiusResourceGroup', 
+               'Get-RadiusResourceGroupDetail', 'New-RadiusResourceGroup', 
+               'Remove-RadiusResourceGroup', 'Switch-RadiusResourceGroup', 
                'Initialize-Radius', 'Install-RadiusKubernetes', 'Get-RadiusRecipe', 
-               'Register-RadiusRecipe', 'Unregister-RadiusRecipe', 
-               'Get-RadiusResource', 'Get-RadiusResourceLogs', 
+               'Get-RadiusRecipeDetail', 'Register-RadiusRecipe', 
+               'Unregister-RadiusRecipe', 'Get-RadiusResource', 
+               'Get-RadiusResourceDetail', 'Get-RadiusResourceLogs', 
                'Remove-RadiusResource', 'Invoke-Radius', 
                'Uninstall-RadiusKubernetes', 'Get-RadiusVersion', 
-               'Get-RadiusWorkspace', 'New-RadiusWorkspaceKubernetes', 
-               'Remove-RadiusWorkspace', 'Set-RadiusWorkspace'
+               'Get-RadiusWorkspace', 'Get-RadiusWorkspaceDetail', 
+               'New-RadiusWorkspaceKubernetes', 'Remove-RadiusWorkspace', 
+               'Switch-RadiusWorkspace'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -112,7 +118,7 @@ AliasesToExport = @()
 PrivateData = @{
 
     #CrescendoGenerated of this module
-    CrescendoGenerated = '10/23/2023 17:01:17'
+    CrescendoGenerated = '10/23/2023 19:21:41'
 
     #CrescendoVersion of this module
     CrescendoVersion = '1.1.0'

@@ -54,6 +54,66 @@
             ]
         },
         {
+            "Verb": "Get",
+            "Noun": "RadiusResourceGroupDetail",
+            "OriginalName": "rad",
+            "OriginalCommandElements": [
+                "group",
+                "show",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusResourceGroupDetail",
+                    "Description": "Show the details of a resource group",
+                    "OriginalCommand": "rad group show"
+                }
+            ]
+        },
+        {
             "Verb": "New",
             "Noun": "RadiusResourceGroup",
             "OriginalName": "rad",
@@ -72,6 +132,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
@@ -133,6 +201,14 @@
             "NoInvocation": false,
             "Parameters": [
                 {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
                     "Name": "Config",
                     "OriginalName": "--config",
                     "DefaultValue": "",
@@ -157,10 +233,10 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Confirm",
+                    "Name": "Yes",
                     "OriginalName": "--yes",
                     "DefaultValue": "",
-                    "ParameterType": "boolean",
+                    "ParameterType": "switch",
                     "OriginalPosition": 0,
                     "Mandatory": false
                 }
@@ -182,7 +258,7 @@
             ]
         },
         {
-            "Verb": "Set",
+            "Verb": "Switch",
             "Noun": "RadiusResourceGroup",
             "OriginalName": "rad",
             "OriginalCommandElements": [
@@ -200,6 +276,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
@@ -235,7 +319,7 @@
             ],
             "Examples": [
                 {
-                    "Command": "Set-RadiusResourceGroup",
+                    "Command": "Switch-RadiusResourceGroup",
                     "Description": "Switch default resource group scope",
                     "OriginalCommand": "rad group switch"
                 }

@@ -7,6 +7,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "recipe",
+                "list",
                 "--output",
                 "json"
             ],
@@ -69,6 +70,82 @@
             ]
         },
         {
+            "Verb": "Get",
+            "Noun": "RadiusRecipeDetail",
+            "OriginalName": "rad",
+            "OriginalCommandElements": [
+                "recipe",
+                "show",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Environment",
+                    "OriginalName": "--environment",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusRecipeDetail",
+                    "Description": "Show recipe details",
+                    "OriginalCommand": "rad recipe show"
+                }
+            ]
+        },
+        {
             "Verb": "Register",
             "Noun": "RadiusRecipe",
             "OriginalName": "rad",
@@ -87,6 +164,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
@@ -195,6 +280,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
