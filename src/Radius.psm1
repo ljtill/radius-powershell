@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/22/2023 23:40:06
+# Generated at: 10/23/2023 00:32:33
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -64,7 +64,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -156,7 +158,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b1d49ffadc2888accf50c49b25991aa6
+TraceId:  ad5bab69c39155abedcc5d858e1a680c
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -204,7 +206,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -296,7 +300,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ebf211dbec4041e5b4fbf4202c98b2d4
+TraceId:  916b3fb4ae220a64f0bce81df2199787
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -344,7 +348,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -436,7 +442,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  369fb00bbe70cea05ea71c92bafee658
+TraceId:  f3efd0393c007a2e82eae52d15d898bc
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -484,7 +490,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -576,7 +584,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  0742b58b44ba3673c6ad05b90190199d
+TraceId:  01c2bc08d0acdc7621cf3eac50d84a96
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -624,7 +632,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -715,7 +725,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  cc0e98e61cbf7912262c43cfe29bbe3c
+TraceId:  b0f19f4f985edaeee003e23779fd185e
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -763,7 +773,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $true; Handler = $null }
+    }
 }
 
 PROCESS {
@@ -855,7 +867,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  91144b1545bb9aa192580e18cf9ead92
+TraceId:  27101ddd50e5c0c6ce0cc1d69916583a
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -903,7 +915,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $true; Handler = $null }
+    }
 }
 
 PROCESS {
@@ -995,7 +1009,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d9ce65ab7ef3a199dd84c20bebc2eaa2
+TraceId:  ae5b7d37e6a9fd109dad704b9927bba6
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1043,7 +1057,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $true; Handler = $null }
+    }
 }
 
 PROCESS {
@@ -1135,7 +1151,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4560fe385a439c31b2c497116d456f1b
+TraceId:  7f7a702c7f320931acbf5462c34d3bdf
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1183,7 +1199,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -1275,7 +1293,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  be49fd6b7cc36125f2c5ff6d30a9b859
+TraceId:  00ea48fa9af93ed9ca91bd0b7aa7e167
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1323,7 +1341,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -1415,7 +1435,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  721b1c9caf7043804ea1afa16826f562
+TraceId:  e243faa1a45bf48c9bff68b9564204fe
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1463,7 +1483,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -1555,7 +1577,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  487d6857132f081b6d690293977a3ac9
+TraceId:  49a38bce6ec25fbd75133cc4772a3c27
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1603,7 +1625,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $true; Handler = $null }
+    }
 }
 
 PROCESS {
@@ -1694,7 +1718,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ae34246415e33b1b6d9dd14ae9e8bddd
+TraceId:  4de178063ed6f52ceab4dc158d40bc89
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1742,7 +1766,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -1833,7 +1859,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7bb8b1849352214bd21062d18c0aceb3
+TraceId:  b0983f116a6dbac2164123417f05e849
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -1881,7 +1907,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -1973,7 +2001,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  25bbf9944ddebf1e7e90e412a9c117ce
+TraceId:  f95df407290ec4bce0719e32f6f51d3f
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2021,7 +2049,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -2113,7 +2143,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9d91f05e50ef8dc20911726353479917
+TraceId:  fd973c5cb31e3f6650e6c60a4deb4e3c
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2161,7 +2191,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -2253,7 +2285,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1ab1fb41a18052da29dba22c4c8ef145
+TraceId:  72c79098468b2ca3bf2fdec5037f572b
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2301,7 +2333,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -2393,7 +2427,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  c85a6997368e9539adfd7201475e15b6
+TraceId:  e0433b5b7f37af55e4ba81f5b53fd914
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2441,7 +2475,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -2533,7 +2569,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  83cf484d167a1e371c62aa8038669e01
+TraceId:  5438bd8eb78bf23085ec38c0f3df2a9b
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2581,7 +2617,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -2673,7 +2711,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  64afec00322d0d5cb650111af6ef6420
+TraceId:  92c5d2f0bbce8ad4957422f1a9eca514
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2721,7 +2759,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -2813,7 +2853,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4572cf92e52a96f63e12ad785cfa7313
+TraceId:  81db67968c298fe9e56a926564f14518
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -2861,7 +2901,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -2953,7 +2995,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  16a7bd7f30ec9e4af0d73bd649b5c443
+TraceId:  e539b634cae6623ea4ad91ac812a080c
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3001,7 +3043,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -3093,7 +3137,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1f906117f0df6d98c848f2aa6d7c391f
+TraceId:  f4ac7d8b31e94be657678382bcf0a126
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3141,7 +3185,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $true; Handler = $null }
+    }
 }
 
 PROCESS {
@@ -3232,7 +3278,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  bb3e7a2d792dfde35ec08c29cacd8ae9
+TraceId:  e258f645c409c27427e81bbaee324435
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3280,7 +3326,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $true; Handler = $null }
+    }
 }
 
 PROCESS {
@@ -3372,7 +3420,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  927e83af99e8e011c0615a1d596425e5
+TraceId:  330be8c9ad868fd0487c063f19aa4b1a
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3420,7 +3468,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -3511,7 +3561,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  393626c30040e65c322c112521266f74
+TraceId:  4965ec945400cdc640b0dd0f87571d1e
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3559,7 +3609,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -3651,7 +3703,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  13e0171e19c4be93d034c584c9572d3c
+TraceId:  482d869d2a2c87ce5d72edaf5a40c0e9
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3699,7 +3751,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -3791,7 +3845,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8f82a379117ea37115ade6bf70971d6d
+TraceId:  4b268e21d141334273b276019268d826
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3839,7 +3893,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -3931,7 +3987,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  58c981e6996d358cbc1b65cb0228d6d5
+TraceId:  b251113e27d3c43bd953d01ea999d802
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -3979,7 +4035,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -4071,7 +4129,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  3e23c8137e70209bf57369c83f6888d0
+TraceId:  fb86ad088dc31e52438c4e05a1df9e63
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4119,7 +4177,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -4211,7 +4271,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  97e0a3e47e0582205ef65cdaca494303
+TraceId:  2e325b1f7ae44a55538da99160b33557
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4259,7 +4319,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -4350,7 +4412,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ad1bced4f2904fecf33d79b37bae3348
+TraceId:  601ec3de6bd5263bdb74f51ca2c1fe79
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4398,7 +4460,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $true; Handler = $null }
+    }
 }
 
 PROCESS {
@@ -4490,7 +4554,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5d8bbc169c1501838569afc1ddb0a8ff
+TraceId:  7c32507702749199704cf45bd8d4bccf
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4538,7 +4602,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -4629,7 +4695,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8532c4df43254227351d98b6af9c0098
+TraceId:  dd7b6503421853e8956ae75d817e5585
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4677,7 +4743,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -4769,7 +4837,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5301a59d61ce1a88b1f6c0988bf1f8e9
+TraceId:  fb83f1339f9a8c76a558a9bc44d9bca3
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4817,7 +4885,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -4909,7 +4979,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  70b026868417c52e1107103894119a4c
+TraceId:  88fb6aadc592de99f7c5baa739c01f07
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -4957,7 +5027,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -5049,7 +5121,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d3f817b32b6e446429237e10c7898208
+TraceId:  92a60a5183a3557342673a3a82bb2b17
 
 
 .DESCRIPTION See help for /usr/local/bin/rad
@@ -5097,7 +5169,9 @@ BEGIN {
                }
     }
 
-    $__outputHandlers = @{ Default = @{ StreamOutput = $true; Handler = { $input; Pop-CrescendoNativeError -EmitAsError } } }
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
 }
 
 PROCESS {
@@ -5189,7 +5263,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e3943995bef5fabee8ffec5edcdcdabe
+TraceId:  ff4219ec18049cc6de128e203eedbb7d
 
 
 .DESCRIPTION See help for /usr/local/bin/rad

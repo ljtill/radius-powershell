@@ -28,6 +28,14 @@
                     "Mandatory": false
                 }
             ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
             "Examples": [
                 {
                     "Command": "Get-RadiusRecipe",
@@ -64,6 +72,14 @@
                     "Mandatory": false
                 }
             ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
             "Examples": [
                 {
                     "Command": "Register-RadiusRecipe",
@@ -98,6 +114,14 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
                 }
             ],
             "Examples": [

@@ -29,6 +29,14 @@
                     "Mandatory": false
                 }
             ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
             "Examples": [
                 {
                     "Command": "Get-RadiusEnvironment",
@@ -63,6 +71,14 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
                 }
             ],
             "Examples": [
@@ -101,6 +117,14 @@
                     "Mandatory": false
                 }
             ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
             "Examples": [
                 {
                     "Command": "Remove-RadiusEnvironment",
@@ -137,6 +161,14 @@
                     "Mandatory": false
                 }
             ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
             "Examples": [
                 {
                     "Command": "Set-RadiusEnvironment",
@@ -171,6 +203,14 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
                 }
             ],
             "Examples": [
