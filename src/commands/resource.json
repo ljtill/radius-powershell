@@ -71,6 +71,82 @@
         },
         {
             "Verb": "Get",
+            "Noun": "RadiusResourceDetail",
+            "OriginalName": "rad",
+            "OriginalCommandElements": [
+                "resource",
+                "show",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Name",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Application",
+                    "OriginalName": "--application",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Get-RadiusResourceDetail",
+                    "Description": "Show Radius resource details",
+                    "OriginalCommand": "rad resource show"
+                }
+            ]
+        },
+        {
+            "Verb": "Get",
             "Noun": "RadiusResourceLogs",
             "OriginalName": "rad",
             "OriginalCommandElements": [
@@ -88,6 +164,14 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Resource",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
@@ -180,6 +264,22 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "ResourceType",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
+                {
+                    "Name": "ResourceName",
+                    "OriginalName": "",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": true
+                },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",

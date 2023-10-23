@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/23/2023 17:01:17
+# Generated at: 10/23/2023 19:21:41
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -184,7 +184,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  422333215493ecdea1c75357f1422da3
+TraceId:  eaf6464e6fd8e40c072190e7205b8214
 
 
 .DESCRIPTION See help for rad
@@ -207,6 +207,216 @@ PS> Get-RadiusApplication
 
 List Radius Applications
 Original Command: rad application list
+
+
+#>
+}
+
+
+function Get-RadiusApplicationDetail
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Application,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Group,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace
+    )
+
+BEGIN {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
+    $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Application = @{
+               OriginalName = '--application'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Group = @{
+               OriginalName = '--group'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters["Debug"]){wait-debugger}
+    $__commandArgs += 'application'
+    $__commandArgs += 'show'
+    $__commandArgs += '--output'
+    $__commandArgs += 'json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                # if a transform is specified, use it and the construction of the values is up to the transform
+                if($param.ArgumentTransform -ne '$args') {
+                    $transform = $param.ArgumentTransform
+                    if($param.ArgumentTransformType -eq 'inline') {
+                        $transform = [scriptblock]::Create($param.ArgumentTransform)
+                    }
+                    $__commandArgs += & $transform $value
+                }
+                else {
+                    $pFmt = "{0}{1}"
+                    # quote the strings if they have spaces
+                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
+                    $__commandArgs += $pFmt -f $param.OriginalName, $value
+                }
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                if($param.ArgumentTransformType -eq 'inline') {
+                   $transform = [scriptblock]::Create($param.ArgumentTransform)
+                }
+                else {
+                   $transform = $param.ArgumentTransform
+                }
+                $__commandArgs += & $transform $value
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters["Debug"]){wait-debugger}
+    if ( $__boundParameters["Verbose"]) {
+         Write-Verbose -Verbose -Message "rad"
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            if ( $null -eq $__handler ) {
+                & "rad" $__commandArgs
+            }
+            else {
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+            }
+        }
+        else {
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            & $__handler $result
+        }
+    }
+    # be sure to let the user know if there are any errors
+    Pop-CrescendoNativeError -EmitAsError
+  } # end PROCESS
+
+<#
+.SYNOPSIS
+Error: unknown shorthand flag: '?' in -?
+
+TraceId:  a35e60d934cf8a615c28b1ec91bca21f
+
+
+.DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Application
+
+
+
+.PARAMETER Group
+
+
+
+.PARAMETER Workspace
+
+
+
+
+.EXAMPLE
+PS> Get-RadiusApplicationDetail
+
+Show Radius Application details
+Original Command: rad application show
 
 
 #>
@@ -386,7 +596,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  30aa20f413be37af351b91d5c45a19b9
+TraceId:  2b99219cf28d2ce0c630dee238d321fc
 
 
 .DESCRIPTION See help for rad
@@ -423,12 +633,242 @@ Original Command: rad application connections
 }
 
 
+function Get-RadiusApplicationConnectionsDetail
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Application,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Environment,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Group,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace
+    )
+
+BEGIN {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
+    $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Application = @{
+               OriginalName = '--application'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Environment = @{
+               OriginalName = '--environment'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Group = @{
+               OriginalName = '--group'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters["Debug"]){wait-debugger}
+    $__commandArgs += 'application'
+    $__commandArgs += 'connections'
+    $__commandArgs += '--output'
+    $__commandArgs += 'json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                # if a transform is specified, use it and the construction of the values is up to the transform
+                if($param.ArgumentTransform -ne '$args') {
+                    $transform = $param.ArgumentTransform
+                    if($param.ArgumentTransformType -eq 'inline') {
+                        $transform = [scriptblock]::Create($param.ArgumentTransform)
+                    }
+                    $__commandArgs += & $transform $value
+                }
+                else {
+                    $pFmt = "{0}{1}"
+                    # quote the strings if they have spaces
+                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
+                    $__commandArgs += $pFmt -f $param.OriginalName, $value
+                }
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                if($param.ArgumentTransformType -eq 'inline') {
+                   $transform = [scriptblock]::Create($param.ArgumentTransform)
+                }
+                else {
+                   $transform = $param.ArgumentTransform
+                }
+                $__commandArgs += & $transform $value
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters["Debug"]){wait-debugger}
+    if ( $__boundParameters["Verbose"]) {
+         Write-Verbose -Verbose -Message "rad"
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            if ( $null -eq $__handler ) {
+                & "rad" $__commandArgs
+            }
+            else {
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+            }
+        }
+        else {
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            & $__handler $result
+        }
+    }
+    # be sure to let the user know if there are any errors
+    Pop-CrescendoNativeError -EmitAsError
+  } # end PROCESS
+
+<#
+.SYNOPSIS
+Error: unknown shorthand flag: '?' in -?
+
+TraceId:  4725ba5dc65317d037e4b77dd6420ef2
+
+
+.DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Application
+
+
+
+.PARAMETER Environment
+
+
+
+.PARAMETER Group
+
+
+
+.PARAMETER Workspace
+
+
+
+
+.EXAMPLE
+PS> Get-RadiusApplicationConnectionsDetail
+
+Shows the Connections for Radius Application
+Original Command: rad application connections
+
+
+#>
+}
+
+
 function Get-RadiusApplicationStatus
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -447,6 +887,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -583,10 +1033,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a0e0bbcbd841a17c8dadc0893a37045f
+TraceId:  4efa2cfd0340a545ef9c5918b98f2586
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -616,12 +1070,15 @@ Original Command: rad application status
 }
 
 
-function Set-RadiusApplication
+function Switch-RadiusApplication
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -637,6 +1094,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -763,10 +1230,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e3180827683028519698b02233aafb59
+TraceId:  67b4c3fbbd2c5bd22e11bee1da03d256
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -782,7 +1253,7 @@ TraceId:  e3180827683028519698b02233aafb59
 
 
 .EXAMPLE
-PS> Set-RadiusApplication
+PS> Switch-RadiusApplication
 
 Switch the default Radius Application
 Original Command: rad application switch
@@ -798,6 +1269,9 @@ function Remove-RadiusApplication
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -812,13 +1286,23 @@ param(
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$Confirm
+[switch]$Yes
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -859,11 +1343,11 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Confirm = @{
+         Yes = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'switch'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -964,10 +1448,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f43b32ea01d9296e9298c23d3ea28c35
+TraceId:  dc5d6525976073a7c2e00fd937bd3310
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -985,7 +1473,7 @@ TraceId:  f43b32ea01d9296e9298c23d3ea28c35
 
 
 
-.PARAMETER Confirm
+.PARAMETER Yes
 
 
 
@@ -1122,7 +1610,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  556de2bb6d3a703b067067a8ab82b08e
+TraceId:  02e2d9aa84fc395ddf298047d623e872
 
 
 .DESCRIPTION See help for rad
@@ -1264,7 +1752,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5e0f0deb7dcf2cf68fc797510136a1c5
+TraceId:  d173fc790c5896320f6589bb0baf3fa6
 
 
 .DESCRIPTION See help for rad
@@ -1432,7 +1920,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f9b062eff7254e5a40f9a653aad69dbc
+TraceId:  a0af2fb0d35abf5ef19940be13c7ae5d
 
 
 .DESCRIPTION See help for rad
@@ -1595,7 +2083,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  edad4ca7df4e6e1b32ab5dc8b227c886
+TraceId:  b8e22ed904c720e005175ceaf0bdb887
 
 
 .DESCRIPTION See help for rad
@@ -1614,6 +2102,182 @@ PS> Get-RadiusCredential
 
 List configured cloud provider credentials
 Original Command: rad credential list
+
+
+#>
+}
+
+
+function Get-RadiusCredentialDetail
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace
+    )
+
+BEGIN {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
+    $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters["Debug"]){wait-debugger}
+    $__commandArgs += 'credential'
+    $__commandArgs += 'show'
+    $__commandArgs += '--output'
+    $__commandArgs += 'json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                # if a transform is specified, use it and the construction of the values is up to the transform
+                if($param.ArgumentTransform -ne '$args') {
+                    $transform = $param.ArgumentTransform
+                    if($param.ArgumentTransformType -eq 'inline') {
+                        $transform = [scriptblock]::Create($param.ArgumentTransform)
+                    }
+                    $__commandArgs += & $transform $value
+                }
+                else {
+                    $pFmt = "{0}{1}"
+                    # quote the strings if they have spaces
+                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
+                    $__commandArgs += $pFmt -f $param.OriginalName, $value
+                }
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                if($param.ArgumentTransformType -eq 'inline') {
+                   $transform = [scriptblock]::Create($param.ArgumentTransform)
+                }
+                else {
+                   $transform = $param.ArgumentTransform
+                }
+                $__commandArgs += & $transform $value
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters["Debug"]){wait-debugger}
+    if ( $__boundParameters["Verbose"]) {
+         Write-Verbose -Verbose -Message "rad"
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            if ( $null -eq $__handler ) {
+                & "rad" $__commandArgs
+            }
+            else {
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+            }
+        }
+        else {
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            & $__handler $result
+        }
+    }
+    # be sure to let the user know if there are any errors
+    Pop-CrescendoNativeError -EmitAsError
+  } # end PROCESS
+
+<#
+.SYNOPSIS
+Error: unknown shorthand flag: '?' in -?
+
+TraceId:  d9daabc7c9b767ca374f343bc9e94772
+
+
+.DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Workspace
+
+
+
+
+.EXAMPLE
+PS> Get-RadiusCredentialDetail
+
+Show details of a configured cloud provider credential
+Original Command: rad credential show
 
 
 #>
@@ -1755,7 +2419,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  05b7f55818fe654bc6929e9534440b81
+TraceId:  43bc1d05cfcebf1fa62a1d6b29f1c04d
 
 
 .DESCRIPTION See help for rad
@@ -1915,7 +2579,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  67621a4221e9198f14320f9a4d8fae12
+TraceId:  89198094d397fc7d137814ca866b8d1f
 
 
 .DESCRIPTION See help for rad
@@ -2114,7 +2778,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  621715e17cd3177b1b3f1094f2e47b3d
+TraceId:  e72e784e92bd55e51705d16f8554891e
 
 
 .DESCRIPTION See help for rad
@@ -2312,7 +2976,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  dffff8dab858d9cd6d0b37bbeffbfa79
+TraceId:  0917819bf61162f29e64d4633beda62f
 
 
 .DESCRIPTION See help for rad
@@ -2480,7 +3144,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  fd909d4c8616a0a2274402a51d88999b
+TraceId:  7a2b8fa2d834da651f1d14742e2ec7b2
 
 
 .DESCRIPTION See help for rad
@@ -2640,7 +3304,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e738ac0edd39f6d6a6b1fc8965a7b892
+TraceId:  415be7adab426d35cdce98c67877d51c
 
 
 .DESCRIPTION See help for rad
@@ -2798,7 +3462,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d0fc372be8d245675c3158d2e3711121
+TraceId:  8f32fd07d4960b882d1e9ae329c2b7f1
 
 
 .DESCRIPTION See help for rad
@@ -2829,6 +3493,9 @@ function New-RadiusDeployment
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$File,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -2853,6 +3520,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         File = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -3008,10 +3685,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a56b2fbb0729e13b205e1d50fc3a31cf
+TraceId:  8ef7c74997e5467252189d74570b7d24
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER File
+
+
 
 .PARAMETER Config
 
@@ -3209,7 +3890,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b9c8308323c499a218da09956490e1cf
+TraceId:  5eabb196affaa3d66f408cd1c1db326b
 
 
 .DESCRIPTION See help for rad
@@ -3242,12 +3923,225 @@ Original Command: rad env list
 }
 
 
+function Get-RadiusEnvironmentDetail
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Environment,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Group,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace
+    )
+
+BEGIN {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
+    $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Environment = @{
+               OriginalName = '--environment'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Group = @{
+               OriginalName = '--group'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters["Debug"]){wait-debugger}
+    $__commandArgs += 'env'
+    $__commandArgs += 'show'
+    $__commandArgs += '--output'
+    $__commandArgs += 'json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                # if a transform is specified, use it and the construction of the values is up to the transform
+                if($param.ArgumentTransform -ne '$args') {
+                    $transform = $param.ArgumentTransform
+                    if($param.ArgumentTransformType -eq 'inline') {
+                        $transform = [scriptblock]::Create($param.ArgumentTransform)
+                    }
+                    $__commandArgs += & $transform $value
+                }
+                else {
+                    $pFmt = "{0}{1}"
+                    # quote the strings if they have spaces
+                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
+                    $__commandArgs += $pFmt -f $param.OriginalName, $value
+                }
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                if($param.ArgumentTransformType -eq 'inline') {
+                   $transform = [scriptblock]::Create($param.ArgumentTransform)
+                }
+                else {
+                   $transform = $param.ArgumentTransform
+                }
+                $__commandArgs += & $transform $value
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters["Debug"]){wait-debugger}
+    if ( $__boundParameters["Verbose"]) {
+         Write-Verbose -Verbose -Message "rad"
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            if ( $null -eq $__handler ) {
+                & "rad" $__commandArgs
+            }
+            else {
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+            }
+        }
+        else {
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            & $__handler $result
+        }
+    }
+    # be sure to let the user know if there are any errors
+    Pop-CrescendoNativeError -EmitAsError
+  } # end PROCESS
+
+<#
+.SYNOPSIS
+Error: unknown shorthand flag: '?' in -?
+
+TraceId:  c5a0128a0b6470be6464127678f41cab
+
+
+.DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Environment
+
+
+
+.PARAMETER Group
+
+
+
+.PARAMETER Workspace
+
+
+
+
+.EXAMPLE
+PS> Get-RadiusEnvironmentDetail
+
+Show environment details
+Original Command: rad env show
+
+
+#>
+}
+
+
 function New-RadiusEnvironment
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -3269,6 +4163,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -3415,10 +4319,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  559fd0b563fc14a9943ee4e3f20ab582
+TraceId:  4cabab7a2828cfd584921f37c4f848e2
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -3458,6 +4366,9 @@ function Remove-RadiusEnvironment
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -3472,13 +4383,23 @@ param(
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$Confirm
+[switch]$Yes
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -3519,11 +4440,11 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Confirm = @{
+         Yes = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'switch'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -3625,10 +4546,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1f42dcf9529c17aafe851b86d4567492
+TraceId:  e0ebf574f15c5e46152fab080ba94a05
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -3646,7 +4571,7 @@ TraceId:  1f42dcf9529c17aafe851b86d4567492
 
 
 
-.PARAMETER Confirm
+.PARAMETER Yes
 
 
 
@@ -3662,12 +4587,15 @@ Original Command: rad env delete
 }
 
 
-function Set-RadiusEnvironment
+function Switch-RadiusEnvironment
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -3683,6 +4611,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -3809,10 +4747,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  028d0f34124d2aef114adb62e902377e
+TraceId:  27eab013358d419b8846c4d1f7c091ec
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -3828,7 +4770,7 @@ TraceId:  028d0f34124d2aef114adb62e902377e
 
 
 .EXAMPLE
-PS> Set-RadiusEnvironment
+PS> Switch-RadiusEnvironment
 
 Switch the current environment
 Original Command: rad env switch
@@ -3844,6 +4786,9 @@ function Update-RadiusEnvironment
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -3880,6 +4825,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -4076,10 +5031,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9166a7064969a80eebbdfc5daf396ac2
+TraceId:  b4ae32649f95032c1f9a6a22edff410b
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -4267,7 +5226,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  2bd10d6ad4449bcd2930c905a97eab48
+TraceId:  e263f1d7efc6e44cddb257ede128e550
 
 
 .DESCRIPTION See help for rad
@@ -4292,12 +5251,191 @@ Original Command: rad group list
 }
 
 
+function Get-RadiusResourceGroupDetail
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace
+    )
+
+BEGIN {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
+    $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters["Debug"]){wait-debugger}
+    $__commandArgs += 'group'
+    $__commandArgs += 'show'
+    $__commandArgs += '--output'
+    $__commandArgs += 'json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                # if a transform is specified, use it and the construction of the values is up to the transform
+                if($param.ArgumentTransform -ne '$args') {
+                    $transform = $param.ArgumentTransform
+                    if($param.ArgumentTransformType -eq 'inline') {
+                        $transform = [scriptblock]::Create($param.ArgumentTransform)
+                    }
+                    $__commandArgs += & $transform $value
+                }
+                else {
+                    $pFmt = "{0}{1}"
+                    # quote the strings if they have spaces
+                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
+                    $__commandArgs += $pFmt -f $param.OriginalName, $value
+                }
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                if($param.ArgumentTransformType -eq 'inline') {
+                   $transform = [scriptblock]::Create($param.ArgumentTransform)
+                }
+                else {
+                   $transform = $param.ArgumentTransform
+                }
+                $__commandArgs += & $transform $value
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters["Debug"]){wait-debugger}
+    if ( $__boundParameters["Verbose"]) {
+         Write-Verbose -Verbose -Message "rad"
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            if ( $null -eq $__handler ) {
+                & "rad" $__commandArgs
+            }
+            else {
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+            }
+        }
+        else {
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            & $__handler $result
+        }
+    }
+    # be sure to let the user know if there are any errors
+    Pop-CrescendoNativeError -EmitAsError
+  } # end PROCESS
+
+<#
+.SYNOPSIS
+Error: unknown shorthand flag: '?' in -?
+
+TraceId:  ea383524f5235438e9e26a2e273f22ad
+
+
+.DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Workspace
+
+
+
+
+.EXAMPLE
+PS> Get-RadiusResourceGroupDetail
+
+Show the details of a resource group
+Original Command: rad group show
+
+
+#>
+}
+
+
 function New-RadiusResourceGroup
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -4313,6 +5451,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -4439,10 +5587,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5e483cb99ac6070a29e28594234bab93
+TraceId:  4733cd72e27c820f13cdc6fceab7f28a
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -4474,6 +5626,9 @@ function Remove-RadiusResourceGroup
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -4485,13 +5640,23 @@ param(
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$Confirm
+[switch]$Yes
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -4522,11 +5687,11 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Confirm = @{
+         Yes = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'switch'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -4628,10 +5793,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  676119a4e7001a2c672785e4a016a9e7
+TraceId:  37fe8aed3e6e30c5ac1a83a26ecf83ec
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -4645,7 +5814,7 @@ TraceId:  676119a4e7001a2c672785e4a016a9e7
 
 
 
-.PARAMETER Confirm
+.PARAMETER Yes
 
 
 
@@ -4661,12 +5830,15 @@ Original Command: rad group delete
 }
 
 
-function Set-RadiusResourceGroup
+function Switch-RadiusResourceGroup
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -4682,6 +5854,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -4808,10 +5990,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b29cfb8b0733f42cabcc45c93b4a8736
+TraceId:  4b887be53472986c0f0299ac78a71078
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -4827,7 +6013,7 @@ TraceId:  b29cfb8b0733f42cabcc45c93b4a8736
 
 
 .EXAMPLE
-PS> Set-RadiusResourceGroup
+PS> Switch-RadiusResourceGroup
 
 Switch default resource group scope
 Original Command: rad group switch
@@ -4970,7 +6156,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8376f1e2ed5608309d4824fe33f31852
+TraceId:  ab1b591866525155d8e5ef080b30729e
 
 
 .DESCRIPTION See help for rad
@@ -5168,7 +6354,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a9e9bb9dd49a453fd227e20719a3992e
+TraceId:  a1d180bc25174fbe8f6afeab8e72704d
 
 
 .DESCRIPTION See help for rad
@@ -5284,6 +6470,7 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'recipe'
+    $__commandArgs += 'list'
     $__commandArgs += '--output'
     $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
@@ -5364,7 +6551,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  66d0c8d097073b2b7cb56c26254f6b20
+TraceId:  3e675df2425b1e54f7817184f8348450
 
 
 .DESCRIPTION See help for rad
@@ -5397,12 +6584,225 @@ Original Command: rad recipe list
 }
 
 
+function Get-RadiusRecipeDetail
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Environment,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Group,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace
+    )
+
+BEGIN {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
+    $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Environment = @{
+               OriginalName = '--environment'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Group = @{
+               OriginalName = '--group'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters["Debug"]){wait-debugger}
+    $__commandArgs += 'recipe'
+    $__commandArgs += 'show'
+    $__commandArgs += '--output'
+    $__commandArgs += 'json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                # if a transform is specified, use it and the construction of the values is up to the transform
+                if($param.ArgumentTransform -ne '$args') {
+                    $transform = $param.ArgumentTransform
+                    if($param.ArgumentTransformType -eq 'inline') {
+                        $transform = [scriptblock]::Create($param.ArgumentTransform)
+                    }
+                    $__commandArgs += & $transform $value
+                }
+                else {
+                    $pFmt = "{0}{1}"
+                    # quote the strings if they have spaces
+                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
+                    $__commandArgs += $pFmt -f $param.OriginalName, $value
+                }
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                if($param.ArgumentTransformType -eq 'inline') {
+                   $transform = [scriptblock]::Create($param.ArgumentTransform)
+                }
+                else {
+                   $transform = $param.ArgumentTransform
+                }
+                $__commandArgs += & $transform $value
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters["Debug"]){wait-debugger}
+    if ( $__boundParameters["Verbose"]) {
+         Write-Verbose -Verbose -Message "rad"
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            if ( $null -eq $__handler ) {
+                & "rad" $__commandArgs
+            }
+            else {
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+            }
+        }
+        else {
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            & $__handler $result
+        }
+    }
+    # be sure to let the user know if there are any errors
+    Pop-CrescendoNativeError -EmitAsError
+  } # end PROCESS
+
+<#
+.SYNOPSIS
+Error: unknown shorthand flag: '?' in -?
+
+TraceId:  0aba5401663de3f36bbd7160d240dbe7
+
+
+.DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Environment
+
+
+
+.PARAMETER Group
+
+
+
+.PARAMETER Workspace
+
+
+
+
+.EXAMPLE
+PS> Get-RadiusRecipeDetail
+
+Show recipe details
+Original Command: rad recipe show
+
+
+#>
+}
+
+
 function Register-RadiusRecipe
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -5436,6 +6836,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -5622,10 +7032,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  29a1cdda529ae662fceb4af5ad0172fa
+TraceId:  bf42ca14ed47fb5cf508a1f3516bb3cd
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -5681,6 +7095,9 @@ function Unregister-RadiusRecipe
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -5702,6 +7119,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -5848,10 +7275,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7afc47a99338a8ecd1c07feae67348a0
+TraceId:  1fa95671a6b6feb9ee8a878452db8c91
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -6045,7 +7476,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  edc08b65e021c75ea3f4f3f7a5601e1b
+TraceId:  55dc9818fd22b32f740c75a85788f7d5
 
 
 .DESCRIPTION See help for rad
@@ -6078,12 +7509,225 @@ Original Command: rad resource list
 }
 
 
+function Get-RadiusResourceDetail
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Application,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Group,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace
+    )
+
+BEGIN {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
+    $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Application = @{
+               OriginalName = '--application'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Group = @{
+               OriginalName = '--group'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters["Debug"]){wait-debugger}
+    $__commandArgs += 'resource'
+    $__commandArgs += 'show'
+    $__commandArgs += '--output'
+    $__commandArgs += 'json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                # if a transform is specified, use it and the construction of the values is up to the transform
+                if($param.ArgumentTransform -ne '$args') {
+                    $transform = $param.ArgumentTransform
+                    if($param.ArgumentTransformType -eq 'inline') {
+                        $transform = [scriptblock]::Create($param.ArgumentTransform)
+                    }
+                    $__commandArgs += & $transform $value
+                }
+                else {
+                    $pFmt = "{0}{1}"
+                    # quote the strings if they have spaces
+                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
+                    $__commandArgs += $pFmt -f $param.OriginalName, $value
+                }
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                if($param.ArgumentTransformType -eq 'inline') {
+                   $transform = [scriptblock]::Create($param.ArgumentTransform)
+                }
+                else {
+                   $transform = $param.ArgumentTransform
+                }
+                $__commandArgs += & $transform $value
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters["Debug"]){wait-debugger}
+    if ( $__boundParameters["Verbose"]) {
+         Write-Verbose -Verbose -Message "rad"
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            if ( $null -eq $__handler ) {
+                & "rad" $__commandArgs
+            }
+            else {
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+            }
+        }
+        else {
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            & $__handler $result
+        }
+    }
+    # be sure to let the user know if there are any errors
+    Pop-CrescendoNativeError -EmitAsError
+  } # end PROCESS
+
+<#
+.SYNOPSIS
+Error: unknown shorthand flag: '?' in -?
+
+TraceId:  f793c7ab43a7686db4959ab8cf9d9cca
+
+
+.DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Application
+
+
+
+.PARAMETER Group
+
+
+
+.PARAMETER Workspace
+
+
+
+
+.EXAMPLE
+PS> Get-RadiusResourceDetail
+
+Show Radius resource details
+Original Command: rad resource show
+
+
+#>
+}
+
+
 function Get-RadiusResourceLogs
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Resource,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -6111,6 +7755,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Resource = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -6277,10 +7931,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7cd3e0f503a1ec58e96151c99db500e8
+TraceId:  832eaf13d6db26abfdd8006ce3ada0ac
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Resource
+
+
 
 .PARAMETER Config
 
@@ -6328,6 +7986,12 @@ function Remove-RadiusResource
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$ResourceType,
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$ResourceName,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -6346,6 +8010,26 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         ResourceType = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         ResourceName = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -6482,10 +8166,18 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  c06dffba381e472bc2e9f85c794946b3
+TraceId:  da21f4fc65fc9af66ab76dd87130ca67
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER ResourceType
+
+
+
+.PARAMETER ResourceName
+
+
 
 .PARAMETER Config
 
@@ -6521,6 +8213,9 @@ function Invoke-Radius
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$File,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -6545,6 +8240,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         File = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -6700,10 +8405,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a88c4ae804c63dfbaa24093a1c81a0ee
+TraceId:  4ff87a061294df70e8eed7279272fa9d
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER File
+
+
 
 .PARAMETER Config
 
@@ -6875,7 +8584,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1150118ac55681a62b8861dacbeb7a6e
+TraceId:  d0be0ed8156718a0e84dac151a25a336
 
 
 .DESCRIPTION See help for rad
@@ -7033,7 +8742,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  c7d4f4581a1b4c4de004c0f7adbc1976
+TraceId:  b137f79b3e800299a0ac5f7e30c4e84d
 
 
 .DESCRIPTION See help for rad
@@ -7192,7 +8901,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  973dbc8d325b5486874db39d884219fe
+TraceId:  75b8bbdb261ab3c5f081e7306325b4bf
 
 
 .DESCRIPTION See help for rad
@@ -7217,12 +8926,191 @@ Original Command: rad workspace list
 }
 
 
+function Get-RadiusWorkspaceDetail
+{
+[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
+[CmdletBinding()]
+
+param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace
+    )
+
+BEGIN {
+    $PSNativeCommandUseErrorActionPreference = $false
+    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
+    $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+    }
+
+    $__outputHandlers = @{
+        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+    }
+}
+
+PROCESS {
+    $__boundParameters = $PSBoundParameters
+    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
+    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
+    $__commandArgs = @()
+    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
+    if ($__boundParameters["Debug"]){wait-debugger}
+    $__commandArgs += 'workspace'
+    $__commandArgs += 'show'
+    $__commandArgs += '--output'
+    $__commandArgs += 'json'
+    foreach ($paramName in $__boundParameters.Keys|
+            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
+            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
+            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
+        $value = $__boundParameters[$paramName]
+        $param = $__PARAMETERMAP[$paramName]
+        if ($param) {
+            if ($value -is [switch]) {
+                 if ($value.IsPresent) {
+                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                 }
+                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
+            }
+            elseif ( $param.NoGap ) {
+                # if a transform is specified, use it and the construction of the values is up to the transform
+                if($param.ArgumentTransform -ne '$args') {
+                    $transform = $param.ArgumentTransform
+                    if($param.ArgumentTransformType -eq 'inline') {
+                        $transform = [scriptblock]::Create($param.ArgumentTransform)
+                    }
+                    $__commandArgs += & $transform $value
+                }
+                else {
+                    $pFmt = "{0}{1}"
+                    # quote the strings if they have spaces
+                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
+                    $__commandArgs += $pFmt -f $param.OriginalName, $value
+                }
+            }
+            else {
+                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
+                if($param.ArgumentTransformType -eq 'inline') {
+                   $transform = [scriptblock]::Create($param.ArgumentTransform)
+                }
+                else {
+                   $transform = $param.ArgumentTransform
+                }
+                $__commandArgs += & $transform $value
+            }
+        }
+    }
+    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
+    if ($__boundParameters["Debug"]){wait-debugger}
+    if ( $__boundParameters["Verbose"]) {
+         Write-Verbose -Verbose -Message "rad"
+         $__commandArgs | Write-Verbose -Verbose
+    }
+    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
+    if (! $__handlerInfo ) {
+        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
+    }
+    $__handler = $__handlerInfo.Handler
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
+    # check for the application and throw if it cannot be found
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
+        }
+        if ( $__handlerInfo.StreamOutput ) {
+            if ( $null -eq $__handler ) {
+                & "rad" $__commandArgs
+            }
+            else {
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+            }
+        }
+        else {
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            & $__handler $result
+        }
+    }
+    # be sure to let the user know if there are any errors
+    Pop-CrescendoNativeError -EmitAsError
+  } # end PROCESS
+
+<#
+.SYNOPSIS
+Error: unknown shorthand flag: '?' in -?
+
+TraceId:  6bb68ad58bd921d62a0372b4fa04d96c
+
+
+.DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Workspace
+
+
+
+
+.EXAMPLE
+PS> Get-RadiusWorkspaceDetail
+
+Show local workspace
+Original Command: rad workspace show
+
+
+#>
+}
+
+
 function New-RadiusWorkspaceKubernetes
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -7247,6 +9135,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -7404,10 +9302,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  dc6c8e9838bb2b93adcfdacdf329f932
+TraceId:  6137481a68367b69fd76b12a752fe828
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -7451,6 +9353,9 @@ function Remove-RadiusWorkspace
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -7459,13 +9364,23 @@ param(
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$Confirm
+[switch]$Yes
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -7486,11 +9401,11 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Confirm = @{
+         Yes = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'switch'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -7592,10 +9507,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d5a59936f97887a80cbab7b31b0e56fb
+TraceId:  1a5a93a6bb2e03f5be52e71ee73f54a4
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -7605,7 +9524,7 @@ TraceId:  d5a59936f97887a80cbab7b31b0e56fb
 
 
 
-.PARAMETER Confirm
+.PARAMETER Yes
 
 
 
@@ -7621,12 +9540,15 @@ Original Command: rad workspace delete
 }
 
 
-function Set-RadiusWorkspace
+function Switch-RadiusWorkspace
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="")]
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Config,
@@ -7639,6 +9561,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -7755,10 +9687,14 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5c0412321d2b8fca908930cb6d7cef8e
+TraceId:  3b81ed4d4b31da6d9dfdc085f85139da
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Name
+
+
 
 .PARAMETER Config
 
@@ -7770,7 +9706,7 @@ TraceId:  5c0412321d2b8fca908930cb6d7cef8e
 
 
 .EXAMPLE
-PS> Set-RadiusWorkspace
+PS> Switch-RadiusWorkspace
 
 Switch current workspace
 Original Command: rad workspace switch
