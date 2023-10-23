@@ -26,7 +26,15 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
-                }
+                },
+                {
+                    "Name": "CLI",
+                    "OriginalName": "--cli",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
             ],
             "OutputHandlers": [
                 {

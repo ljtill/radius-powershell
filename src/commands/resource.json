@@ -27,46 +27,26 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
-                }
-            ],
-            "OutputHandlers": [
+                },
                 {
-                    "ParameterSetName": "Default",
-                    "HandlerType": "inline",
-                    "Handler": "$input | ConvertFrom-Json -Depth 25",
-                    "StreamOutput": true
-                }
-            ],
-            "Examples": [
+                    "Name": "Application",
+                    "OriginalName": "--application",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
                 {
-                    "Command": "Get-RadiusResource",
-                    "Description": "Lists resources",
-                    "OriginalCommand": "rad resource list"
-                }
-            ]
-        },
-        {
-            "Verb": "Remove",
-            "Noun": "RadiusResource",
-            "OriginalName": "/usr/local/bin/rad",
-            "OriginalCommandElements": [
-                "resource",
-                "delete",
-                "--output",
-                "json"
-            ],
-            "Platform": [
-                "Windows",
-                "Linux",
-                "MacOS"
-            ],
-            "SupportsShouldProcess": false,
-            "SupportsTransactions": false,
-            "NoInvocation": false,
-            "Parameters": [
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
                 {
-                    "Name": "Config",
-                    "OriginalName": "--config",
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
                     "OriginalPosition": 0,
@@ -83,9 +63,9 @@
             ],
             "Examples": [
                 {
-                    "Command": "Remove-RadiusResource",
-                    "Description": "Delete a Radius resource",
-                    "OriginalCommand": "rad resource delete"
+                    "Command": "Get-RadiusResource",
+                    "Description": "Lists resources",
+                    "OriginalCommand": "rad resource list"
                 }
             ]
         },
@@ -115,6 +95,54 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                },
+                {
+                    "Name": "Container",
+                    "OriginalName": "--container",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Follow",
+                    "OriginalName": "--follow",
+                    "DefaultValue": "",
+                    "ParameterType": "boolean",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Replica",
+                    "OriginalName": "--replica",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Application",
+                    "OriginalName": "--application",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
                 }
             ],
             "OutputHandlers": [
@@ -130,6 +158,74 @@
                     "Command": "Get-RadiusResourceLogs",
                     "Description": "Read logs from a running containers resourc",
                     "OriginalCommand": "rad resource logs"
+                }
+            ]
+        },
+        {
+            "Verb": "Remove",
+            "Noun": "RadiusResource",
+            "OriginalName": "/usr/local/bin/rad",
+            "OriginalCommandElements": [
+                "resource",
+                "delete",
+                "--output",
+                "json"
+            ],
+            "Platform": [
+                "Windows",
+                "Linux",
+                "MacOS"
+            ],
+            "SupportsShouldProcess": false,
+            "SupportsTransactions": false,
+            "NoInvocation": false,
+            "Parameters": [
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Confirm",
+                    "OriginalName": "--yes",
+                    "DefaultValue": "",
+                    "ParameterType": "boolean",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
+            "Examples": [
+                {
+                    "Command": "Remove-RadiusResource",
+                    "Description": "Delete a Radius resource",
+                    "OriginalCommand": "rad resource delete"
                 }
             ]
         }
