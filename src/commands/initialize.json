@@ -39,7 +39,8 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "ByPass"
+                    "HandlerType": "Script",
+                    "Handler": "handlers/Parse.ps1"
                 }
             ],
             "Examples": [
