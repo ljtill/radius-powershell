@@ -6,9 +6,11 @@ This repository contains a PowerShell module designed to serve as a wrapper for 
 
 **Getting Started**
 
+Prior to utilizing this module, it is necessary to have the Radius CLI installed on your local system.
+
 ```powershell
 Import-Module "./src/Radius.psd1" -Force
-Get-Command -Module Radius
+Get-Command -Module "Radius"
 ```
 
 The module has not yet been published on the PowerShell Gallery, so you'll need to import it manually for use.
@@ -20,5 +22,6 @@ The module has not yet been published on the PowerShell Gallery, so you'll need 
 - [Source](https://github.com/radius-project/radius)
 - [Samples](https://github.com/radius-project/samples)
 - [Recipes](https://github.com/radius-project/recipes)
+- [Commands](https://github.com/ljtill/radius-powershell/blob/main/src/README.md)
 
 _Please note these artifacts are under development and subject to change._
