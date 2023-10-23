@@ -15,11 +15,5 @@ $Params = @{
     PowerShellVersion = "7.2.0"
 }
 
-try {
-    Export-CrescendoModule -ConfigurationFile $commands -ModuleName "$rootPath/src/Radius.psm1" -Force
-    Update-ModuleManifest @Params
-}
-catch {
-    Write-Information -MessageData "Failed to generate module"
-    Write-Error $_.Exception
-}
+Export-CrescendoModule -ConfigurationFile $commands -ModuleName "$rootPath/src/Radius.psm1" -Force
+Update-ModuleManifest @Params
