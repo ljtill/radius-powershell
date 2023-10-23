@@ -4,7 +4,7 @@
         {
             "Verb": "Initialize",
             "Noun": "Radius",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "init",
                 "--output",

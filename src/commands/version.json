@@ -4,7 +4,7 @@
         {
             "Verb": "Get",
             "Noun": "RadiusVersion",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "version",
                 "--output",

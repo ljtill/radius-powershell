@@ -4,7 +4,7 @@
         {
             "Verb": "Get",
             "Noun": "RadiusRecipe",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "recipe",
                 "--output",
@@ -71,7 +71,7 @@
         {
             "Verb": "Register",
             "Noun": "RadiusRecipe",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "recipe",
                 "register",
@@ -179,7 +179,7 @@
         {
             "Verb": "Unregister",
             "Noun": "RadiusRecipe",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "recipe",
                 "unregister",
