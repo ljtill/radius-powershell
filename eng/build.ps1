@@ -2,6 +2,8 @@
 #requires -Modules Microsoft.PowerShell.Crescendo
 
 $rootPath = (Get-Item $PSScriptRoot).parent
+
+Write-Verbose -Message "Retrieving configuration manifests..."
 $commands = (Get-ChildItem $rootPath/src/commands | Select-Object -ExpandProperty FullName)
 
 $Params = @{
@@ -15,5 +17,8 @@ $Params = @{
     PowerShellVersion = "7.2.0"
 }
 
+Write-Verbose -Message "Generating Radius module..."
 Export-CrescendoModule -ConfigurationFile $commands -ModuleName "$rootPath/src/Radius.psm1" -Force
+
+Write-Verbose -Message "Updating module manifest..."
 Update-ModuleManifest @Params
