@@ -27,6 +27,30 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                },
+                {
+                    "Name": "Environment",
+                    "OriginalName": "--environment",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
                 }
             ],
             "OutputHandlers": [
@@ -67,6 +91,38 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Environment",
+                    "OriginalName": "--environment",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Namespace",
+                    "OriginalName": "--namespace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
                     "OriginalPosition": 0,
@@ -115,6 +171,38 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                },
+                {
+                    "Name": "Environment",
+                    "OriginalName": "--environment",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Confirm",
+                    "OriginalName": "--yes",
+                    "DefaultValue": "",
+                    "ParameterType": "boolean",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
                 }
             ],
             "OutputHandlers": [
@@ -159,6 +247,22 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                },
+                {
+                    "Name": "Environment",
+                    "OriginalName": "--environment",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
                 }
             ],
             "OutputHandlers": [
@@ -199,6 +303,78 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "AWSAccountId",
+                    "OriginalName": "--aws-account-id",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "AWSRegion",
+                    "OriginalName": "--aws-region",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "AzureResourceGroup",
+                    "OriginalName": "--azure-resource-group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "AzureSubscriptionId",
+                    "OriginalName": "--azure-subscription-id",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "ClearAWS",
+                    "OriginalName": "--clear-aws",
+                    "DefaultValue": "",
+                    "ParameterType": "boolean",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "ClearAzure",
+                    "OriginalName": "--clear-azure",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Environment",
+                    "OriginalName": "--environment",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
                     "OriginalPosition": 0,

@@ -27,6 +27,14 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
                 }
             ],
             "OutputHandlers": [
@@ -47,11 +55,12 @@
         },
         {
             "Verb": "New",
-            "Noun": "RadiusWorkspace",
+            "Noun": "RadiusWorkspaceKubernetes",
             "OriginalName": "/usr/local/bin/rad",
             "OriginalCommandElements": [
                 "workspace",
                 "create",
+                "kubernetes",
                 "--output",
                 "json"
             ],
@@ -67,6 +76,46 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Context",
+                    "OriginalName": "--context",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Environment",
+                    "OriginalName": "--environment",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Force",
+                    "OriginalName": "--force",
+                    "DefaultValue": "",
+                    "ParameterType": "boolean",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Group",
+                    "OriginalName": "--group",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
                     "OriginalPosition": 0,
@@ -115,7 +164,23 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
-                }
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Confirm",
+                    "OriginalName": "--yes",
+                    "DefaultValue": "",
+                    "ParameterType": "boolean",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
             ],
             "OutputHandlers": [
                 {
@@ -155,6 +220,14 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Workspace",
+                    "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
                     "OriginalPosition": 0,
