@@ -1,9 +1,8 @@
-#!/usr/bin/env pwsh
+#requires -Version 7.0
+#requires -Modules Microsoft.PowerShell.Crescendo
 
 $rootPath = (Get-Item $PSScriptRoot).parent
 $commands = (Get-ChildItem $rootPath/src/commands | Select-Object -ExpandProperty FullName)
-
-Export-CrescendoModule -ConfigurationFile $commands -ModuleName "$rootPath/src/Radius.psm1" -Force
 
 $Params = @{
     Path              = "$rootPath/src/Radius.psd1"
@@ -16,4 +15,5 @@ $Params = @{
     PowerShellVersion = "7.2.0"
 }
 
+Export-CrescendoModule -ConfigurationFile $commands -ModuleName "$rootPath/src/Radius.psm1" -Force
 Update-ModuleManifest @Params
