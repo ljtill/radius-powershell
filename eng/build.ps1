@@ -1,9 +1,19 @@
 #!/usr/bin/env pwsh
 
 $rootPath = (Get-Item $PSScriptRoot).parent
-
-Remove-Item -Path $rootPath/src/Radius.psm1 -ErrorAction SilentlyContinue
-
 $commands = (Get-ChildItem $rootPath/src/commands | Select-Object -ExpandProperty FullName)
 
-Export-CrescendoModule -ConfigurationFile $commands -ModuleName $rootPath/src/Radius.psm1 -NoClobberManifest
+Export-CrescendoModule -ConfigurationFile $commands -ModuleName "$rootPath/src/Radius.psm1" -Force
+
+$Params = @{
+    Path              = "$rootPath/src/Radius.psd1"
+    RootModule        = "Radius.psm1"
+    ModuleVersion     = "0.0.1"
+    Guid              = "2f010876-a659-4995-b5bf-8378e4e7ce34"
+    Author            = "Lyon Till"
+    CompanyName       = "."
+    Copyright         = "(c) Lyon Till. All rights reserved."
+    PowerShellVersion = "7.2.0"
+}
+
+Update-ModuleManifest @Params
