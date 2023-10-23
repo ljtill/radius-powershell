@@ -56,9 +56,8 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "inline",
-                    "Handler": "$input | ConvertFrom-Json -Depth 25",
-                    "StreamOutput": true
+                    "HandlerType": "Script",
+                    "Handler": "handlers/Parse.ps1"
                 }
             ],
             "Examples": [
@@ -121,6 +120,14 @@
                     "Mandatory": false
                 },
                 {
+                    "Name": "ResourceType",
+                    "OriginalName": "--resource-type",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 0,
+                    "Mandatory": false
+                },
+                {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
@@ -132,9 +139,8 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "inline",
-                    "Handler": "$input | ConvertFrom-Json -Depth 25",
-                    "StreamOutput": true
+                    "HandlerType": "Script",
+                    "Handler": "handlers/Parse.ps1"
                 }
             ],
             "Examples": [
@@ -248,9 +254,8 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "inline",
-                    "Handler": "$input | ConvertFrom-Json -Depth 25",
-                    "StreamOutput": true
+                    "HandlerType": "Script",
+                    "Handler": "handlers/Parse.ps1"
                 }
             ],
             "Examples": [
@@ -332,9 +337,8 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "inline",
-                    "Handler": "$input | ConvertFrom-Json -Depth 25",
-                    "StreamOutput": true
+                    "HandlerType": "Script",
+                    "Handler": "handlers/Parse.ps1"
                 }
             ],
             "Examples": [
