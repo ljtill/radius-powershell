@@ -29,6 +29,14 @@
                     "Mandatory": false
                 }
             ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
             "Examples": [
                 {
                     "Command": "Get-RadiusResource",
@@ -65,6 +73,14 @@
                     "Mandatory": false
                 }
             ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
+                }
+            ],
             "Examples": [
                 {
                     "Command": "Remove-RadiusResource",
@@ -99,6 +115,14 @@
                     "ParameterType": "string",
                     "OriginalPosition": 0,
                     "Mandatory": false
+                }
+            ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "inline",
+                    "Handler": "$input | ConvertFrom-Json -Depth 25",
+                    "StreamOutput": true
                 }
             ],
             "Examples": [

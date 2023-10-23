@@ -29,6 +29,12 @@
                     "Mandatory": false
                 }
             ],
+            "OutputHandlers": [
+                {
+                    "ParameterSetName": "Default",
+                    "HandlerType": "ByPass"
+                }
+            ],
             "Examples": [
                 {
                     "Command": "Uninstall-RadiusKubernetes",
