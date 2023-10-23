@@ -2,7 +2,7 @@
 
 $rootPath = (Get-Item $PSScriptRoot).parent
 
-Remove-Item -Path $rootPath/src/Radius.psm1
+Remove-Item -Path $rootPath/src/Radius.psm1 -ErrorAction SilentlyContinue
 
 $commands = (Get-ChildItem $rootPath/src/commands | Select-Object -ExpandProperty FullName)
 
