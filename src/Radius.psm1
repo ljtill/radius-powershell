@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/23/2023 16:40:15
+# Generated at: 10/23/2023 17:01:17
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -150,7 +150,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -158,21 +158,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -184,10 +184,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ef02d281dcbf3a900b8d625be3637a9d
+TraceId:  422333215493ecdea1c75357f1422da3
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -352,7 +352,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -360,21 +360,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -386,10 +386,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  bf116eca0861c9b635dd2bc738abd706
+TraceId:  30aa20f413be37af351b91d5c45a19b9
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -549,7 +549,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -557,21 +557,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -583,10 +583,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  cabf360198d765156fc25a535946345c
+TraceId:  a0e0bbcbd841a17c8dadc0893a37045f
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -729,7 +729,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -737,21 +737,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -763,10 +763,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  496cb53c31acfc060946db7ff586c3d6
+TraceId:  e3180827683028519698b02233aafb59
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -930,7 +930,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -938,21 +938,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -964,10 +964,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  76cf7b9215b6b44745057f99182183ee
+TraceId:  f43b32ea01d9296e9298c23d3ea28c35
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -1088,7 +1088,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -1096,21 +1096,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -1122,10 +1122,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  3496b2cf3801ae53deca799d30431d65
+TraceId:  556de2bb6d3a703b067067a8ab82b08e
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -1230,7 +1230,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -1238,21 +1238,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -1264,10 +1264,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  61dd39e424f04be8e8316fcc2a1f484d
+TraceId:  5e0f0deb7dcf2cf68fc797510136a1c5
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -1398,7 +1398,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -1406,21 +1406,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -1432,10 +1432,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d3c69416d0510ac1de2a8d316f5e0b61
+TraceId:  f9b062eff7254e5a40f9a653aad69dbc
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -1561,7 +1561,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -1569,21 +1569,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -1595,10 +1595,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f6880064b6e099f31d2a8c81fa75b65d
+TraceId:  edad4ca7df4e6e1b32ab5dc8b227c886
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -1721,7 +1721,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -1729,21 +1729,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -1755,10 +1755,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  25b0267f108ee6714939a46b1cba1a2b
+TraceId:  05b7f55818fe654bc6929e9534440b81
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -1881,7 +1881,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -1889,21 +1889,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -1915,10 +1915,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  0a09396c846fe63c27c1d8bd6358fb43
+TraceId:  67621a4221e9198f14320f9a4d8fae12
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -2080,7 +2080,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -2088,21 +2088,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -2114,10 +2114,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  16cf711a16c1d5932bb7e80f1af91c98
+TraceId:  621715e17cd3177b1b3f1094f2e47b3d
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -2278,7 +2278,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -2286,21 +2286,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -2312,10 +2312,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7456a04ae6f5f24f7d3f809099cd986a
+TraceId:  dffff8dab858d9cd6d0b37bbeffbfa79
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -2446,7 +2446,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -2454,21 +2454,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -2480,10 +2480,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f20900d9b0146f30239980c4d8e3a88f
+TraceId:  fd909d4c8616a0a2274402a51d88999b
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -2606,7 +2606,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -2614,21 +2614,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -2640,10 +2640,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  2a47fcb0df3dd7ab3ecc045aa1713cbf
+TraceId:  e738ac0edd39f6d6a6b1fc8965a7b892
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -2764,7 +2764,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -2772,21 +2772,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -2798,10 +2798,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1e732f9a30a863f34dabae728efd7e1f
+TraceId:  d0fc372be8d245675c3158d2e3711121
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -2974,7 +2974,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -2982,21 +2982,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -3008,10 +3008,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4f0fdce07b1e426ebc985383342ed8ef
+TraceId:  a56b2fbb0729e13b205e1d50fc3a31cf
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -3175,7 +3175,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -3183,21 +3183,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -3209,10 +3209,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e5e70c4c99aadcec9b47654c1ad37484
+TraceId:  b9c8308323c499a218da09956490e1cf
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -3381,7 +3381,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -3389,21 +3389,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -3415,10 +3415,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  47de0577cbdfefa1eb03bf72727d3272
+TraceId:  559fd0b563fc14a9943ee4e3f20ab582
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -3591,7 +3591,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -3599,21 +3599,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -3625,10 +3625,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b8078cc4fd2a6886f6e4e7a3f2b5b14c
+TraceId:  1f42dcf9529c17aafe851b86d4567492
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -3775,7 +3775,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -3783,21 +3783,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -3809,10 +3809,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5d4a79d5c789fbbde49473b283326395
+TraceId:  028d0f34124d2aef114adb62e902377e
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -4042,7 +4042,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -4050,21 +4050,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -4076,10 +4076,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8f7ebae91e5c9d3f5f4aa79a642ba93a
+TraceId:  9166a7064969a80eebbdfc5daf396ac2
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -4233,7 +4233,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -4241,21 +4241,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -4267,10 +4267,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  37dbd13a4876cec0630d1bf76cd4a7d3
+TraceId:  2bd10d6ad4449bcd2930c905a97eab48
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -4405,7 +4405,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -4413,21 +4413,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -4439,10 +4439,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ae3a522190d58ae72b0f4ff630769f1a
+TraceId:  5e483cb99ac6070a29e28594234bab93
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -4594,7 +4594,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -4602,21 +4602,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -4628,10 +4628,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  27280f7ea4949238a3e87ef977b75594
+TraceId:  676119a4e7001a2c672785e4a016a9e7
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -4774,7 +4774,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -4782,21 +4782,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -4808,10 +4808,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4940a10e86af15a089600cb0f957ddde
+TraceId:  b29cfb8b0733f42cabcc45c93b4a8736
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -4936,7 +4936,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -4944,21 +4944,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -4970,10 +4970,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ec073bfe589eb276e72494075b083940
+TraceId:  8376f1e2ed5608309d4824fe33f31852
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -5134,7 +5134,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -5142,21 +5142,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -5168,10 +5168,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  45b40a7a96edd52f01dffcceedeb8cb1
+TraceId:  a9e9bb9dd49a453fd227e20719a3992e
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -5330,7 +5330,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -5338,21 +5338,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -5364,10 +5364,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f40946bfaa0791db7686d33573e70966
+TraceId:  66d0c8d097073b2b7cb56c26254f6b20
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -5588,7 +5588,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -5596,21 +5596,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -5622,10 +5622,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1a9106a9e521cc1fb43cfe1ebc942ab4
+TraceId:  29a1cdda529ae662fceb4af5ad0172fa
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -5814,7 +5814,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -5822,21 +5822,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -5848,10 +5848,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  6946b329b528161efdd4b73a67257eeb
+TraceId:  7afc47a99338a8ecd1c07feae67348a0
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -6011,7 +6011,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -6019,21 +6019,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -6045,10 +6045,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9013adcc0aa11e69660082c95b69124c
+TraceId:  edc08b65e021c75ea3f4f3f7a5601e1b
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -6243,7 +6243,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -6251,21 +6251,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -6277,10 +6277,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  2f6968a47a264fe8ad61abce38cb03ac
+TraceId:  7cd3e0f503a1ec58e96151c99db500e8
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -6448,7 +6448,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -6456,21 +6456,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -6482,10 +6482,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7a0710967c87b1bfb1b1b30e15d2402f
+TraceId:  c06dffba381e472bc2e9f85c794946b3
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -6666,7 +6666,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -6674,21 +6674,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -6700,10 +6700,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  6f618ecac89a8d8a23cb52afe3dc7f8e
+TraceId:  a88c4ae804c63dfbaa24093a1c81a0ee
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -6841,7 +6841,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -6849,21 +6849,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -6875,10 +6875,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  657a3a4b8bb796690a8a45a459b8a7dc
+TraceId:  1150118ac55681a62b8861dacbeb7a6e
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -6999,7 +6999,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -7007,21 +7007,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -7033,10 +7033,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f0ead56255ac57a0d90875ff54a810e2
+TraceId:  c7d4f4581a1b4c4de004c0f7adbc1976
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -7158,7 +7158,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -7166,21 +7166,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -7192,10 +7192,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d1ad37f9317c2321a10a075c449b587a
+TraceId:  973dbc8d325b5486874db39d884219fe
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -7370,7 +7370,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -7378,21 +7378,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -7404,10 +7404,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ad73459548a46e14a5fca652de54e32d
+TraceId:  dc6c8e9838bb2b93adcfdacdf329f932
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -7558,7 +7558,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -7566,21 +7566,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -7592,10 +7592,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  39ae4bccdab6f293c92450bba4510b84
+TraceId:  d5a59936f97887a80cbab7b31b0e56fb
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 
@@ -7721,7 +7721,7 @@ PROCESS {
     $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
     if ($__boundParameters["Debug"]){wait-debugger}
     if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "/usr/local/bin/rad"
+         Write-Verbose -Verbose -Message "rad"
          $__commandArgs | Write-Verbose -Verbose
     }
     $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
@@ -7729,21 +7729,21 @@ PROCESS {
         $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
     }
     $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("/usr/local/bin/rad $__commandArgs")) {
+    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
     # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "/usr/local/bin/rad")) {
-          throw "Cannot find executable '/usr/local/bin/rad'"
+        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
+          throw "Cannot find executable 'rad'"
         }
         if ( $__handlerInfo.StreamOutput ) {
             if ( $null -eq $__handler ) {
-                & "/usr/local/bin/rad" $__commandArgs
+                & "rad" $__commandArgs
             }
             else {
-                & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
+                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
             }
         }
         else {
-            $result = & "/usr/local/bin/rad" $__commandArgs 2>&1| Push-CrescendoNativeError
+            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
             & $__handler $result
         }
     }
@@ -7755,10 +7755,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f78ab23f855a567d6ec0eaa250cd9467
+TraceId:  5c0412321d2b8fca908930cb6d7cef8e
 
 
-.DESCRIPTION See help for /usr/local/bin/rad
+.DESCRIPTION See help for rad
 
 .PARAMETER Config
 

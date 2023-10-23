@@ -4,7 +4,7 @@
         {
             "Verb": "New",
             "Noun": "RadiusDeployment",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "deploy",
                 "--output",

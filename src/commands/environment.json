@@ -4,7 +4,7 @@
         {
             "Verb": "Get",
             "Noun": "RadiusEnvironment",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "env",
                 "list",
@@ -72,7 +72,7 @@
         {
             "Verb": "New",
             "Noun": "RadiusEnvironment",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "env",
                 "create",
@@ -148,7 +148,7 @@
         {
             "Verb": "Remove",
             "Noun": "RadiusEnvironment",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "env",
                 "delete",
@@ -224,7 +224,7 @@
         {
             "Verb": "Set",
             "Noun": "RadiusEnvironment",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "env",
                 "switch",
@@ -284,7 +284,7 @@
         {
             "Verb": "Update",
             "Noun": "RadiusEnvironment",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "env",
                 "update",

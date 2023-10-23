@@ -4,7 +4,7 @@
         {
             "Verb": "Install",
             "Noun": "RadiusKubernetes",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "install",
                 "kubernetes",

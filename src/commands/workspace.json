@@ -4,7 +4,7 @@
         {
             "Verb": "Get",
             "Noun": "RadiusWorkspace",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
                 "list",
@@ -56,7 +56,7 @@
         {
             "Verb": "New",
             "Noun": "RadiusWorkspaceKubernetes",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
                 "create",
@@ -141,7 +141,7 @@
         {
             "Verb": "Remove",
             "Noun": "RadiusWorkspace",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
                 "delete",
@@ -201,7 +201,7 @@
         {
             "Verb": "Set",
             "Noun": "RadiusWorkspace",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
                 "switch",

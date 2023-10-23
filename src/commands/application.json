@@ -4,7 +4,7 @@
         {
             "Verb": "Get",
             "Noun": "RadiusApplication",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "application",
                 "list",
@@ -64,7 +64,7 @@
         {
             "Verb": "Get",
             "Noun": "RadiusApplicationConnections",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "application",
                 "connections",
@@ -140,7 +140,7 @@
         {
             "Verb": "Get",
             "Noun": "RadiusApplicationStatus",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "application",
                 "status",
@@ -208,7 +208,7 @@
         {
             "Verb": "Set",
             "Noun": "RadiusApplication",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "application",
                 "switch",
@@ -268,7 +268,7 @@
         {
             "Verb": "Remove",
             "Noun": "RadiusApplication",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "application",
                 "--output",

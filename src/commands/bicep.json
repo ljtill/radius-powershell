@@ -4,7 +4,7 @@
         {
             "Verb": "Install",
             "Noun": "RadiusBicep",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "bicep",
                 "download",
@@ -46,7 +46,7 @@
         {
             "Verb": "Uninstall",
             "Noun": "RadiusBicep",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "bicep",
                 "delete",
@@ -88,7 +88,7 @@
         {
             "Verb": "Publish",
             "Noun": "RadiusBicep",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "bicep",
                 "publish",

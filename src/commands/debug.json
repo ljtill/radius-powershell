@@ -4,7 +4,7 @@
         {
             "Verb": "Debug",
             "Noun": "Radius",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "debug-logs",
                 "--output",

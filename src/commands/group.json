@@ -4,7 +4,7 @@
         {
             "Verb": "Get",
             "Noun": "RadiusResourceGroup",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
                 "list",
@@ -56,7 +56,7 @@
         {
             "Verb": "New",
             "Noun": "RadiusResourceGroup",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
                 "create",
@@ -116,7 +116,7 @@
         {
             "Verb": "Remove",
             "Noun": "RadiusResourceGroup",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
                 "delete",
@@ -184,7 +184,7 @@
         {
             "Verb": "Set",
             "Noun": "RadiusResourceGroup",
-            "OriginalName": "/usr/local/bin/rad",
+            "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
                 "switch",
