@@ -7,7 +7,7 @@ This repository contains a PowerShell module designed to serve as a wrapper for 
 **Getting Started**
 
 ```powershell
-Import-Module ./src/Radius.psd1 -Force
+Import-Module "./src/Radius.psd1" -Force
 Get-Command -Module Radius
 ```
 
