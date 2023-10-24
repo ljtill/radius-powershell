@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/24/2023 01:02:21
+# Generated at: 10/24/2023 01:06:41
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -195,7 +195,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  67d50d3acdcd2450b69c091d7e2cc57c
+TraceId:  77957ccfefcb1274a9cdc1a920c01c00
 
 
 .DESCRIPTION See help for rad
@@ -412,7 +412,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b03fb7c193a515c66d43f0be0718f208
+TraceId:  5bf83d94494943aaa2307b71a1e426ce
 
 
 .DESCRIPTION See help for rad
@@ -460,231 +460,6 @@ function Get-RadiusApplicationConnections
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
-[string]$Application,
-[Parameter()]
-[PSDefaultValue(Value="")]
-[string]$Environment,
-[Parameter()]
-[PSDefaultValue(Value="")]
-[string]$Group,
-[Parameter()]
-[PSDefaultValue(Value="")]
-[string]$Workspace,
-[Parameter()]
-[PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
-    )
-
-BEGIN {
-    $PSNativeCommandUseErrorActionPreference = $false
-    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
-    $__PARAMETERMAP = @{
-         Application = @{
-               OriginalName = '--application'
-               OriginalPosition = '1'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Environment = @{
-               OriginalName = '--environment'
-               OriginalPosition = '2'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Group = @{
-               OriginalName = '--group'
-               OriginalPosition = '3'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '4'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '5'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Output = @{
-               OriginalName = '--output'
-               OriginalPosition = '6'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-    }
-
-    $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
-    }
-}
-
-PROCESS {
-    $__boundParameters = $PSBoundParameters
-    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
-    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
-    $__commandArgs = @()
-    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
-    if ($__boundParameters["Debug"]){wait-debugger}
-    $__commandArgs += 'application'
-    $__commandArgs += 'connections'
-    foreach ($paramName in $__boundParameters.Keys|
-            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
-            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
-            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
-        $value = $__boundParameters[$paramName]
-        $param = $__PARAMETERMAP[$paramName]
-        if ($param) {
-            if ($value -is [switch]) {
-                 if ($value.IsPresent) {
-                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                 }
-                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
-            }
-            elseif ( $param.NoGap ) {
-                # if a transform is specified, use it and the construction of the values is up to the transform
-                if($param.ArgumentTransform -ne '$args') {
-                    $transform = $param.ArgumentTransform
-                    if($param.ArgumentTransformType -eq 'inline') {
-                        $transform = [scriptblock]::Create($param.ArgumentTransform)
-                    }
-                    $__commandArgs += & $transform $value
-                }
-                else {
-                    $pFmt = "{0}{1}"
-                    # quote the strings if they have spaces
-                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
-                    $__commandArgs += $pFmt -f $param.OriginalName, $value
-                }
-            }
-            else {
-                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                if($param.ArgumentTransformType -eq 'inline') {
-                   $transform = [scriptblock]::Create($param.ArgumentTransform)
-                }
-                else {
-                   $transform = $param.ArgumentTransform
-                }
-                $__commandArgs += & $transform $value
-            }
-        }
-    }
-    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
-    if ($__boundParameters["Debug"]){wait-debugger}
-    if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "rad"
-         $__commandArgs | Write-Verbose -Verbose
-    }
-    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
-    if (! $__handlerInfo ) {
-        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
-    }
-    $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
-    # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
-          throw "Cannot find executable 'rad'"
-        }
-        if ( $__handlerInfo.StreamOutput ) {
-            if ( $null -eq $__handler ) {
-                & "rad" $__commandArgs
-            }
-            else {
-                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
-            }
-        }
-        else {
-            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
-            & $__handler $result
-        }
-    }
-    # be sure to let the user know if there are any errors
-    Pop-CrescendoNativeError -EmitAsError
-  } # end PROCESS
-
-<#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  abebc0ae1e276468526eac0551a31741
-
-
-.DESCRIPTION See help for rad
-
-.PARAMETER Application
-
-
-
-.PARAMETER Environment
-
-
-
-.PARAMETER Group
-
-
-
-.PARAMETER Workspace
-
-
-
-.PARAMETER Config
-
-
-
-.PARAMETER Output
-
-
-
-
-.EXAMPLE
-PS> Get-RadiusApplicationConnections
-
-Shows the Connections for Radius Application
-Original Command: rad application connections
-
-
-#>
-}
-
-
-function Get-RadiusApplicationConnectionsDetail
-{
-[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
-[CmdletBinding()]
-
-param(
-[Parameter(Mandatory=$true)]
 [PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
@@ -875,7 +650,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f39c54739920662e0b3d6e14a40e1907
+TraceId:  2c2770691a97a943cf7bcc2e9cd3ca8b
 
 
 .DESCRIPTION See help for rad
@@ -910,7 +685,7 @@ TraceId:  f39c54739920662e0b3d6e14a40e1907
 
 
 .EXAMPLE
-PS> Get-RadiusApplicationConnectionsDetail
+PS> Get-RadiusApplicationConnections
 
 Shows the Connections for Radius Application
 Original Command: rad application connections
@@ -1104,7 +879,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  3f739aad36f9a851c71efff9b1a524ae
+TraceId:  37e5ee2518feec0dfedb98b44c9d3a70
 
 
 .DESCRIPTION See help for rad
@@ -1316,7 +1091,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f50d6789bb2456e90b5634bad25aeaad
+TraceId:  214c243a5125b690631b9ee242d79eda
 
 
 .DESCRIPTION See help for rad
@@ -1549,7 +1324,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  6462db0fc4ef9ffeddacd0062fae60ae
+TraceId:  9c175dc2941a3bda0c211254dd70ceca
 
 
 .DESCRIPTION See help for rad
@@ -1726,7 +1501,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  face12098f1571bbf542351c2f330cec
+TraceId:  fc6494096e363621a1cc1f7520c88be2
 
 
 .DESCRIPTION See help for rad
@@ -1883,7 +1658,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b2002317820981cdd7b1bd4a04769918
+TraceId:  7c5c3ad7aa3f01698d136c9f383a688f
 
 
 .DESCRIPTION See help for rad
@@ -2066,7 +1841,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  699a16c89672ff228eeef9b294c40430
+TraceId:  f039f49fc7aaac44201e898152a357b7
 
 
 .DESCRIPTION See help for rad
@@ -2244,7 +2019,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ff7e828659e9ad12ebb3d4fba9c9d7f0
+TraceId:  efbcf0f691dd5755154a40a950144f43
 
 
 .DESCRIPTION See help for rad
@@ -2431,7 +2206,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f2cb3961acbfdfaf37a173628044a796
+TraceId:  7336669631cdae914414f5e79dfffde7
 
 
 .DESCRIPTION See help for rad
@@ -2610,7 +2385,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  31917fb78437c19d0a00ce739628786d
+TraceId:  69991cdc701072623090afe2d7732dc4
 
 
 .DESCRIPTION See help for rad
@@ -2785,7 +2560,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a4ba1ca4a214b4716136ee2fd2294481
+TraceId:  9e6d30d5282aec4fc880c68f21dd15e5
 
 
 .DESCRIPTION See help for rad
@@ -2999,7 +2774,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  57433735aa588bab56960dce1f2a3693
+TraceId:  c9cb42bca90969a0f81f4b217fce7893
 
 
 .DESCRIPTION See help for rad
@@ -3212,7 +2987,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  066302ced13472992a5e07aa1983ae0e
+TraceId:  01cb768881b1004bfae99d1a99f04f76
 
 
 .DESCRIPTION See help for rad
@@ -3395,7 +3170,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f559db6e16f553e03afcce86d34bba10
+TraceId:  9b827a687852b5dd869a5fcf503c110c
 
 
 .DESCRIPTION See help for rad
@@ -3570,7 +3345,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7b3599baeeda04cd7885abfec1ba8050
+TraceId:  b2df92fb54cf0d08d6b20da623e4c92b
 
 
 .DESCRIPTION See help for rad
@@ -3743,7 +3518,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9e375347c5bbec1a207337dca4e0c62f
+TraceId:  c3f65bddc934edc8382016a104a4e50a
 
 
 .DESCRIPTION See help for rad
@@ -3981,7 +3756,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  50581fb02ff9126acae99f33f2475f23
+TraceId:  efc945add43303c67aed749e306b4171
 
 
 .DESCRIPTION See help for rad
@@ -4201,7 +3976,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d64b30c98ca9283abe47e30df9995d0c
+TraceId:  11f212403dfd04f4e8bb755cb7610190
 
 
 .DESCRIPTION See help for rad
@@ -4422,7 +4197,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7bb97367b20d89a555e448d53434b8c1
+TraceId:  623ddf56adc88156c153ead1c21ff0ba
 
 
 .DESCRIPTION See help for rad
@@ -4660,7 +4435,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  29f11d01b203cbaf098420d7a797758c
+TraceId:  43a3348ad111fb6eab1dd5be75f6ab63
 
 
 .DESCRIPTION See help for rad
@@ -4902,7 +4677,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5677093b8355b902ad170371fe73bb42
+TraceId:  ad30b20b542a9795c4ba782dac474fef
 
 
 .DESCRIPTION See help for rad
@@ -5118,7 +4893,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ebf87db00b120a3f8e3283f447868683
+TraceId:  149df90305bb43a1fe3685a8b0c06c43
 
 
 .DESCRIPTION See help for rad
@@ -5417,7 +5192,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  92b434d078e8ef70a27bbc637b06613d
+TraceId:  c1540163f22cc6766fd5a216ad67cc5b
 
 
 .DESCRIPTION See help for rad
@@ -5627,7 +5402,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  26520c8b7d63fb0e4507e654fbf7a1d2
+TraceId:  e3d77bbf5d0dacefdc0031f5556bc1c8
 
 
 .DESCRIPTION See help for rad
@@ -5814,7 +5589,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  bb1e8426dfac4a3447bb7b50876a9e0f
+TraceId:  3fc9feeb9ea45dd2e7f4e06ca7a664ae
 
 
 .DESCRIPTION See help for rad
@@ -6018,7 +5793,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f00aaed15b4ef80444b97e6155ba8d8b
+TraceId:  e9923e3dbe60413153545ff53a9b4b68
 
 
 .DESCRIPTION See help for rad
@@ -6239,7 +6014,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  df775747222f33324b894841b6a92ad3
+TraceId:  55f6650bdd214e26947cbd468a518b0e
 
 
 .DESCRIPTION See help for rad
@@ -6451,7 +6226,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  045521ec55c7053b33a21813f1cb77c8
+TraceId:  5d04859581355b20828254951fd4cf74
 
 
 .DESCRIPTION See help for rad
@@ -6632,7 +6407,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  3e1ac04d4b296dcdc7205a3478dd2b89
+TraceId:  4cde4887132c04c253f55b8a6fa4314a
 
 
 .DESCRIPTION See help for rad
@@ -6845,7 +6620,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ce0263ef28c6b6cc2bd05299ee65d176
+TraceId:  3230d509a94e82a9d6e7824ff3d45754
 
 
 .DESCRIPTION See help for rad
@@ -7057,7 +6832,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  112c5547edea58726a46452f9161fae0
+TraceId:  97282097353ed9c0f94ef03f8e6777a1
 
 
 .DESCRIPTION See help for rad
@@ -7291,7 +7066,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  091f126ea5f342d6d46ae63d6a288ad3
+TraceId:  40e1f6c5d23f653a9b6fa6b96ee038fd
 
 
 .DESCRIPTION See help for rad
@@ -7585,7 +7360,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5d50bdc563525302f58f7bc6c2dc12c5
+TraceId:  bd15f318222572fb26c2e33ee979ed56
 
 
 .DESCRIPTION See help for rad
@@ -7843,7 +7618,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b68c9d3c18b9c714bcf392ede909a83f
+TraceId:  ca22f93ad8a32829e745d40242f306ee
 
 
 .DESCRIPTION See help for rad
@@ -8072,7 +7847,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  6d15da8bf6c7ec153067e53a6447b007
+TraceId:  076dab8e948b914df39432ac029e266c
 
 
 .DESCRIPTION See help for rad
@@ -8310,7 +8085,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1f887a775607bcea7899e001b3ca634f
+TraceId:  ecc3059f946f7b318d37769b6a0a7bb4
 
 
 .DESCRIPTION See help for rad
@@ -8591,7 +8366,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b09eb2c2417470f9b39d75cdbedd8a26
+TraceId:  7693dd6dc57212c05c22d0b89c89b94f
 
 
 .DESCRIPTION See help for rad
@@ -8845,7 +8620,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  289ae99d9ac78ebb5ec75184cfb7cf61
+TraceId:  cc4890ce89f4a3ee00480ed5e0ddf1bc
 
 
 .DESCRIPTION See help for rad
@@ -9099,7 +8874,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  83b8aa5bfbc6422e609d48356ea33d5f
+TraceId:  bc968664edea34d20461654dbf301194
 
 
 .DESCRIPTION See help for rad
@@ -9293,7 +9068,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  49f244256d003422868260e44c4e291d
+TraceId:  7eb47c95729a2b682a50e7381c11a681
 
 
 .DESCRIPTION See help for rad
@@ -9466,7 +9241,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b0b3f18eb0a4b6c3104ece6b47088344
+TraceId:  2ccc7c177c018fb9bd957cc4099aab08
 
 
 .DESCRIPTION See help for rad
@@ -9640,7 +9415,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  112a3d2e1cb426ab6dad354e3775aacd
+TraceId:  ef29d31d1372ba5dc0f256b63dd3c86b
 
 
 .DESCRIPTION See help for rad
@@ -9827,7 +9602,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b57e51ab66ad09c8aaa207418d087087
+TraceId:  eb94750c5f90a7e86c03e095461da70d
 
 
 .DESCRIPTION See help for rad
@@ -10071,7 +9846,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  034f5a926822a2490df1f24da6eba261
+TraceId:  550dad603fa08f8dbfb929b1e5290a65
 
 
 .DESCRIPTION See help for rad
@@ -10291,7 +10066,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  92d4fbec4984803f43d28ba6f81f0ed2
+TraceId:  fb6f98424b44015065db9ff41b1578a6
 
 
 .DESCRIPTION See help for rad
@@ -10486,7 +10261,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e12b2b2274cace3b76702b7938e7b57a
+TraceId:  29bbf77024808d7df5324f6c44e5b027
 
 
 .DESCRIPTION See help for rad

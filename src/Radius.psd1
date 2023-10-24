@@ -70,11 +70,9 @@ PowerShellVersion = '7.2.0'
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = 'Get-RadiusApplication', 'Get-RadiusApplicationDetail', 
-               'Get-RadiusApplicationConnections', 
-               'Get-RadiusApplicationConnectionsDetail', 
-               'Get-RadiusApplicationStatus', 'Switch-RadiusApplication', 
-               'Remove-RadiusApplication', 'Install-RadiusBicep', 
-               'Uninstall-RadiusBicep', 'Publish-RadiusBicep', 
+               'Get-RadiusApplicationConnections', 'Get-RadiusApplicationStatus', 
+               'Switch-RadiusApplication', 'Remove-RadiusApplication', 
+               'Install-RadiusBicep', 'Uninstall-RadiusBicep', 'Publish-RadiusBicep', 
                'Get-RadiusCredential', 'Get-RadiusCredentialDetail', 
                'Get-RadiusCredentialAzure', 'Get-RadiusCredentialAWS', 
                'Register-RadiusCredentialAzure', 'Register-RadiusCredentialAWS', 
@@ -118,7 +116,7 @@ AliasesToExport = @()
 PrivateData = @{
 
     #CrescendoGenerated of this module
-    CrescendoGenerated = '10/24/2023 01:02:21'
+    CrescendoGenerated = '10/24/2023 01:06:41'
 
     #CrescendoVersion of this module
     CrescendoVersion = '1.1.0'

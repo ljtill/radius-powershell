@@ -7,7 +7,6 @@
 | Application    | rad application list            | Get-RadiusApplication                  |
 | Application    | rad application show            | Get-RadiusApplicationDetail            |
 | Application    | rad application connections     | Get-RadiusApplicationConnections       |
- Application     | rad application connections     | Get-RadiusApplicationConnectionsDetail |
 | Application    | rad application status          | Get-RadiusApplicationStatus            |
 | Application    | rad application delete          | Remove-RadiusApplication               |
 | Application    | rad application switch          | Switch-RadiusApplication               |

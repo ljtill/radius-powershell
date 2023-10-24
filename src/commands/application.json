@@ -165,93 +165,12 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "Application",
-                    "OriginalName": "--application",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 1,
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Environment",
-                    "OriginalName": "--environment",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 2,
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Group",
-                    "OriginalName": "--group",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 3,
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Workspace",
-                    "OriginalName": "--workspace",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 4,
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 5,
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Output",
-                    "OriginalName": "--output",
-                    "DefaultValue": "json",
-                    "ParameterType": "string",
-                    "OriginalPosition": 6,
-                    "Mandatory": false
-                }
-            ],
-            "OutputHandlers": [
-                {
-                    "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
-                }
-            ],
-            "Examples": [
-                {
-                    "Command": "Get-RadiusApplicationConnections",
-                    "Description": "Shows the Connections for Radius Application",
-                    "OriginalCommand": "rad application connections"
-                }
-            ]
-        },
-        {
-            "Verb": "Get",
-            "Noun": "RadiusApplicationConnectionsDetail",
-            "OriginalName": "rad",
-            "OriginalCommandElements": [
-                "application",
-                "connections"
-            ],
-            "Platform": [
-                "Windows",
-                "Linux",
-                "MacOS"
-            ],
-            "SupportsShouldProcess": false,
-            "SupportsTransactions": false,
-            "NoInvocation": false,
-            "Parameters": [
-                {
                     "Name": "Name",
                     "OriginalName": "",
                     "DefaultValue": "",
                     "ParameterType": "string",
                     "OriginalPosition": 1,
-                    "Mandatory": true
+                    "Mandatory": false
                 },
                 {
                     "Name": "Application",
@@ -311,7 +230,7 @@
             ],
             "Examples": [
                 {
-                    "Command": "Get-RadiusApplicationConnectionsDetail",
+                    "Command": "Get-RadiusApplicationConnections",
                     "Description": "Shows the Connections for Radius Application",
                     "OriginalCommand": "rad application connections"
                 }
