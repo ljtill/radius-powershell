@@ -45,6 +45,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Uninstalls Radius onto a Kubernetes cluster",
             "Examples": [
                 {
                     "Command": "Uninstall-RadiusKubernetes",

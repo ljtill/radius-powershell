@@ -51,6 +51,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "List Radius Applications",
             "Examples": [
                 {
                     "Command": "Get-RadiusApplication",
@@ -121,6 +122,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Show Radius Application details",
             "Examples": [
                 {
                     "Command": "Get-RadiusApplicationDetail",
@@ -197,6 +199,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Shows the Connections for Radius Application",
             "Examples": [
                 {
                     "Command": "Get-RadiusApplicationConnections",
@@ -267,6 +270,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Show Radius Application status",
             "Examples": [
                 {
                     "Command": "Get-RadiusApplicationStatus",
@@ -331,6 +335,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Switch the default Radius Application",
             "Examples": [
                 {
                     "Command": "Switch-RadiusApplication",
@@ -406,6 +411,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Delete Radius Application",
             "Examples": [
                 {
                     "Command": "Remove-RadiusApplication",

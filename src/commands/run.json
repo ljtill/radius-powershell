@@ -74,6 +74,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Run an application specified by a Bicep file",
             "Examples": [
                 {
                     "Command": "Invoke-Radius",

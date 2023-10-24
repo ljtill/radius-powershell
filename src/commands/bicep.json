@@ -39,6 +39,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Download the bicep compiler",
             "Examples": [
                 {
                     "Command": "Install-RadiusBicep",
@@ -85,6 +86,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Delete installed Bicep compiler",
             "Examples": [
                 {
                     "Command": "Uninstall-RadiusBicep",
@@ -143,6 +145,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Publish a Bicep file to an OCI registry",
             "Examples": [
                 {
                     "Command": "Publish-RadiusBicep",

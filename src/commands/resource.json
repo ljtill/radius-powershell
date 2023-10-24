@@ -63,6 +63,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Lists resources",
             "Examples": [
                 {
                     "Command": "Get-RadiusResource",
@@ -139,6 +140,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Show Radius resource details",
             "Examples": [
                 {
                     "Command": "Get-RadiusResourceDetail",
@@ -233,10 +235,11 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Read logs from a running containers resource",
             "Examples": [
                 {
                     "Command": "Get-RadiusResourceLogs",
-                    "Description": "Read logs from a running containers resourc",
+                    "Description": "Read logs from a running containers resource",
                     "OriginalCommand": "rad resource logs"
                 }
             ]
@@ -309,6 +312,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Delete a Radius resource",
             "Examples": [
                 {
                     "Command": "Remove-RadiusResource",
