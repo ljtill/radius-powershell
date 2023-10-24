@@ -74,11 +74,8 @@ FunctionsToExport = 'Get-RadiusApplication', 'Get-RadiusApplicationDetail',
                'Switch-RadiusApplication', 'Remove-RadiusApplication', 
                'Install-RadiusBicep', 'Uninstall-RadiusBicep', 'Publish-RadiusBicep', 
                'Get-RadiusCredential', 'Get-RadiusCredentialDetail', 
-               'Get-RadiusCredentialAzure', 'Get-RadiusCredentialAWS', 
-               'Register-RadiusCredentialAzure', 'Register-RadiusCredentialAWS', 
-               'Unregister-RadiusCredentialAzure', 
-               'Unregister-RadiusCredentialAWS', 'Debug-Radius', 
-               'New-RadiusDeployment', 'Get-RadiusEnvironment', 
+               'Register-RadiusCredential', 'Unregister-RadiusCredential', 
+               'Debug-Radius', 'New-RadiusDeployment', 'Get-RadiusEnvironment', 
                'Get-RadiusEnvironmentDetail', 'New-RadiusEnvironment', 
                'Remove-RadiusEnvironment', 'Switch-RadiusEnvironment', 
                'Update-RadiusEnvironment', 'Get-RadiusResourceGroup', 
@@ -119,7 +116,7 @@ PrivateData = @{
     CrescendoVersion = '1.1.0'
 
     #CrescendoGenerated of this module
-    CrescendoGenerated = '10/24/2023 23:06:43'
+    CrescendoGenerated = '10/24/2023 23:21:39'
 
     PSData = @{
 

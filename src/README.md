@@ -17,10 +17,8 @@
 | ---            | ---                             | ---                              |
 | Credential     | rad credential list             | Get-RadiusCredential             |
 | Credential     | rad credential show             | Get-RadiusCredentialDetail       |
-| Credential     | rad credential register azure   | Register-RadiusCredentialAzure   |
-| Credential     | rad credential register aws     | Register-RadiusCredentialAWS     |
-| Credential     | rad credential unregister azure | Unregister-RadiusCredentialAzure |
-| Credential     | rad credential unregister aws   | Unregister-RadiusCredentialAWS   |
+| Credential     | rad credential register azure   | Register-RadiusCredential        |
+| Credential     | rad credential unregister azure | Unregister-RadiusCredential      |
 | ---            | ---                             | ---                              |
 | Debug Logs     | rad debug-logs                  | Debug-Radius                     |
 | ---            | ---                             | ---                              |

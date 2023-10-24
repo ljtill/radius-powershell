@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/24/2023 23:06:43
+# Generated at: 10/24/2023 23:21:39
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -1988,8 +1988,9 @@ function Get-RadiusCredentialDetail
 [CmdletBinding()]
 
 param(
+[ValidateSet('azure','aws')]
 [Parameter(Mandatory=$true)]
-[string]$Name,
+[string]$Provider,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -2003,7 +2004,7 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Name = @{
+         Provider = @{
                OriginalName = ''
                OriginalPosition = '0'
                Position = '2147483647'
@@ -2139,7 +2140,7 @@ PROCESS {
 .DESCRIPTION
 Show details of a configured cloud provider credential
 
-.PARAMETER Name
+.PARAMETER Provider
 
 
 
@@ -2157,7 +2158,7 @@ Show details of a configured cloud provider credential
 
 
 .EXAMPLE
-PS> Get-RadiusCredentialDetail
+PS> Get-RadiusCredential
 
 Show details of a configured cloud provider credential
 Original Command: rad credential show
@@ -2167,352 +2168,15 @@ Original Command: rad credential show
 }
 
 
-function Get-RadiusCredentialAzure
+function Register-RadiusCredential
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
-[Parameter()]
-[string]$Workspace,
-[Parameter()]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
-    )
-
-BEGIN {
-    $PSNativeCommandUseErrorActionPreference = $false
-    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
-    $__PARAMETERMAP = @{
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Output = @{
-               OriginalName = '--output'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-    }
-
-    $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
-    }
-}
-
-PROCESS {
-    $__boundParameters = $PSBoundParameters
-    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
-    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
-    $__commandArgs = @()
-    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
-    if ($__boundParameters["Debug"]){wait-debugger}
-    $__commandArgs += 'credential'
-    $__commandArgs += 'show'
-    $__commandArgs += 'azure'
-    foreach ($paramName in $__boundParameters.Keys|
-            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
-            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
-            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
-        $value = $__boundParameters[$paramName]
-        $param = $__PARAMETERMAP[$paramName]
-        if ($param) {
-            if ($value -is [switch]) {
-                 if ($value.IsPresent) {
-                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                 }
-                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
-            }
-            elseif ( $param.NoGap ) {
-                # if a transform is specified, use it and the construction of the values is up to the transform
-                if($param.ArgumentTransform -ne '$args') {
-                    $transform = $param.ArgumentTransform
-                    if($param.ArgumentTransformType -eq 'inline') {
-                        $transform = [scriptblock]::Create($param.ArgumentTransform)
-                    }
-                    $__commandArgs += & $transform $value
-                }
-                else {
-                    $pFmt = "{0}{1}"
-                    # quote the strings if they have spaces
-                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
-                    $__commandArgs += $pFmt -f $param.OriginalName, $value
-                }
-            }
-            else {
-                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                if($param.ArgumentTransformType -eq 'inline') {
-                   $transform = [scriptblock]::Create($param.ArgumentTransform)
-                }
-                else {
-                   $transform = $param.ArgumentTransform
-                }
-                $__commandArgs += & $transform $value
-            }
-        }
-    }
-    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
-    if ($__boundParameters["Debug"]){wait-debugger}
-    if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "rad"
-         $__commandArgs | Write-Verbose -Verbose
-    }
-    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
-    if (! $__handlerInfo ) {
-        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
-    }
-    $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
-    # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
-          throw "Cannot find executable 'rad'"
-        }
-        if ( $__handlerInfo.StreamOutput ) {
-            if ( $null -eq $__handler ) {
-                & "rad" $__commandArgs
-            }
-            else {
-                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
-            }
-        }
-        else {
-            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
-            & $__handler $result
-        }
-    }
-    # be sure to let the user know if there are any errors
-    Pop-CrescendoNativeError -EmitAsError
-  } # end PROCESS
-
-<#
-
-
-.DESCRIPTION
-List configured cloud provider credentials
-
-.PARAMETER Workspace
-
-
-
-.PARAMETER Config
-
-
-
-.PARAMETER Output
-
-
-
-
-.EXAMPLE
-PS> Get-RadiusCredential
-
-List configured cloud provider credentials
-Original Command: rad credential list
-
-
-#>
-}
-
-
-function Get-RadiusCredentialAWS
-{
-[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
-[CmdletBinding()]
-
-param(
-[Parameter()]
-[string]$Workspace,
-[Parameter()]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
-    )
-
-BEGIN {
-    $PSNativeCommandUseErrorActionPreference = $false
-    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
-    $__PARAMETERMAP = @{
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Output = @{
-               OriginalName = '--output'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-    }
-
-    $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
-    }
-}
-
-PROCESS {
-    $__boundParameters = $PSBoundParameters
-    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
-    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
-    $__commandArgs = @()
-    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
-    if ($__boundParameters["Debug"]){wait-debugger}
-    $__commandArgs += 'credential'
-    $__commandArgs += 'show'
-    $__commandArgs += 'aws'
-    foreach ($paramName in $__boundParameters.Keys|
-            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
-            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
-            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
-        $value = $__boundParameters[$paramName]
-        $param = $__PARAMETERMAP[$paramName]
-        if ($param) {
-            if ($value -is [switch]) {
-                 if ($value.IsPresent) {
-                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                 }
-                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
-            }
-            elseif ( $param.NoGap ) {
-                # if a transform is specified, use it and the construction of the values is up to the transform
-                if($param.ArgumentTransform -ne '$args') {
-                    $transform = $param.ArgumentTransform
-                    if($param.ArgumentTransformType -eq 'inline') {
-                        $transform = [scriptblock]::Create($param.ArgumentTransform)
-                    }
-                    $__commandArgs += & $transform $value
-                }
-                else {
-                    $pFmt = "{0}{1}"
-                    # quote the strings if they have spaces
-                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
-                    $__commandArgs += $pFmt -f $param.OriginalName, $value
-                }
-            }
-            else {
-                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                if($param.ArgumentTransformType -eq 'inline') {
-                   $transform = [scriptblock]::Create($param.ArgumentTransform)
-                }
-                else {
-                   $transform = $param.ArgumentTransform
-                }
-                $__commandArgs += & $transform $value
-            }
-        }
-    }
-    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
-    if ($__boundParameters["Debug"]){wait-debugger}
-    if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "rad"
-         $__commandArgs | Write-Verbose -Verbose
-    }
-    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
-    if (! $__handlerInfo ) {
-        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
-    }
-    $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
-    # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
-          throw "Cannot find executable 'rad'"
-        }
-        if ( $__handlerInfo.StreamOutput ) {
-            if ( $null -eq $__handler ) {
-                & "rad" $__commandArgs
-            }
-            else {
-                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
-            }
-        }
-        else {
-            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
-            & $__handler $result
-        }
-    }
-    # be sure to let the user know if there are any errors
-    Pop-CrescendoNativeError -EmitAsError
-  } # end PROCESS
-
-<#
-
-
-.DESCRIPTION
-List configured cloud provider credentials
-
-.PARAMETER Workspace
-
-
-
-.PARAMETER Config
-
-
-
-.PARAMETER Output
-
-
-
-
-.EXAMPLE
-PS> Get-RadiusCredential
-
-List configured cloud provider credentials
-Original Command: rad credential list
-
-
-#>
-}
-
-
-function Register-RadiusCredentialAzure
-{
-[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
-[CmdletBinding()]
-
-param(
+[ValidateSet('azure','aws')]
+[Parameter(Mandatory=$true)]
+[string]$Provider,
 [Parameter()]
 [string]$ClientId,
 [Parameter()]
@@ -2532,6 +2196,16 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Provider = @{
+               OriginalName = ''
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          ClientId = @{
                OriginalName = '--client-id'
                OriginalPosition = '0'
@@ -2608,7 +2282,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'credential'
     $__commandArgs += 'register'
-    $__commandArgs += 'azure'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -2688,6 +2361,10 @@ PROCESS {
 
 .DESCRIPTION
 Register(Add or update) cloud provider credential for a Radius installation
+
+.PARAMETER Provider
+
+
 
 .PARAMETER ClientId
 
@@ -2725,16 +2402,15 @@ Original Command: rad credential register
 }
 
 
-function Register-RadiusCredentialAWS
+function Unregister-RadiusCredential
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
-[Parameter()]
-[string]$AccessKeyId,
-[Parameter()]
-[string]$SecretAccessKey,
+[ValidateSet('azure','aws')]
+[Parameter(Mandatory=$true)]
+[string]$Provider,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -2748,8 +2424,8 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         AccessKeyId = @{
-               OriginalName = '--access-key-id'
+         Provider = @{
+               OriginalName = ''
                OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
@@ -2758,194 +2434,6 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         SecretAccessKey = @{
-               OriginalName = '--secret-access-key'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Output = @{
-               OriginalName = '--output'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-    }
-
-    $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
-    }
-}
-
-PROCESS {
-    $__boundParameters = $PSBoundParameters
-    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
-    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
-    $__commandArgs = @()
-    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
-    if ($__boundParameters["Debug"]){wait-debugger}
-    $__commandArgs += 'credential'
-    $__commandArgs += 'register'
-    $__commandArgs += 'azure'
-    foreach ($paramName in $__boundParameters.Keys|
-            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
-            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
-            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
-        $value = $__boundParameters[$paramName]
-        $param = $__PARAMETERMAP[$paramName]
-        if ($param) {
-            if ($value -is [switch]) {
-                 if ($value.IsPresent) {
-                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                 }
-                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
-            }
-            elseif ( $param.NoGap ) {
-                # if a transform is specified, use it and the construction of the values is up to the transform
-                if($param.ArgumentTransform -ne '$args') {
-                    $transform = $param.ArgumentTransform
-                    if($param.ArgumentTransformType -eq 'inline') {
-                        $transform = [scriptblock]::Create($param.ArgumentTransform)
-                    }
-                    $__commandArgs += & $transform $value
-                }
-                else {
-                    $pFmt = "{0}{1}"
-                    # quote the strings if they have spaces
-                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
-                    $__commandArgs += $pFmt -f $param.OriginalName, $value
-                }
-            }
-            else {
-                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                if($param.ArgumentTransformType -eq 'inline') {
-                   $transform = [scriptblock]::Create($param.ArgumentTransform)
-                }
-                else {
-                   $transform = $param.ArgumentTransform
-                }
-                $__commandArgs += & $transform $value
-            }
-        }
-    }
-    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
-    if ($__boundParameters["Debug"]){wait-debugger}
-    if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "rad"
-         $__commandArgs | Write-Verbose -Verbose
-    }
-    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
-    if (! $__handlerInfo ) {
-        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
-    }
-    $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
-    # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
-          throw "Cannot find executable 'rad'"
-        }
-        if ( $__handlerInfo.StreamOutput ) {
-            if ( $null -eq $__handler ) {
-                & "rad" $__commandArgs
-            }
-            else {
-                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
-            }
-        }
-        else {
-            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
-            & $__handler $result
-        }
-    }
-    # be sure to let the user know if there are any errors
-    Pop-CrescendoNativeError -EmitAsError
-  } # end PROCESS
-
-<#
-
-
-.DESCRIPTION
-Register(Add or update) cloud provider credential for a Radius installation
-
-.PARAMETER AccessKeyId
-
-
-
-.PARAMETER SecretAccessKey
-
-
-
-.PARAMETER Workspace
-
-
-
-.PARAMETER Config
-
-
-
-.PARAMETER Output
-
-
-
-
-.EXAMPLE
-PS> Register-RadiusCredential
-
-Register(Add or update) cloud provider credential for a Radius installation
-Original Command: rad credential register
-
-
-#>
-}
-
-
-function Unregister-RadiusCredentialAzure
-{
-[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
-[CmdletBinding()]
-
-param(
-[Parameter()]
-[string]$Workspace,
-[Parameter()]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
-    )
-
-BEGIN {
-    $PSNativeCommandUseErrorActionPreference = $false
-    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
-    $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
                OriginalPosition = '0'
@@ -2992,7 +2480,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'credential'
     $__commandArgs += 'unregister'
-    $__commandArgs += 'azure'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -3073,175 +2560,9 @@ PROCESS {
 .DESCRIPTION
 Unregisters a configured cloud provider credential from the Radius installation
 
-.PARAMETER Workspace
+.PARAMETER Provider
 
 
-
-.PARAMETER Config
-
-
-
-.PARAMETER Output
-
-
-
-
-.EXAMPLE
-PS> Unregister-RadiusBicep
-
-Unregisters a configured cloud provider credential from the Radius installation
-Original Command: rad crdential unregister
-
-
-#>
-}
-
-
-function Unregister-RadiusCredentialAWS
-{
-[PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
-[CmdletBinding()]
-
-param(
-[Parameter()]
-[string]$Workspace,
-[Parameter()]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
-    )
-
-BEGIN {
-    $PSNativeCommandUseErrorActionPreference = $false
-    $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
-    $__PARAMETERMAP = @{
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Output = @{
-               OriginalName = '--output'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-    }
-
-    $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
-    }
-}
-
-PROCESS {
-    $__boundParameters = $PSBoundParameters
-    $__defaultValueParameters = $PSCmdlet.MyInvocation.MyCommand.Parameters.Values.Where({$_.Attributes.Where({$_.TypeId.Name -eq "PSDefaultValueAttribute"})}).Name
-    $__defaultValueParameters.Where({ !$__boundParameters["$_"] }).ForEach({$__boundParameters["$_"] = get-variable -value $_})
-    $__commandArgs = @()
-    $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
-    if ($__boundParameters["Debug"]){wait-debugger}
-    $__commandArgs += 'credential'
-    $__commandArgs += 'unregister'
-    $__commandArgs += 'aws'
-    foreach ($paramName in $__boundParameters.Keys|
-            Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
-            Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
-            Sort-Object {$__PARAMETERMAP[$_].OriginalPosition}) {
-        $value = $__boundParameters[$paramName]
-        $param = $__PARAMETERMAP[$paramName]
-        if ($param) {
-            if ($value -is [switch]) {
-                 if ($value.IsPresent) {
-                     if ($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                 }
-                 elseif ($param.DefaultMissingValue) { $__commandArgs += $param.DefaultMissingValue }
-            }
-            elseif ( $param.NoGap ) {
-                # if a transform is specified, use it and the construction of the values is up to the transform
-                if($param.ArgumentTransform -ne '$args') {
-                    $transform = $param.ArgumentTransform
-                    if($param.ArgumentTransformType -eq 'inline') {
-                        $transform = [scriptblock]::Create($param.ArgumentTransform)
-                    }
-                    $__commandArgs += & $transform $value
-                }
-                else {
-                    $pFmt = "{0}{1}"
-                    # quote the strings if they have spaces
-                    if($value -match "\s") { $pFmt = "{0}""{1}""" }
-                    $__commandArgs += $pFmt -f $param.OriginalName, $value
-                }
-            }
-            else {
-                if($param.OriginalName) { $__commandArgs += $param.OriginalName }
-                if($param.ArgumentTransformType -eq 'inline') {
-                   $transform = [scriptblock]::Create($param.ArgumentTransform)
-                }
-                else {
-                   $transform = $param.ArgumentTransform
-                }
-                $__commandArgs += & $transform $value
-            }
-        }
-    }
-    $__commandArgs = $__commandArgs | Where-Object {$_ -ne $null}
-    if ($__boundParameters["Debug"]){wait-debugger}
-    if ( $__boundParameters["Verbose"]) {
-         Write-Verbose -Verbose -Message "rad"
-         $__commandArgs | Write-Verbose -Verbose
-    }
-    $__handlerInfo = $__outputHandlers[$PSCmdlet.ParameterSetName]
-    if (! $__handlerInfo ) {
-        $__handlerInfo = $__outputHandlers["Default"] # Guaranteed to be present
-    }
-    $__handler = $__handlerInfo.Handler
-    if ( $PSCmdlet.ShouldProcess("rad $__commandArgs")) {
-    # check for the application and throw if it cannot be found
-        if ( -not (Get-Command -ErrorAction Ignore "rad")) {
-          throw "Cannot find executable 'rad'"
-        }
-        if ( $__handlerInfo.StreamOutput ) {
-            if ( $null -eq $__handler ) {
-                & "rad" $__commandArgs
-            }
-            else {
-                & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError | & $__handler
-            }
-        }
-        else {
-            $result = & "rad" $__commandArgs 2>&1| Push-CrescendoNativeError
-            & $__handler $result
-        }
-    }
-    # be sure to let the user know if there are any errors
-    Pop-CrescendoNativeError -EmitAsError
-  } # end PROCESS
-
-<#
-
-
-.DESCRIPTION
-Unregisters a configured cloud provider credential from the Radius installation
 
 .PARAMETER Workspace
 
@@ -3257,7 +2578,7 @@ Unregisters a configured cloud provider credential from the Radius installation
 
 
 .EXAMPLE
-PS> Unregister-RadiusBicep
+PS> Unregister-RadiusCredential
 
 Unregisters a configured cloud provider credential from the Radius installation
 Original Command: rad crdential unregister
