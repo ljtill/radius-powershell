@@ -45,8 +45,7 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Examples": [
