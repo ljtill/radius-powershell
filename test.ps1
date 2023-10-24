@@ -1,6 +1,6 @@
 #requires -Version 7.0
 
-$rootPath = (Get-Item $PSScriptRoot).parent
+$rootPath = (Get-Item $PSScriptRoot)
 
 Push-Location -Path $rootPath/src
 

@@ -1,7 +1,7 @@
 #requires -Version 7.0
 #requires -Modules Microsoft.PowerShell.Crescendo
 
-$rootPath = (Get-Item $PSScriptRoot).parent
+$rootPath = (Get-Item $PSScriptRoot)
 
 Push-Location -Path $rootPath/src
 
