@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/24/2023 23:21:39
+# Generated at: 10/24/2023 23:24:16
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -2158,7 +2158,7 @@ Show details of a configured cloud provider credential
 
 
 .EXAMPLE
-PS> Get-RadiusCredential
+PS> Get-RadiusCredentialDetail
 
 Show details of a configured cloud provider credential
 Original Command: rad credential show
