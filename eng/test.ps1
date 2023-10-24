@@ -2,8 +2,12 @@
 
 $rootPath = (Get-Item $PSScriptRoot).parent
 
+Push-Location -Path $rootPath/src
+
 Write-Verbose -Message "Importing Radius module..."
-Import-Module "$rootPath/src/Radius.psd1" -Force
+Import-Module "./Radius.psd1" -Force
 
 Get-Module -ListAvailable | Format-Table
 Get-Command -Module "Radius"
+
+Pop-Location

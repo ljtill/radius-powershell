@@ -3,11 +3,16 @@
 
 $rootPath = (Get-Item $PSScriptRoot).parent
 
+Push-Location -Path $rootPath/src
+
 Write-Verbose -Message "Retrieving configuration manifests..."
-$commands = (Get-ChildItem $rootPath/src/commands | Select-Object -ExpandProperty FullName)
+$commands = (Get-ChildItem "./commands" | Select-Object -ExpandProperty FullName)
+
+Write-Verbose -Message "Initializing handler functions..."
+. ./handlers/Parser.ps1
 
 $Params = @{
-    Path              = "$rootPath/src/Radius.psd1"
+    Path              = "./Radius.psd1"
     RootModule        = "Radius.psm1"
     ModuleVersion     = "0.0.1"
     Guid              = "2f010876-a659-4995-b5bf-8378e4e7ce34"
@@ -18,7 +23,9 @@ $Params = @{
 }
 
 Write-Verbose -Message "Generating Radius module..."
-Export-CrescendoModule -ConfigurationFile $commands -ModuleName "$rootPath/src/Radius.psm1" -Force
+Export-CrescendoModule -ConfigurationFile $commands -ModuleName "./Radius.psm1" -Force
 
 Write-Verbose -Message "Updating module manifest..."
 Update-ModuleManifest @Params
+
+Pop-Location
