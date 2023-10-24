@@ -2,16 +2,22 @@
     "name": "Radius",
     "image": "mcr.microsoft.com/devcontainers/base:jammy",
     "features": {
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
         "ghcr.io/devcontainers/features/powershell:1": {
-            "modules": "Microsoft.PowerShell.Crescendo"
+            "modules": "Microsoft.PowerShell.Crescendo,Pester"
         },
+        "ghcr.io/ljtill/features/kind:1": {},
+        "ghcr.io/ljtill/features/kubectl:1": {},
         "ghcr.io/ljtill/features/rad:1": {}
     },
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-vscode.powershell"
+                "pspester.pester-test"
             ]
         }
-    }
+    },
+    "runArgs": [
+        "--network=host"
+            ]
 }
