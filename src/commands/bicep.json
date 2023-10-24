@@ -21,9 +21,7 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 1,
                     "Mandatory": false
                 },
                 {
@@ -31,7 +29,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": false
                 }
             ],
@@ -70,9 +67,7 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 1,
                     "Mandatory": false
                 },
                 {
@@ -80,7 +75,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": false
                 }
             ],
@@ -119,25 +113,19 @@
                 {
                     "Name": "File",
                     "OriginalName": "--file",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 1,
                     "Mandatory": false
                 },
                 {
                     "Name": "Target",
                     "OriginalName": "--target",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
@@ -145,7 +133,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 4,
                     "Mandatory": false
                 }
             ],

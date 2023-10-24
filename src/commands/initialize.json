@@ -20,17 +20,13 @@
                 {
                     "Name": "Full",
                     "OriginalName": "--full",
-                    "DefaultValue": "",
                     "ParameterType": "switch",
-                    "OriginalPosition": 1,
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
@@ -38,7 +34,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 3,
                     "Mandatory": false
                 }
             ],

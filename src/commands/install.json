@@ -21,41 +21,31 @@
                 {
                     "Name": "Chart",
                     "OriginalName": "--chart",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 1,
                     "Mandatory": false
                 },
                 {
                     "Name": "KubeContext",
                     "OriginalName": "--kubecontext",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
                     "Name": "Reinstall",
                     "OriginalName": "--reinstall",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
                     "Name": "Set",
                     "OriginalName": "--set",
-                    "DefaultValue": "",
-                    "ParameterType": "string[]",
-                    "OriginalPosition": 4,
+                    "ParameterType": "array",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 5,
                     "Mandatory": false
                 },
                 {
@@ -63,7 +53,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 6,
                     "Mandatory": false
                 }
             ],

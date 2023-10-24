@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/24/2023 01:06:41
+# Generated at: 10/24/2023 22:38:09
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -44,13 +44,10 @@ function Get-RadiusApplication
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -63,7 +60,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -73,7 +70,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -83,7 +80,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -93,7 +90,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -195,7 +192,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  77957ccfefcb1274a9cdc1a920c01c00
+TraceId:  02339b153f3ecd115e018be029c83cb5
 
 
 .DESCRIPTION See help for rad
@@ -235,19 +232,14 @@ function Get-RadiusApplicationDetail
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -260,7 +252,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -270,7 +262,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -280,7 +272,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -290,7 +282,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -300,7 +292,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -310,7 +302,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -412,7 +404,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5bf83d94494943aaa2307b71a1e426ce
+TraceId:  4c12528394e8283da85cf2cc4e2e7cbc
 
 
 .DESCRIPTION See help for rad
@@ -460,22 +452,16 @@ function Get-RadiusApplicationConnections
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -488,7 +474,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -498,7 +484,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -508,7 +494,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -518,7 +504,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -528,7 +514,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -538,7 +524,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -548,7 +534,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -650,7 +636,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  2c2770691a97a943cf7bcc2e9cd3ca8b
+TraceId:  6fb0f0c250e552d325b2b5c599a541b9
 
 
 .DESCRIPTION See help for rad
@@ -702,19 +688,14 @@ function Get-RadiusApplicationStatus
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -727,7 +708,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -737,7 +718,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -747,7 +728,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -757,7 +738,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -767,7 +748,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -777,7 +758,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -879,7 +860,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  37e5ee2518feec0dfedb98b44c9d3a70
+TraceId:  4b560c3871e717ca3bf4cd47a696da75
 
 
 .DESCRIPTION See help for rad
@@ -927,16 +908,12 @@ function Switch-RadiusApplication
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -949,7 +926,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -959,7 +936,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -969,7 +946,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -979,7 +956,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -989,7 +966,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1091,7 +1068,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  214c243a5125b690631b9ee242d79eda
+TraceId:  0de103339f16220bdb72be376b66a213
 
 
 .DESCRIPTION See help for rad
@@ -1135,22 +1112,16 @@ function Remove-RadiusApplication
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$Yes,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -1163,7 +1134,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1173,7 +1144,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1183,7 +1154,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1193,7 +1164,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1203,7 +1174,7 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -1213,7 +1184,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1223,7 +1194,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1324,7 +1295,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9c175dc2941a3bda0c211254dd70ceca
+TraceId:  38315becad30e7e6e96e7478e9780629
 
 
 .DESCRIPTION See help for rad
@@ -1376,7 +1347,6 @@ function Install-RadiusBicep
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -1389,7 +1359,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1399,7 +1369,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1501,7 +1471,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  fc6494096e363621a1cc1f7520c88be2
+TraceId:  368180b66b06fc88a62f9f0215c1b6ea
 
 
 .DESCRIPTION See help for rad
@@ -1533,7 +1503,6 @@ function Uninstall-RadiusBicep
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -1546,7 +1515,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1556,7 +1525,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1658,7 +1627,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7c5c3ad7aa3f01698d136c9f383a688f
+TraceId:  c1a006672fe80b05220704c6ab07719d
 
 
 .DESCRIPTION See help for rad
@@ -1690,13 +1659,10 @@ function Publish-RadiusBicep
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$File,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Target,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -1709,7 +1675,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = '--file'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1719,7 +1685,7 @@ BEGIN {
                }
          Target = @{
                OriginalName = '--target'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1729,7 +1695,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1739,7 +1705,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1841,7 +1807,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f039f49fc7aaac44201e898152a357b7
+TraceId:  82a9cf2e8cfa4fb5cca86c96d8aade6e
 
 
 .DESCRIPTION See help for rad
@@ -1881,10 +1847,8 @@ function Get-RadiusCredential
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -1897,7 +1861,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1907,7 +1871,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1917,7 +1881,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2019,7 +1983,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  efbcf0f691dd5755154a40a950144f43
+TraceId:  aec52bacaaff20e4f52e0707ea626003
 
 
 .DESCRIPTION See help for rad
@@ -2055,13 +2019,10 @@ function Get-RadiusCredentialDetail
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -2074,7 +2035,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2084,7 +2045,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2094,7 +2055,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2104,7 +2065,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2206,7 +2167,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7336669631cdae914414f5e79dfffde7
+TraceId:  0be8e9b927309f02510d39530c90cb11
 
 
 .DESCRIPTION See help for rad
@@ -2246,10 +2207,8 @@ function Get-RadiusCredentialAzure
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -2262,7 +2221,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2272,7 +2231,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2282,7 +2241,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2385,7 +2344,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  69991cdc701072623090afe2d7732dc4
+TraceId:  057b851ee83d4c917b944defde66e7d1
 
 
 .DESCRIPTION See help for rad
@@ -2421,10 +2380,8 @@ function Get-RadiusCredentialAWS
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -2437,7 +2394,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2447,7 +2404,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2457,7 +2414,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2560,7 +2517,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9e6d30d5282aec4fc880c68f21dd15e5
+TraceId:  8590528a51a4ad0e249c7bdd0bdcbf4a
 
 
 .DESCRIPTION See help for rad
@@ -2596,19 +2553,14 @@ function Register-RadiusCredentialAzure
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$ClientId,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$ClientSecret,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$TenantId,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -2621,7 +2573,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ClientId = @{
                OriginalName = '--client-id'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2631,7 +2583,7 @@ BEGIN {
                }
          ClientSecret = @{
                OriginalName = '--client-secret'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2641,7 +2593,7 @@ BEGIN {
                }
          TenantId = @{
                OriginalName = '--tenant-id'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2651,7 +2603,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2661,7 +2613,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2671,7 +2623,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2774,7 +2726,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  c9cb42bca90969a0f81f4b217fce7893
+TraceId:  defb85cfd12cb10188aa4109be7a86ae
 
 
 .DESCRIPTION See help for rad
@@ -2822,16 +2774,12 @@ function Register-RadiusCredentialAWS
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$AccessKeyId,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$SecretAccessKey,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -2844,7 +2792,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          AccessKeyId = @{
                OriginalName = '--access-key-id'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2854,7 +2802,7 @@ BEGIN {
                }
          SecretAccessKey = @{
                OriginalName = '--secret-access-key'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2864,7 +2812,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2874,7 +2822,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2884,7 +2832,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2987,7 +2935,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  01cb768881b1004bfae99d1a99f04f76
+TraceId:  335463f3537d78fd332527996e23ffe2
 
 
 .DESCRIPTION See help for rad
@@ -3031,10 +2979,8 @@ function Unregister-RadiusCredentialAzure
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -3047,7 +2993,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3057,7 +3003,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3067,7 +3013,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3170,7 +3116,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  9b827a687852b5dd869a5fcf503c110c
+TraceId:  2adb46b340c021c1aeef281ebf50391e
 
 
 .DESCRIPTION See help for rad
@@ -3206,10 +3152,8 @@ function Unregister-RadiusCredentialAWS
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -3222,7 +3166,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3232,7 +3176,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3242,7 +3186,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3345,7 +3289,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b2df92fb54cf0d08d6b20da623e4c92b
+TraceId:  fb4705fa966fadf4fc4ae9e37829eef4
 
 
 .DESCRIPTION See help for rad
@@ -3381,10 +3325,8 @@ function Debug-Radius
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -3397,7 +3339,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3407,7 +3349,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3417,7 +3359,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3518,7 +3460,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  c3f65bddc934edc8382016a104a4e50a
+TraceId:  e26146813bd82f4ed3b58ed5d3f19562
 
 
 .DESCRIPTION See help for rad
@@ -3554,25 +3496,18 @@ function New-RadiusDeployment
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$File,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
-[string[]]$Parameters,
+[array]$Parameters,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -3585,7 +3520,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3595,7 +3530,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3605,7 +3540,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3615,7 +3550,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3625,9 +3560,9 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'string[]'
+               ParameterType = 'array'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -3635,7 +3570,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3645,7 +3580,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3655,7 +3590,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '8'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3756,7 +3691,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  efc945add43303c67aed749e306b4171
+TraceId:  0ee23ab9f34c78dacdbd942d3e743d30
 
 
 .DESCRIPTION See help for rad
@@ -3812,16 +3747,12 @@ function Get-RadiusEnvironment
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -3834,7 +3765,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3844,7 +3775,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3854,7 +3785,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3864,7 +3795,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3874,7 +3805,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3976,7 +3907,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  11f212403dfd04f4e8bb755cb7610190
+TraceId:  200219fdcc197570f1d39477ebbd7194
 
 
 .DESCRIPTION See help for rad
@@ -4020,19 +3951,14 @@ function Get-RadiusEnvironmentDetail
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -4045,7 +3971,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4055,7 +3981,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4065,7 +3991,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4075,7 +4001,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4085,7 +4011,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4095,7 +4021,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4197,7 +4123,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  623ddf56adc88156c153ead1c21ff0ba
+TraceId:  b01b1f5defde459dba65444997f91bac
 
 
 .DESCRIPTION See help for rad
@@ -4245,22 +4171,16 @@ function New-RadiusEnvironment
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Namespace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -4273,7 +4193,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4283,7 +4203,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4293,7 +4213,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4303,7 +4223,7 @@ BEGIN {
                }
          Namespace = @{
                OriginalName = '--namespace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4313,7 +4233,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4323,7 +4243,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4333,7 +4253,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4435,7 +4355,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  43a3348ad111fb6eab1dd5be75f6ab63
+TraceId:  d330dead203c3e5d20c7476b913387cb
 
 
 .DESCRIPTION See help for rad
@@ -4487,22 +4407,16 @@ function Remove-RadiusEnvironment
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$Yes,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -4515,7 +4429,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4525,7 +4439,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4535,7 +4449,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4545,7 +4459,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4555,7 +4469,7 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -4565,7 +4479,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4575,7 +4489,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4677,7 +4591,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ad30b20b542a9795c4ba782dac474fef
+TraceId:  1f6e8c1f266e65418260a75765ddeea5
 
 
 .DESCRIPTION See help for rad
@@ -4729,16 +4643,12 @@ function Switch-RadiusEnvironment
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -4751,7 +4661,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4761,7 +4671,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4771,7 +4681,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4781,7 +4691,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4791,7 +4701,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4893,7 +4803,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  149df90305bb43a1fe3685a8b0c06c43
+TraceId:  25a15638d554ad8ed28a18c9a50408fd
 
 
 .DESCRIPTION See help for rad
@@ -4937,37 +4847,26 @@ function Update-RadiusEnvironment
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$AWSAccountId,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$AWSRegion,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$AzureResourceGroup,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$AzureSubscriptionId,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$ClearAWS,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$ClearAzure,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -4980,7 +4879,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4990,7 +4889,7 @@ BEGIN {
                }
          AWSAccountId = @{
                OriginalName = '--aws-account-id'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5000,7 +4899,7 @@ BEGIN {
                }
          AWSRegion = @{
                OriginalName = '--aws-region'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5010,7 +4909,7 @@ BEGIN {
                }
          AzureResourceGroup = @{
                OriginalName = '--azure-resource-group'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5020,7 +4919,7 @@ BEGIN {
                }
          AzureSubscriptionId = @{
                OriginalName = '--azure-subscription-id'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5030,7 +4929,7 @@ BEGIN {
                }
          ClearAWS = @{
                OriginalName = '--clear-aws'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -5040,7 +4939,7 @@ BEGIN {
                }
          ClearAzure = @{
                OriginalName = '--clear-azure'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -5050,7 +4949,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '8'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5060,7 +4959,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '9'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5070,7 +4969,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '10'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5080,7 +4979,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '11'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5090,7 +4989,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '12'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5192,7 +5091,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  c1540163f22cc6766fd5a216ad67cc5b
+TraceId:  723dfb637510946d2b6018efd7474ea2
 
 
 .DESCRIPTION See help for rad
@@ -5264,10 +5163,8 @@ function Get-RadiusResourceGroup
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -5280,7 +5177,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5290,7 +5187,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5300,7 +5197,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5402,7 +5299,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e3d77bbf5d0dacefdc0031f5556bc1c8
+TraceId:  aae20dd82e7b5db970c6e24180cb1946
 
 
 .DESCRIPTION See help for rad
@@ -5438,13 +5335,10 @@ function Get-RadiusResourceGroupDetail
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -5457,7 +5351,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5467,7 +5361,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5477,7 +5371,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5487,7 +5381,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5589,7 +5483,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  3fc9feeb9ea45dd2e7f4e06ca7a664ae
+TraceId:  a7568021592e8207d4910b182a315946
 
 
 .DESCRIPTION See help for rad
@@ -5629,16 +5523,12 @@ function New-RadiusResourceGroup
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -5651,7 +5541,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5661,7 +5551,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5671,7 +5561,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5681,7 +5571,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5691,7 +5581,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5793,7 +5683,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e9923e3dbe60413153545ff53a9b4b68
+TraceId:  d97972e4c08e93ff278fa4eebd6cc16f
 
 
 .DESCRIPTION See help for rad
@@ -5837,19 +5727,14 @@ function Remove-RadiusResourceGroup
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$Yes,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -5862,7 +5747,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5872,7 +5757,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5882,7 +5767,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5892,7 +5777,7 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -5902,7 +5787,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5912,7 +5797,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6014,7 +5899,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  55f6650bdd214e26947cbd468a518b0e
+TraceId:  5f86e9d8f2ba363e4fd0c11054d2087e
 
 
 .DESCRIPTION See help for rad
@@ -6062,16 +5947,12 @@ function Switch-RadiusResourceGroup
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -6084,7 +5965,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6094,7 +5975,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6104,7 +5985,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6114,7 +5995,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6124,7 +6005,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6226,7 +6107,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5d04859581355b20828254951fd4cf74
+TraceId:  38a4ee7b0b973c1a3793eae68bb2c7a1
 
 
 .DESCRIPTION See help for rad
@@ -6270,10 +6151,8 @@ function Initialize-Radius
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$Full,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -6286,7 +6165,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Full = @{
                OriginalName = '--full'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -6296,7 +6175,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6306,7 +6185,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6317,7 +6196,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -6407,7 +6286,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4cde4887132c04c253f55b8a6fa4314a
+TraceId:  5cafc4ce57a3dcfb171e87954cba52c3
 
 
 .DESCRIPTION See help for rad
@@ -6443,19 +6322,14 @@ function Install-RadiusKubernetes
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Chart,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$KubeContext,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Reinstall,
 [Parameter()]
-[PSDefaultValue(Value="")]
-[string[]]$Set,
+[array]$Set,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -6468,7 +6342,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Chart = @{
                OriginalName = '--chart'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6478,7 +6352,7 @@ BEGIN {
                }
          KubeContext = @{
                OriginalName = '--kubecontext'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6488,7 +6362,7 @@ BEGIN {
                }
          Reinstall = @{
                OriginalName = '--reinstall'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6498,9 +6372,9 @@ BEGIN {
                }
          Set = @{
                OriginalName = '--set'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'string[]'
+               ParameterType = 'array'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -6508,7 +6382,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6518,7 +6392,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6620,7 +6494,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  3230d509a94e82a9d6e7824ff3d45754
+TraceId:  c0036413567503801a515d7e1462573f
 
 
 .DESCRIPTION See help for rad
@@ -6668,16 +6542,12 @@ function Get-RadiusRecipe
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -6690,7 +6560,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6700,7 +6570,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6710,7 +6580,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6720,7 +6590,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6730,7 +6600,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6832,7 +6702,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  97282097353ed9c0f94ef03f8e6777a1
+TraceId:  a0063cc58b861be9ddf8b8f0ee3325ef
 
 
 .DESCRIPTION See help for rad
@@ -6876,22 +6746,16 @@ function Get-RadiusRecipeDetail
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
-[string]$Environment,
-[Parameter()]
-[PSDefaultValue(Value="")]
-[string]$Group,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$ResourceType,
 [Parameter()]
-[PSDefaultValue(Value="")]
+[string]$Environment,
+[Parameter()]
+[string]$Group,
+[Parameter()]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -6904,27 +6768,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Environment = @{
-               OriginalName = '--environment'
-               OriginalPosition = '2'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Group = @{
-               OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6934,7 +6778,27 @@ BEGIN {
                }
          ResourceType = @{
                OriginalName = '--resource-type'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Environment = @{
+               OriginalName = '--environment'
+               OriginalPosition = '0'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Group = @{
+               OriginalName = '--group'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6944,7 +6808,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6954,7 +6818,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6964,7 +6828,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7066,7 +6930,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  40e1f6c5d23f653a9b6fa6b96ee038fd
+TraceId:  ccd541257096eb9b39c587d903734ebe
 
 
 .DESCRIPTION See help for rad
@@ -7075,15 +6939,15 @@ TraceId:  40e1f6c5d23f653a9b6fa6b96ee038fd
 
 
 
+.PARAMETER ResourceType
+
+
+
 .PARAMETER Environment
 
 
 
 .PARAMETER Group
-
-
-
-.PARAMETER ResourceType
 
 
 
@@ -7118,34 +6982,24 @@ function Register-RadiusRecipe
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
-[string[]]$Parameters,
+[array]$Parameters,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$ResourceType,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$TemplateKind,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$TemplatePath,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$TemplateVersion,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -7158,7 +7012,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7168,7 +7022,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7178,7 +7032,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7188,9 +7042,9 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'string[]'
+               ParameterType = 'array'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -7198,7 +7052,7 @@ BEGIN {
                }
          ResourceType = @{
                OriginalName = '--resource-type'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7208,7 +7062,7 @@ BEGIN {
                }
          TemplateKind = @{
                OriginalName = '--template-kind'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7218,7 +7072,7 @@ BEGIN {
                }
          TemplatePath = @{
                OriginalName = '--template-path'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7228,7 +7082,7 @@ BEGIN {
                }
          TemplateVersion = @{
                OriginalName = '--template-version'
-               OriginalPosition = '8'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7238,7 +7092,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '9'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7248,7 +7102,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '10'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7258,7 +7112,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '11'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7360,7 +7214,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  bd15f318222572fb26c2e33ee979ed56
+TraceId:  c7f1dd1c7a383e5ee45acc2292201245
 
 
 .DESCRIPTION See help for rad
@@ -7428,22 +7282,16 @@ function Unregister-RadiusRecipe
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$ResourceType,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -7456,7 +7304,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7466,7 +7314,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7476,7 +7324,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7486,7 +7334,7 @@ BEGIN {
                }
          ResourceType = @{
                OriginalName = '--resource-type'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7496,7 +7344,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7506,7 +7354,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7516,7 +7364,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7618,7 +7466,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ca22f93ad8a32829e745d40242f306ee
+TraceId:  2fb20d2e3396e6132615a2099c071509
 
 
 .DESCRIPTION See help for rad
@@ -7670,19 +7518,14 @@ function Get-RadiusResource
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$ResourceType,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -7695,7 +7538,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7705,7 +7548,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7715,7 +7558,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7725,7 +7568,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7735,7 +7578,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7745,7 +7588,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7847,7 +7690,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  076dab8e948b914df39432ac029e266c
+TraceId:  8d4064540d821f88b18ed2ccfb7d2e7f
 
 
 .DESCRIPTION See help for rad
@@ -7895,22 +7738,16 @@ function Get-RadiusResourceDetail
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$ResourceType,
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -7923,7 +7760,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7933,7 +7770,7 @@ BEGIN {
                }
          Name = @{
                OriginalName = ''
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7943,7 +7780,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7953,7 +7790,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7963,7 +7800,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7973,7 +7810,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7983,7 +7820,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8085,7 +7922,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ecc3059f946f7b318d37769b6a0a7bb4
+TraceId:  f06af8da03a1da3978bf87057384a729
 
 
 .DESCRIPTION See help for rad
@@ -8137,31 +7974,22 @@ function Get-RadiusResourceLogs
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$ResourceType,
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Container,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$Follow,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Replica,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -8174,7 +8002,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8184,7 +8012,7 @@ BEGIN {
                }
          Name = @{
                OriginalName = ''
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8194,7 +8022,7 @@ BEGIN {
                }
          Container = @{
                OriginalName = '--container'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8204,7 +8032,7 @@ BEGIN {
                }
          Follow = @{
                OriginalName = '--follow'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -8214,7 +8042,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8224,7 +8052,7 @@ BEGIN {
                }
          Replica = @{
                OriginalName = '--replica'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8234,7 +8062,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8244,7 +8072,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '8'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8254,7 +8082,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '9'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8264,7 +8092,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '10'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8366,7 +8194,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7693dd6dc57212c05c22d0b89c89b94f
+TraceId:  e217634df43d8060de617dbf5ce85417
 
 
 .DESCRIPTION See help for rad
@@ -8430,22 +8258,16 @@ function Remove-RadiusResource
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$ResourceType,
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$Yes,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -8458,7 +8280,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8468,7 +8290,7 @@ BEGIN {
                }
          Name = @{
                OriginalName = ''
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8478,7 +8300,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8488,7 +8310,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8498,7 +8320,7 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -8508,7 +8330,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8518,7 +8340,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8620,7 +8442,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  cc4890ce89f4a3ee00480ed5e0ddf1bc
+TraceId:  ac2b61eeb546387f26652790d7e8c080
 
 
 .DESCRIPTION See help for rad
@@ -8672,25 +8494,18 @@ function Invoke-Radius
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$File,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
-[string[]]$Parameters,
+[array]$Parameters,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -8703,7 +8518,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8713,7 +8528,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8723,7 +8538,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8733,7 +8548,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8743,9 +8558,9 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'string[]'
+               ParameterType = 'array'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -8753,7 +8568,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8763,7 +8578,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8773,7 +8588,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '8'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8874,7 +8689,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  bc968664edea34d20461654dbf301194
+TraceId:  0854d011601005c1fa1943f7560763e9
 
 
 .DESCRIPTION See help for rad
@@ -8930,10 +8745,8 @@ function Uninstall-RadiusKubernetes
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$KubeContext,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -8946,7 +8759,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          KubeContext = @{
                OriginalName = '--kubecontext'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8956,7 +8769,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8966,7 +8779,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9068,7 +8881,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7eb47c95729a2b682a50e7381c11a681
+TraceId:  e5e14cc8a173162ee44a58bb24107062
 
 
 .DESCRIPTION See help for rad
@@ -9104,10 +8917,8 @@ function Get-RadiusVersion
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$CLI,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -9120,7 +8931,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          CLI = @{
                OriginalName = '--cli'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -9130,7 +8941,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9140,7 +8951,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9241,7 +9052,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  2ccc7c177c018fb9bd957cc4099aab08
+TraceId:  014ebf0fc1aa2e9c5a9745a731c4163e
 
 
 .DESCRIPTION See help for rad
@@ -9277,10 +9088,8 @@ function Get-RadiusWorkspace
 
 param(
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -9293,7 +9102,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9303,7 +9112,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9313,7 +9122,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9415,7 +9224,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ef29d31d1372ba5dc0f256b63dd3c86b
+TraceId:  975a6efe1d83f5b0d963bb4accc53f71
 
 
 .DESCRIPTION See help for rad
@@ -9451,13 +9260,10 @@ function Get-RadiusWorkspaceDetail
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -9470,7 +9276,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9480,7 +9286,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9490,7 +9296,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9500,7 +9306,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9602,7 +9408,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  eb94750c5f90a7e86c03e095461da70d
+TraceId:  65d9c758adfec8f5ed62db591ddcff92
 
 
 .DESCRIPTION See help for rad
@@ -9642,25 +9448,18 @@ function New-RadiusWorkspaceKubernetes
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Context,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$Force,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -9673,7 +9472,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9683,7 +9482,7 @@ BEGIN {
                }
          Context = @{
                OriginalName = '--context'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9693,7 +9492,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9703,7 +9502,7 @@ BEGIN {
                }
          Force = @{
                OriginalName = '--force'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -9713,7 +9512,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9723,7 +9522,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '6'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9733,7 +9532,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '7'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9743,7 +9542,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '8'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9846,7 +9645,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  550dad603fa08f8dbfb929b1e5290a65
+TraceId:  33e2f912f6e46e080d1da8c9af8523c1
 
 
 .DESCRIPTION See help for rad
@@ -9902,16 +9701,12 @@ function Remove-RadiusWorkspace
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [switch]$Yes,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -9924,7 +9719,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9934,7 +9729,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9944,7 +9739,7 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -9954,7 +9749,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9964,7 +9759,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '5'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -10066,7 +9861,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  fb6f98424b44015065db9ff41b1578a6
+TraceId:  06af99bd721263153612bbe02abf5142
 
 
 .DESCRIPTION See help for rad
@@ -10110,13 +9905,10 @@ function Switch-RadiusWorkspace
 
 param(
 [Parameter(Mandatory=$true)]
-[PSDefaultValue(Value="")]
 [string]$Name,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="json")]
@@ -10129,7 +9921,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -10139,7 +9931,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '2'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -10149,7 +9941,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '3'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -10159,7 +9951,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '4'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -10261,7 +10053,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  29bbf77024808d7df5324f6c44e5b027
+TraceId:  c2068f94f5db6c688184a121c2ad320f
 
 
 .DESCRIPTION See help for rad
@@ -10307,5 +10099,8 @@ function Parser {
     }
     else {
         Write-Output $data
+
+
+
     }
 }
