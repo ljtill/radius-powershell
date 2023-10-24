@@ -43,6 +43,7 @@
                     "HandlerType": "ByPass"
                 }
             ],
+            "Description": "Initialize Radius",
             "Examples": [
                 {
                     "Command": "Initialize-Radius",

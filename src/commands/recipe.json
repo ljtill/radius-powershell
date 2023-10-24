@@ -57,6 +57,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "List recipes",
             "Examples": [
                 {
                     "Command": "Get-RadiusRecipe",
@@ -133,6 +134,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Show recipe details",
             "Examples": [
                 {
                     "Command": "Get-RadiusRecipeDetail",
@@ -233,6 +235,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Add a recipe to an environment",
             "Examples": [
                 {
                     "Command": "Register-RadiusRecipe",
@@ -309,6 +312,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Unregister a recipe from an environment",
             "Examples": [
                 {
                     "Command": "Unregister-RadiusRecipe",

@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/24/2023 22:38:09
+# Generated at: 10/24/2023 23:06:43
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -189,13 +189,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  02339b153f3ecd115e018be029c83cb5
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List Radius Applications
 
 .PARAMETER Group
 
@@ -401,13 +398,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  4c12528394e8283da85cf2cc4e2e7cbc
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Show Radius Application details
 
 .PARAMETER Name
 
@@ -633,13 +627,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  6fb0f0c250e552d325b2b5c599a541b9
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Shows the Connections for Radius Application
 
 .PARAMETER Name
 
@@ -857,13 +848,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  4b560c3871e717ca3bf4cd47a696da75
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Show Radius Application status
 
 .PARAMETER Name
 
@@ -1065,13 +1053,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  0de103339f16220bdb72be376b66a213
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Switch the default Radius Application
 
 .PARAMETER Name
 
@@ -1292,13 +1277,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  38315becad30e7e6e96e7478e9780629
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Delete Radius Application
 
 .PARAMETER Name
 
@@ -1468,13 +1450,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  368180b66b06fc88a62f9f0215c1b6ea
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Download the bicep compiler
 
 .PARAMETER Config
 
@@ -1624,13 +1603,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  c1a006672fe80b05220704c6ab07719d
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Delete installed Bicep compiler
 
 .PARAMETER Config
 
@@ -1804,13 +1780,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  82a9cf2e8cfa4fb5cca86c96d8aade6e
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Publish a Bicep file to an OCI registry
 
 .PARAMETER File
 
@@ -1980,13 +1953,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  aec52bacaaff20e4f52e0707ea626003
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List configured cloud provider credentials
 
 .PARAMETER Workspace
 
@@ -2164,13 +2134,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  0be8e9b927309f02510d39530c90cb11
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Show details of a configured cloud provider credential
 
 .PARAMETER Name
 
@@ -2341,13 +2308,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  057b851ee83d4c917b944defde66e7d1
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List configured cloud provider credentials
 
 .PARAMETER Workspace
 
@@ -2514,13 +2478,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  8590528a51a4ad0e249c7bdd0bdcbf4a
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List configured cloud provider credentials
 
 .PARAMETER Workspace
 
@@ -2723,13 +2684,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  defb85cfd12cb10188aa4109be7a86ae
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Register(Add or update) cloud provider credential for a Radius installation
 
 .PARAMETER ClientId
 
@@ -2932,13 +2890,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  335463f3537d78fd332527996e23ffe2
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Register(Add or update) cloud provider credential for a Radius installation
 
 .PARAMETER AccessKeyId
 
@@ -3113,13 +3068,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  2adb46b340c021c1aeef281ebf50391e
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Unregisters a configured cloud provider credential from the Radius installation
 
 .PARAMETER Workspace
 
@@ -3286,13 +3238,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  fb4705fa966fadf4fc4ae9e37829eef4
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Unregisters a configured cloud provider credential from the Radius installation
 
 .PARAMETER Workspace
 
@@ -3457,13 +3406,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  e26146813bd82f4ed3b58ed5d3f19562
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Capture logs from Radius control plane for debugging and diagnostics.
 
 .PARAMETER Workspace
 
@@ -3688,13 +3634,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  0ee23ab9f34c78dacdbd942d3e743d30
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Deploy Bicep file
 
 .PARAMETER File
 
@@ -3904,13 +3847,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  200219fdcc197570f1d39477ebbd7194
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List environments
 
 .PARAMETER Environment
 
@@ -4120,13 +4060,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  b01b1f5defde459dba65444997f91bac
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Show environment details
 
 .PARAMETER Name
 
@@ -4352,13 +4289,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  d330dead203c3e5d20c7476b913387cb
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Create a new Radius Environment
 
 .PARAMETER Name
 
@@ -4588,13 +4522,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  1f6e8c1f266e65418260a75765ddeea5
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Delete environment
 
 .PARAMETER Name
 
@@ -4800,13 +4731,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  25a15638d554ad8ed28a18c9a50408fd
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Switch the current environment
 
 .PARAMETER Name
 
@@ -5088,13 +5016,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  723dfb637510946d2b6018efd7474ea2
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Update environment configuration
 
 .PARAMETER Name
 
@@ -5296,13 +5221,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  aae20dd82e7b5db970c6e24180cb1946
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List resource groups within current/specified workspace
 
 .PARAMETER Workspace
 
@@ -5480,13 +5402,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  a7568021592e8207d4910b182a315946
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Show the details of a resource group
 
 .PARAMETER Name
 
@@ -5680,13 +5599,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  d97972e4c08e93ff278fa4eebd6cc16f
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List resource groups within current/specified workspace
 
 .PARAMETER Name
 
@@ -5896,13 +5812,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  5f86e9d8f2ba363e4fd0c11054d2087e
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Delete a resource group
 
 .PARAMETER Name
 
@@ -6104,13 +6017,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  38a4ee7b0b973c1a3793eae68bb2c7a1
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Switch default resource group scope
 
 .PARAMETER Name
 
@@ -6283,13 +6193,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  5cafc4ce57a3dcfb171e87954cba52c3
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Initialize Radius
 
 .PARAMETER Full
 
@@ -6491,13 +6398,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  c0036413567503801a515d7e1462573f
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Installs Radius onto a Kubernetes cluster
 
 .PARAMETER Chart
 
@@ -6699,13 +6603,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  a0063cc58b861be9ddf8b8f0ee3325ef
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List recipes
 
 .PARAMETER Environment
 
@@ -6927,13 +6828,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  ccd541257096eb9b39c587d903734ebe
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Show recipe details
 
 .PARAMETER Name
 
@@ -7211,13 +7109,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  c7f1dd1c7a383e5ee45acc2292201245
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Add a recipe to an environment
 
 .PARAMETER Name
 
@@ -7463,13 +7358,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  2fb20d2e3396e6132615a2099c071509
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Unregister a recipe from an environment
 
 .PARAMETER Name
 
@@ -7687,13 +7579,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  8d4064540d821f88b18ed2ccfb7d2e7f
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Lists resources
 
 .PARAMETER ResourceType
 
@@ -7919,13 +7808,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  f06af8da03a1da3978bf87057384a729
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Show Radius resource details
 
 .PARAMETER ResourceType
 
@@ -8191,13 +8077,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  e217634df43d8060de617dbf5ce85417
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Read logs from a running containers resource
 
 .PARAMETER ResourceType
 
@@ -8243,7 +8126,7 @@ TraceId:  e217634df43d8060de617dbf5ce85417
 .EXAMPLE
 PS> Get-RadiusResourceLogs
 
-Read logs from a running containers resourc
+Read logs from a running containers resource
 Original Command: rad resource logs
 
 
@@ -8439,13 +8322,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  ac2b61eeb546387f26652790d7e8c080
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Delete a Radius resource
 
 .PARAMETER ResourceType
 
@@ -8686,13 +8566,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  0854d011601005c1fa1943f7560763e9
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Run an application specified by a Bicep file
 
 .PARAMETER File
 
@@ -8878,13 +8755,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  e5e14cc8a173162ee44a58bb24107062
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Uninstalls Radius onto a Kubernetes cluster
 
 .PARAMETER KubeContext
 
@@ -9049,13 +8923,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  014ebf0fc1aa2e9c5a9745a731c4163e
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Prints the versions of the rad cli
 
 .PARAMETER CLI
 
@@ -9221,13 +9092,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  975a6efe1d83f5b0d963bb4accc53f71
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+List local workspaces
 
 .PARAMETER Workspace
 
@@ -9405,13 +9273,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  65d9c758adfec8f5ed62db591ddcff92
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Show local workspace
 
 .PARAMETER Name
 
@@ -9642,13 +9507,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  33e2f912f6e46e080d1da8c9af8523c1
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Create a workspace
 
 .PARAMETER Name
 
@@ -9858,13 +9720,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  06af99bd721263153612bbe02abf5142
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Delete local workspaces
 
 .PARAMETER Name
 
@@ -10050,13 +9909,10 @@ PROCESS {
   } # end PROCESS
 
 <#
-.SYNOPSIS
-Error: unknown shorthand flag: '?' in -?
-
-TraceId:  c2068f94f5db6c688184a121c2ad320f
 
 
-.DESCRIPTION See help for rad
+.DESCRIPTION
+Switch current workspace
 
 .PARAMETER Name
 
@@ -10099,8 +9955,5 @@ function Parser {
     }
     else {
         Write-Output $data
-
-
-
     }
 }

@@ -45,6 +45,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "List resource groups within current/specified workspace",
             "Examples": [
                 {
                     "Command": "Get-RadiusResourceGroup",
@@ -103,6 +104,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Show the details of a resource group",
             "Examples": [
                 {
                     "Command": "Get-RadiusResourceGroupDetail",
@@ -167,6 +169,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "List resource groups within current/specified workspace",
             "Examples": [
                 {
                     "Command": "New-RadiusResourceGroup",
@@ -237,6 +240,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Delete a resource group",
             "Examples": [
                 {
                     "Command": "Remove-RadiusResourceGroup",
@@ -301,6 +305,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Switch default resource group scope",
             "Examples": [
                 {
                     "Command": "Switch-RadiusResourceGroup",

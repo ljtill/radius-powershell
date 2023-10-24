@@ -57,6 +57,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "List environments",
             "Examples": [
                 {
                     "Command": "Get-RadiusEnvironment",
@@ -127,6 +128,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Show environment details",
             "Examples": [
                 {
                     "Command": "Get-RadiusEnvironmentDetail",
@@ -203,6 +205,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Create a new Radius Environment",
             "Examples": [
                 {
                     "Command": "New-RadiusEnvironment",
@@ -279,6 +282,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Delete environment",
             "Examples": [
                 {
                     "Command": "Remove-RadiusEnvironment",
@@ -343,6 +347,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Switch the current environment",
             "Examples": [
                 {
                     "Command": "Switch-RadiusEnvironment",
@@ -449,6 +454,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Update environment configuration",
             "Examples": [
                 {
                     "Command": "Update-RadiusEnvironment",

@@ -44,6 +44,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Prints the versions of the rad cli",
             "Examples": [
                 {
                     "Command": "Get-RadiusVersion",

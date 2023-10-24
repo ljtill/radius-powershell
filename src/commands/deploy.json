@@ -74,6 +74,7 @@
                     "Handler": "Parser"
                 }
             ],
+            "Description": "Deploy Bicep file",
             "Examples": [
                 {
                     "Command": "New-RadiusDeployment",
