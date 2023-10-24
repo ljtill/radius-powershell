@@ -11,5 +11,8 @@ function global:Parser {
     }
     else {
         Write-Output $data
+
+
+
     }
 }

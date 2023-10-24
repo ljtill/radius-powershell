@@ -21,41 +21,31 @@
                 {
                     "Name": "ResourceType",
                     "OriginalName": "",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 1,
                     "Mandatory": true
                 },
                 {
                     "Name": "Application",
                     "OriginalName": "--application",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 4,
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 5,
                     "Mandatory": false
                 },
                 {
@@ -63,7 +53,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 6,
                     "Mandatory": false
                 }
             ],
@@ -102,49 +91,37 @@
                 {
                     "Name": "ResourceType",
                     "OriginalName": "",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 1,
                     "Mandatory": true
                 },
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": true
                 },
                 {
                     "Name": "Application",
                     "OriginalName": "--application",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 4,
                     "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 5,
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 6,
                     "Mandatory": false
                 },
                 {
@@ -152,7 +129,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 7,
                     "Mandatory": false
                 }
             ],
@@ -191,73 +167,55 @@
                 {
                     "Name": "ResourceType",
                     "OriginalName": "",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 1,
                     "Mandatory": true
                 },
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": true
                 },
                 {
                     "Name": "Container",
                     "OriginalName": "--container",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
                     "Name": "Follow",
                     "OriginalName": "--follow",
-                    "DefaultValue": "",
                     "ParameterType": "switch",
-                    "OriginalPosition": 4,
                     "Mandatory": false
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 5,
                     "Mandatory": false
                 },
                 {
                     "Name": "Replica",
                     "OriginalName": "--replica",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 6,
                     "Mandatory": false
                 },
                 {
                     "Name": "Application",
                     "OriginalName": "--application",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 7,
                     "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 8,
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 9,
                     "Mandatory": false
                 },
                 {
@@ -265,7 +223,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 10,
                     "Mandatory": false
                 }
             ],
@@ -304,49 +261,37 @@
                 {
                     "Name": "ResourceType",
                     "OriginalName": "",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 1,
                     "Mandatory": true
                 },
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 2,
                     "Mandatory": true
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 4,
                     "Mandatory": false
                 },
                 {
                     "Name": "Yes",
                     "OriginalName": "--yes",
-                    "DefaultValue": "",
                     "ParameterType": "switch",
-                    "OriginalPosition": 5,
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 6,
                     "Mandatory": false
                 },
                 {
@@ -354,7 +299,6 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "OriginalPosition": 7,
                     "Mandatory": false
                 }
             ],

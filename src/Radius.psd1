@@ -115,11 +115,11 @@ AliasesToExport = @()
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
 
-    #CrescendoGenerated of this module
-    CrescendoGenerated = '10/24/2023 01:06:41'
-
     #CrescendoVersion of this module
     CrescendoVersion = '1.1.0'
+
+    #CrescendoGenerated of this module
+    CrescendoGenerated = '10/24/2023 22:38:09'
 
     PSData = @{
 
