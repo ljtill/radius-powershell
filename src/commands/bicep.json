@@ -7,9 +7,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "bicep",
-                "download",
-                "--output",
-                "json"
+                "download"
             ],
             "Platform": [
                 "Windows",
@@ -25,15 +23,23 @@
                     "OriginalName": "--config",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -50,9 +56,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "bicep",
-                "delete",
-                "--output",
-                "json"
+                "delete"
             ],
             "Platform": [
                 "Windows",
@@ -68,15 +72,23 @@
                     "OriginalName": "--config",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -93,9 +105,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "bicep",
-                "publish",
-                "--output",
-                "json"
+                "publish"
             ],
             "Platform": [
                 "Windows",
@@ -107,19 +117,11 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
-                },
-                {
                     "Name": "File",
                     "OriginalName": "--file",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": false
                 },
                 {
@@ -127,15 +129,31 @@
                     "OriginalName": "--target",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 3,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 4,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [

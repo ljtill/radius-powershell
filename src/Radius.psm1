@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/23/2023 19:21:41
+# Generated at: 10/24/2023 01:02:21
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -45,32 +45,25 @@ function Get-RadiusApplication
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -80,7 +73,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -91,7 +104,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -104,8 +117,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'application'
     $__commandArgs += 'list'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -184,20 +195,24 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  eaf6464e6fd8e40c072190e7205b8214
+TraceId:  67d50d3acdcd2450b69c091d7e2cc57c
 
 
 .DESCRIPTION See help for rad
-
-.PARAMETER Config
-
-
 
 .PARAMETER Group
 
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -224,16 +239,19 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -242,17 +260,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -262,7 +270,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -272,7 +280,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -282,7 +290,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -293,7 +321,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -306,8 +334,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'application'
     $__commandArgs += 'show'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -386,16 +412,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a35e60d934cf8a615c28b1ec91bca21f
+TraceId:  b03fb7c193a515c66d43f0be0718f208
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -408,6 +430,14 @@ TraceId:  a35e60d934cf8a615c28b1ec91bca21f
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -431,9 +461,6 @@ function Get-RadiusApplicationConnections
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -443,26 +470,22 @@ param(
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -472,7 +495,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -482,7 +505,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -492,7 +515,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -503,7 +546,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -516,8 +559,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'application'
     $__commandArgs += 'connections'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -596,14 +637,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  2b99219cf28d2ce0c630dee238d321fc
+TraceId:  abebc0ae1e276468526eac0551a31741
 
 
 .DESCRIPTION See help for rad
-
-.PARAMETER Config
-
-
 
 .PARAMETER Application
 
@@ -618,6 +655,14 @@ TraceId:  2b99219cf28d2ce0c630dee238d321fc
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -644,9 +689,6 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -656,7 +698,13 @@ param(
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -665,17 +713,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -685,7 +723,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -695,7 +733,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -705,7 +743,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -715,7 +753,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -726,7 +784,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -739,8 +797,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'application'
     $__commandArgs += 'connections'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -819,16 +875,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4725ba5dc65317d037e4b77dd6420ef2
+TraceId:  f39c54739920662e0b3d6e14a40e1907
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -845,6 +897,14 @@ TraceId:  4725ba5dc65317d037e4b77dd6420ef2
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -871,16 +931,19 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -889,17 +952,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -909,7 +962,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -919,7 +972,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -929,7 +982,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -940,7 +1013,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -953,8 +1026,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'application'
     $__commandArgs += 'status'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -1033,16 +1104,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4efa2cfd0340a545ef9c5918b98f2586
+TraceId:  3f739aad36f9a851c71efff9b1a524ae
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -1055,6 +1122,14 @@ TraceId:  4efa2cfd0340a545ef9c5918b98f2586
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -1081,13 +1156,16 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -1096,17 +1174,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1116,7 +1184,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1126,7 +1194,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1137,7 +1225,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -1150,8 +1238,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'application'
     $__commandArgs += 'switch'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -1230,7 +1316,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  67b4c3fbbd2c5bd22e11bee1da03d256
+TraceId:  f50d6789bb2456e90b5634bad25aeaad
 
 
 .DESCRIPTION See help for rad
@@ -1239,15 +1325,19 @@ TraceId:  67b4c3fbbd2c5bd22e11bee1da03d256
 
 
 
-.PARAMETER Config
-
-
-
 .PARAMETER Application
 
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -1274,9 +1364,6 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -1286,7 +1373,13 @@ param(
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[switch]$Yes
+[switch]$Yes,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -1295,17 +1388,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1315,7 +1398,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1325,7 +1408,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1335,7 +1418,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1345,9 +1428,29 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '7'
+               Position = '2147483647'
+               ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -1356,7 +1459,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -1368,8 +1471,6 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'application'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -1448,16 +1549,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  dc5d6525976073a7c2e00fd937bd3310
+TraceId:  6462db0fc4ef9ffeddacd0062fae60ae
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -1474,6 +1571,14 @@ TraceId:  dc5d6525976073a7c2e00fd937bd3310
 
 
 .PARAMETER Yes
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -1497,7 +1602,10 @@ function Install-RadiusBicep
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -1506,7 +1614,17 @@ BEGIN {
     $__PARAMETERMAP = @{
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1517,7 +1635,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $true; Handler = $null }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -1530,8 +1648,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'bicep'
     $__commandArgs += 'download'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -1610,12 +1726,16 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  02e2d9aa84fc395ddf298047d623e872
+TraceId:  face12098f1571bbf542351c2f330cec
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -1639,7 +1759,10 @@ function Uninstall-RadiusBicep
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -1648,7 +1771,17 @@ BEGIN {
     $__PARAMETERMAP = @{
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1659,7 +1792,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $true; Handler = $null }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -1672,8 +1805,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'bicep'
     $__commandArgs += 'delete'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -1752,12 +1883,16 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d173fc790c5896320f6589bb0baf3fa6
+TraceId:  b2002317820981cdd7b1bd4a04769918
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -1781,32 +1916,25 @@ function Publish-RadiusBicep
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$File,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Target
+[string]$Target,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          File = @{
                OriginalName = '--file'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1816,7 +1944,27 @@ BEGIN {
                }
          Target = @{
                OriginalName = '--target'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1827,7 +1975,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $true; Handler = $null }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -1840,8 +1988,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'bicep'
     $__commandArgs += 'publish'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -1920,20 +2066,24 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a0af2fb0d35abf5ef19940be13c7ae5d
+TraceId:  699a16c89672ff228eeef9b294c40430
 
 
 .DESCRIPTION See help for rad
-
-.PARAMETER Config
-
-
 
 .PARAMETER File
 
 
 
 .PARAMETER Target
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -1957,19 +2107,22 @@ function Get-RadiusCredential
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1977,9 +2130,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1990,7 +2153,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -2003,8 +2166,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'credential'
     $__commandArgs += 'list'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -2083,16 +2244,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b8e22ed904c720e005175ceaf0bdb887
+TraceId:  ff7e828659e9ad12ebb3d4fba9c9d7f0
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Workspace
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -2119,10 +2284,13 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -2131,17 +2299,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2151,7 +2309,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2162,7 +2340,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -2175,8 +2353,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'credential'
     $__commandArgs += 'show'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -2255,7 +2431,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d9daabc7c9b767ca374f343bc9e94772
+TraceId:  f2cb3961acbfdfaf37a173628044a796
 
 
 .DESCRIPTION See help for rad
@@ -2264,11 +2440,15 @@ TraceId:  d9daabc7c9b767ca374f343bc9e94772
 
 
 
+.PARAMETER Workspace
+
+
+
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -2292,19 +2472,22 @@ function Get-RadiusCredentialAzure
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2312,9 +2495,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2325,7 +2518,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -2339,8 +2532,6 @@ PROCESS {
     $__commandArgs += 'credential'
     $__commandArgs += 'show'
     $__commandArgs += 'azure'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -2419,16 +2610,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  43bc1d05cfcebf1fa62a1d6b29f1c04d
+TraceId:  31917fb78437c19d0a00ce739628786d
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Workspace
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -2452,19 +2647,22 @@ function Get-RadiusCredentialAWS
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2472,9 +2670,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2485,7 +2693,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -2499,8 +2707,6 @@ PROCESS {
     $__commandArgs += 'credential'
     $__commandArgs += 'show'
     $__commandArgs += 'aws'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -2579,16 +2785,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  89198094d397fc7d137814ca866b8d1f
+TraceId:  a4ba1ca4a214b4716136ee2fd2294481
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Workspace
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -2612,9 +2822,6 @@ function Register-RadiusCredentialAzure
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$ClientId,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -2624,26 +2831,22 @@ param(
 [string]$TenantId,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          ClientId = @{
                OriginalName = '--client-id'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2653,7 +2856,7 @@ BEGIN {
                }
          ClientSecret = @{
                OriginalName = '--client-secret'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2663,7 +2866,7 @@ BEGIN {
                }
          TenantId = @{
                OriginalName = '--tenant-id'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2673,7 +2876,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2684,7 +2907,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -2698,8 +2921,6 @@ PROCESS {
     $__commandArgs += 'credential'
     $__commandArgs += 'register'
     $__commandArgs += 'azure'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -2778,14 +2999,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e72e784e92bd55e51705d16f8554891e
+TraceId:  57433735aa588bab56960dce1f2a3693
 
 
 .DESCRIPTION See help for rad
-
-.PARAMETER Config
-
-
 
 .PARAMETER ClientId
 
@@ -2800,6 +3017,14 @@ TraceId:  e72e784e92bd55e51705d16f8554891e
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -2823,35 +3048,28 @@ function Register-RadiusCredentialAWS
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$AccessKeyId,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$SecretAccessKey,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          AccessKeyId = @{
                OriginalName = '--access-key-id'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2861,7 +3079,7 @@ BEGIN {
                }
          SecretAccessKey = @{
                OriginalName = '--secret-access-key'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2871,7 +3089,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2882,7 +3120,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -2896,8 +3134,6 @@ PROCESS {
     $__commandArgs += 'credential'
     $__commandArgs += 'register'
     $__commandArgs += 'azure'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -2976,14 +3212,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  0917819bf61162f29e64d4633beda62f
+TraceId:  066302ced13472992a5e07aa1983ae0e
 
 
 .DESCRIPTION See help for rad
-
-.PARAMETER Config
-
-
 
 .PARAMETER AccessKeyId
 
@@ -2994,6 +3226,14 @@ TraceId:  0917819bf61162f29e64d4633beda62f
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -3017,19 +3257,22 @@ function Unregister-RadiusCredentialAzure
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3037,9 +3280,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3050,7 +3303,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -3064,8 +3317,6 @@ PROCESS {
     $__commandArgs += 'credential'
     $__commandArgs += 'unregister'
     $__commandArgs += 'azure'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -3144,16 +3395,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  7a2b8fa2d834da651f1d14742e2ec7b2
+TraceId:  f559db6e16f553e03afcce86d34bba10
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Workspace
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -3177,19 +3432,22 @@ function Unregister-RadiusCredentialAWS
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3197,9 +3455,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3210,7 +3478,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -3224,8 +3492,6 @@ PROCESS {
     $__commandArgs += 'credential'
     $__commandArgs += 'unregister'
     $__commandArgs += 'aws'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -3304,16 +3570,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  415be7adab426d35cdce98c67877d51c
+TraceId:  7b3599baeeda04cd7885abfec1ba8050
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Workspace
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -3337,19 +3607,22 @@ function Debug-Radius
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3357,9 +3630,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3370,7 +3653,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $true; Handler = $null }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -3382,8 +3665,6 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'debug-logs'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -3462,16 +3743,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8f32fd07d4960b882d1e9ae329c2b7f1
+TraceId:  9e375347c5bbec1a207337dca4e0c62f
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Workspace
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -3498,9 +3783,6 @@ param(
 [string]$File,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -3513,7 +3795,13 @@ param(
 [string[]]$Parameters,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -3522,17 +3810,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3542,7 +3820,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3552,7 +3830,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3562,7 +3840,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3572,7 +3850,7 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string[]'
                ApplyToExecutable = $False
@@ -3582,7 +3860,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '7'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '8'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3593,7 +3891,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -3605,8 +3903,6 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'deploy'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -3685,16 +3981,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  8ef7c74997e5467252189d74570b7d24
+TraceId:  50581fb02ff9126acae99f33f2475f23
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER File
-
-
-
-.PARAMETER Config
 
 
 
@@ -3718,6 +4010,14 @@ TraceId:  8ef7c74997e5467252189d74570b7d24
 
 
 
+.PARAMETER Config
+
+
+
+.PARAMETER Output
+
+
+
 
 .EXAMPLE
 PS> New-RadiusDeployment
@@ -3738,35 +4038,28 @@ function Get-RadiusEnvironment
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3776,7 +4069,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3786,7 +4079,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3797,7 +4110,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -3810,8 +4123,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'env'
     $__commandArgs += 'list'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -3890,14 +4201,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  5eabb196affaa3d66f408cd1c1db326b
+TraceId:  d64b30c98ca9283abe47e30df9995d0c
 
 
 .DESCRIPTION See help for rad
-
-.PARAMETER Config
-
-
 
 .PARAMETER Environment
 
@@ -3908,6 +4215,14 @@ TraceId:  5eabb196affaa3d66f408cd1c1db326b
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -3934,16 +4249,19 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -3952,17 +4270,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3972,7 +4280,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3982,7 +4290,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3992,7 +4300,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4003,7 +4331,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -4016,8 +4344,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'env'
     $__commandArgs += 'show'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -4096,16 +4422,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  c5a0128a0b6470be6464127678f41cab
+TraceId:  7bb97367b20d89a555e448d53434b8c1
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -4118,6 +4440,14 @@ TraceId:  c5a0128a0b6470be6464127678f41cab
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -4144,9 +4474,6 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -4156,7 +4483,13 @@ param(
 [string]$Namespace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -4165,17 +4498,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4185,7 +4508,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4195,7 +4518,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4205,7 +4528,7 @@ BEGIN {
                }
          Namespace = @{
                OriginalName = '--namespace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4215,7 +4538,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4226,7 +4569,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -4239,8 +4582,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'env'
     $__commandArgs += 'create'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -4319,16 +4660,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4cabab7a2828cfd584921f37c4f848e2
+TraceId:  29f11d01b203cbaf098420d7a797758c
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -4345,6 +4682,14 @@ TraceId:  4cabab7a2828cfd584921f37c4f848e2
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -4371,9 +4716,6 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -4383,7 +4725,13 @@ param(
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[switch]$Yes
+[switch]$Yes,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -4392,17 +4740,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4412,7 +4750,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4422,7 +4760,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4432,7 +4770,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4442,9 +4780,29 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '7'
+               Position = '2147483647'
+               ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -4453,7 +4811,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -4466,8 +4824,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'env'
     $__commandArgs += 'delete'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -4546,16 +4902,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e0ebf574f15c5e46152fab080ba94a05
+TraceId:  5677093b8355b902ad170371fe73bb42
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -4572,6 +4924,14 @@ TraceId:  e0ebf574f15c5e46152fab080ba94a05
 
 
 .PARAMETER Yes
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -4598,13 +4958,16 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -4613,17 +4976,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4633,7 +4986,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4643,7 +4996,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4654,7 +5027,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -4667,8 +5040,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'env'
     $__commandArgs += 'switch'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -4747,7 +5118,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  27eab013358d419b8846c4d1f7c091ec
+TraceId:  ebf87db00b120a3f8e3283f447868683
 
 
 .DESCRIPTION See help for rad
@@ -4756,15 +5127,19 @@ TraceId:  27eab013358d419b8846c4d1f7c091ec
 
 
 
-.PARAMETER Config
-
-
-
 .PARAMETER Environment
 
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -4791,9 +5166,6 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$AWSAccountId,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -4806,10 +5178,10 @@ param(
 [string]$AzureSubscriptionId,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$ClearAWS,
+[switch]$ClearAWS,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$ClearAzure,
+[switch]$ClearAzure,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Environment,
@@ -4818,7 +5190,13 @@ param(
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -4827,17 +5205,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4847,7 +5215,7 @@ BEGIN {
                }
          AWSAccountId = @{
                OriginalName = '--aws-account-id'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4857,7 +5225,7 @@ BEGIN {
                }
          AWSRegion = @{
                OriginalName = '--aws-region'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4867,7 +5235,7 @@ BEGIN {
                }
          AzureResourceGroup = @{
                OriginalName = '--azure-resource-group'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4877,7 +5245,7 @@ BEGIN {
                }
          AzureSubscriptionId = @{
                OriginalName = '--azure-subscription-id'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4887,9 +5255,9 @@ BEGIN {
                }
          ClearAWS = @{
                OriginalName = '--clear-aws'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'switch'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -4897,9 +5265,9 @@ BEGIN {
                }
          ClearAzure = @{
                OriginalName = '--clear-azure'
-               OriginalPosition = '0'
+               OriginalPosition = '7'
                Position = '2147483647'
-               ParameterType = 'string'
+               ParameterType = 'switch'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -4907,7 +5275,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '8'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4917,7 +5285,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '9'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4927,7 +5295,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '10'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '11'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '12'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4938,7 +5326,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -4951,8 +5339,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'env'
     $__commandArgs += 'update'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -5031,16 +5417,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b4ae32649f95032c1f9a6a22edff410b
+TraceId:  92b434d078e8ef70a27bbc637b06613d
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -5080,6 +5462,14 @@ TraceId:  b4ae32649f95032c1f9a6a22edff410b
 
 
 
+.PARAMETER Config
+
+
+
+.PARAMETER Output
+
+
+
 
 .EXAMPLE
 PS> Update-RadiusEnvironment
@@ -5100,19 +5490,22 @@ function Get-RadiusResourceGroup
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5120,9 +5513,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5133,7 +5536,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -5146,8 +5549,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'group'
     $__commandArgs += 'list'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -5226,16 +5627,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  e263f1d7efc6e44cddb257ede128e550
+TraceId:  26520c8b7d63fb0e4507e654fbf7a1d2
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Workspace
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -5262,10 +5667,13 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -5274,17 +5682,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5294,7 +5692,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5305,7 +5723,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -5318,8 +5736,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'group'
     $__commandArgs += 'show'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -5398,7 +5814,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ea383524f5235438e9e26a2e273f22ad
+TraceId:  bb1e8426dfac4a3447bb7b50876a9e0f
 
 
 .DESCRIPTION See help for rad
@@ -5407,11 +5823,15 @@ TraceId:  ea383524f5235438e9e26a2e273f22ad
 
 
 
+.PARAMETER Workspace
+
+
+
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -5438,13 +5858,16 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -5453,17 +5876,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5473,7 +5886,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5483,7 +5896,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5494,7 +5927,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -5507,8 +5940,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'group'
     $__commandArgs += 'create'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -5587,7 +6018,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4733cd72e27c820f13cdc6fceab7f28a
+TraceId:  f00aaed15b4ef80444b97e6155ba8d8b
 
 
 .DESCRIPTION See help for rad
@@ -5596,15 +6027,19 @@ TraceId:  4733cd72e27c820f13cdc6fceab7f28a
 
 
 
-.PARAMETER Config
-
-
-
 .PARAMETER Group
 
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -5631,16 +6066,19 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[switch]$Yes
+[switch]$Yes,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -5649,17 +6087,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5669,7 +6097,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5679,7 +6107,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5689,9 +6117,29 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -5700,7 +6148,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -5713,8 +6161,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'group'
     $__commandArgs += 'delete'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -5793,16 +6239,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  37fe8aed3e6e30c5ac1a83a26ecf83ec
+TraceId:  df775747222f33324b894841b6a92ad3
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -5815,6 +6257,14 @@ TraceId:  37fe8aed3e6e30c5ac1a83a26ecf83ec
 
 
 .PARAMETER Yes
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -5841,13 +6291,16 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -5856,17 +6309,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5876,7 +6319,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5886,7 +6329,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5897,7 +6360,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -5910,8 +6373,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'group'
     $__commandArgs += 'switch'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -5990,7 +6451,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4b887be53472986c0f0299ac78a71078
+TraceId:  045521ec55c7053b33a21813f1cb77c8
 
 
 .DESCRIPTION See help for rad
@@ -5999,15 +6460,19 @@ TraceId:  4b887be53472986c0f0299ac78a71078
 
 
 
-.PARAMETER Config
-
-
-
 .PARAMETER Group
 
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -6031,19 +6496,32 @@ function Initialize-Radius
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[switch]$Full,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$Full
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Full = @{
+               OriginalName = '--full'
+               OriginalPosition = '1'
+               Position = '2147483647'
+               ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6051,11 +6529,11 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Full = @{
-               OriginalName = '--full'
-               OriginalPosition = '0'
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -6064,7 +6542,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $true; Handler = $null }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -6076,8 +6554,6 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'init'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -6156,16 +6632,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  ab1b591866525155d8e5ef080b30729e
+TraceId:  3e1ac04d4b296dcdc7205a3478dd2b89
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Full
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Full
+.PARAMETER Output
 
 
 
@@ -6189,9 +6669,6 @@ function Install-RadiusKubernetes
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Chart,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -6201,26 +6678,22 @@ param(
 [string]$Reinstall,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string[]]$Set
+[string[]]$Set,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          Chart = @{
                OriginalName = '--chart'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6230,7 +6703,7 @@ BEGIN {
                }
          KubeContext = @{
                OriginalName = '--kubecontext'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6240,7 +6713,7 @@ BEGIN {
                }
          Reinstall = @{
                OriginalName = '--reinstall'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6250,9 +6723,29 @@ BEGIN {
                }
          Set = @{
                OriginalName = '--set'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string[]'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -6261,7 +6754,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $true; Handler = $null }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -6274,8 +6767,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'install'
     $__commandArgs += 'kubernetes'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -6354,14 +6845,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  a1d180bc25174fbe8f6afeab8e72704d
+TraceId:  ce0263ef28c6b6cc2bd05299ee65d176
 
 
 .DESCRIPTION See help for rad
-
-.PARAMETER Config
-
-
 
 .PARAMETER Chart
 
@@ -6376,6 +6863,14 @@ TraceId:  a1d180bc25174fbe8f6afeab8e72704d
 
 
 .PARAMETER Set
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -6399,35 +6894,28 @@ function Get-RadiusRecipe
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6437,7 +6925,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6447,7 +6935,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6458,7 +6966,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -6471,8 +6979,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'recipe'
     $__commandArgs += 'list'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -6551,14 +7057,10 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  3e675df2425b1e54f7817184f8348450
+TraceId:  112c5547edea58726a46452f9161fae0
 
 
 .DESCRIPTION See help for rad
-
-.PARAMETER Config
-
-
 
 .PARAMETER Environment
 
@@ -6569,6 +7071,14 @@ TraceId:  3e675df2425b1e54f7817184f8348450
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -6595,16 +7105,22 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$ResourceType,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -6613,17 +7129,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6633,7 +7139,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6643,7 +7149,17 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         ResourceType = @{
+               OriginalName = '--resource-type'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6653,7 +7169,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6664,7 +7200,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -6677,8 +7213,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'recipe'
     $__commandArgs += 'show'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -6757,16 +7291,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  0aba5401663de3f36bbd7160d240dbe7
+TraceId:  091f126ea5f342d6d46ae63d6a288ad3
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -6778,7 +7308,19 @@ TraceId:  0aba5401663de3f36bbd7160d240dbe7
 
 
 
+.PARAMETER ResourceType
+
+
+
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -6805,9 +7347,6 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -6829,7 +7368,13 @@ param(
 [string]$TemplateVersion,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -6838,17 +7383,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6858,7 +7393,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6868,7 +7403,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6878,7 +7413,7 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string[]'
                ApplyToExecutable = $False
@@ -6888,7 +7423,7 @@ BEGIN {
                }
          ResourceType = @{
                OriginalName = '--resource-type'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6898,7 +7433,7 @@ BEGIN {
                }
          TemplateKind = @{
                OriginalName = '--template-kind'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6908,7 +7443,7 @@ BEGIN {
                }
          TemplatePath = @{
                OriginalName = '--template-path'
-               OriginalPosition = '0'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6918,7 +7453,7 @@ BEGIN {
                }
          TemplateVersion = @{
                OriginalName = '--template-version'
-               OriginalPosition = '0'
+               OriginalPosition = '8'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6928,7 +7463,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '9'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '10'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '11'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6939,7 +7494,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -6952,8 +7507,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'recipe'
     $__commandArgs += 'register'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -7032,16 +7585,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  bf42ca14ed47fb5cf508a1f3516bb3cd
+TraceId:  5d50bdc563525302f58f7bc6c2dc12c5
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -7077,6 +7626,14 @@ TraceId:  bf42ca14ed47fb5cf508a1f3516bb3cd
 
 
 
+.PARAMETER Config
+
+
+
+.PARAMETER Output
+
+
+
 
 .EXAMPLE
 PS> Register-RadiusRecipe
@@ -7100,9 +7657,6 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -7112,7 +7666,13 @@ param(
 [string]$ResourceType,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -7121,17 +7681,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7141,7 +7691,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7151,7 +7701,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7161,7 +7711,7 @@ BEGIN {
                }
          ResourceType = @{
                OriginalName = '--resource-type'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7171,7 +7721,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7182,7 +7752,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -7195,8 +7765,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'recipe'
     $__commandArgs += 'unregister'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -7275,16 +7843,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1fa95671a6b6feb9ee8a878452db8c91
+TraceId:  b68c9d3c18b9c714bcf392ede909a83f
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -7301,6 +7865,14 @@ TraceId:  1fa95671a6b6feb9ee8a878452db8c91
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -7322,9 +7894,9 @@ function Get-RadiusResource
 [CmdletBinding()]
 
 param(
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$ResourceType,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Application,
@@ -7333,16 +7905,22 @@ param(
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         ResourceType = @{
+               OriginalName = ''
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7352,7 +7930,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7362,7 +7940,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7372,7 +7950,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7383,7 +7981,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -7396,8 +7994,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'resource'
     $__commandArgs += 'list'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -7476,12 +8072,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  55dc9818fd22b32f740c75a85788f7d5
+TraceId:  6d15da8bf6c7ec153067e53a6447b007
 
 
 .DESCRIPTION See help for rad
 
-.PARAMETER Config
+.PARAMETER ResourceType
 
 
 
@@ -7494,6 +8090,14 @@ TraceId:  55dc9818fd22b32f740c75a85788f7d5
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -7517,10 +8121,10 @@ function Get-RadiusResourceDetail
 param(
 [Parameter(Mandatory=$true)]
 [PSDefaultValue(Value="")]
-[string]$Name,
-[Parameter()]
+[string]$ResourceType,
+[Parameter(Mandatory=$true)]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Application,
@@ -7529,16 +8133,22 @@ param(
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Name = @{
+         ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7546,9 +8156,9 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7558,7 +8168,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7568,7 +8178,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7578,7 +8188,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7589,7 +8219,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -7602,8 +8232,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'resource'
     $__commandArgs += 'show'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -7682,16 +8310,16 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  f793c7ab43a7686db4959ab8cf9d9cca
+TraceId:  1f887a775607bcea7899e001b3ca634f
 
 
 .DESCRIPTION See help for rad
 
+.PARAMETER ResourceType
+
+
+
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -7704,6 +8332,14 @@ TraceId:  f793c7ab43a7686db4959ab8cf9d9cca
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -7727,16 +8363,16 @@ function Get-RadiusResourceLogs
 param(
 [Parameter(Mandatory=$true)]
 [PSDefaultValue(Value="")]
-[string]$Resource,
-[Parameter()]
+[string]$ResourceType,
+[Parameter(Mandatory=$true)]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Container,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$Follow,
+[switch]$Follow,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
@@ -7748,16 +8384,22 @@ param(
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Resource = @{
+         ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7765,9 +8407,9 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Name = @{
+               OriginalName = ''
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7777,7 +8419,7 @@ BEGIN {
                }
          Container = @{
                OriginalName = '--container'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7787,9 +8429,9 @@ BEGIN {
                }
          Follow = @{
                OriginalName = '--follow'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'switch'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -7797,7 +8439,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7807,7 +8449,7 @@ BEGIN {
                }
          Replica = @{
                OriginalName = '--replica'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7817,7 +8459,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7827,7 +8469,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '8'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '9'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '10'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7838,7 +8500,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -7851,8 +8513,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'resource'
     $__commandArgs += 'logs'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -7931,16 +8591,16 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  832eaf13d6db26abfdd8006ce3ada0ac
+TraceId:  b09eb2c2417470f9b39d75cdbedd8a26
 
 
 .DESCRIPTION See help for rad
 
-.PARAMETER Resource
+.PARAMETER ResourceType
 
 
 
-.PARAMETER Config
+.PARAMETER Name
 
 
 
@@ -7968,6 +8628,14 @@ TraceId:  832eaf13d6db26abfdd8006ce3ada0ac
 
 
 
+.PARAMETER Config
+
+
+
+.PARAMETER Output
+
+
+
 
 .EXAMPLE
 PS> Get-RadiusResourceLogs
@@ -7991,10 +8659,7 @@ param(
 [string]$ResourceType,
 [Parameter(Mandatory=$true)]
 [PSDefaultValue(Value="")]
-[string]$ResourceName,
-[Parameter()]
-[PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
@@ -8003,7 +8668,13 @@ param(
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$Confirm
+[switch]$Yes,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -8012,7 +8683,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8020,19 +8691,9 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         ResourceName = @{
+         Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8042,7 +8703,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8052,7 +8713,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8060,11 +8721,31 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Confirm = @{
+         Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '7'
+               Position = '2147483647'
+               ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -8073,7 +8754,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -8086,8 +8767,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'resource'
     $__commandArgs += 'delete'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -8166,7 +8845,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  da21f4fc65fc9af66ab76dd87130ca67
+TraceId:  289ae99d9ac78ebb5ec75184cfb7cf61
 
 
 .DESCRIPTION See help for rad
@@ -8175,11 +8854,7 @@ TraceId:  da21f4fc65fc9af66ab76dd87130ca67
 
 
 
-.PARAMETER ResourceName
-
-
-
-.PARAMETER Config
+.PARAMETER Name
 
 
 
@@ -8191,7 +8866,15 @@ TraceId:  da21f4fc65fc9af66ab76dd87130ca67
 
 
 
-.PARAMETER Confirm
+.PARAMETER Yes
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -8218,9 +8901,6 @@ param(
 [string]$File,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Application,
 [Parameter()]
 [PSDefaultValue(Value="")]
@@ -8233,7 +8913,13 @@ param(
 [string[]]$Parameters,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -8242,17 +8928,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8262,7 +8938,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8272,7 +8948,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8282,7 +8958,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8292,7 +8968,7 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string[]'
                ApplyToExecutable = $False
@@ -8302,7 +8978,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '7'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '8'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8313,7 +9009,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -8325,8 +9021,6 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'run'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -8405,16 +9099,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  4ff87a061294df70e8eed7279272fa9d
+TraceId:  83b8aa5bfbc6422e609d48356ea33d5f
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER File
-
-
-
-.PARAMETER Config
 
 
 
@@ -8438,6 +9128,14 @@ TraceId:  4ff87a061294df70e8eed7279272fa9d
 
 
 
+.PARAMETER Config
+
+
+
+.PARAMETER Output
+
+
+
 
 .EXAMPLE
 PS> Invoke-Radius
@@ -8458,19 +9156,22 @@ function Uninstall-RadiusKubernetes
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$KubeContext,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$KubeContext
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         KubeContext = @{
+               OriginalName = '--kubecontext'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8478,9 +9179,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         KubeContext = @{
-               OriginalName = '--kubecontext'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8491,7 +9202,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $true; Handler = $null }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -8504,8 +9215,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'uninstall'
     $__commandArgs += 'kubernetes'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -8584,16 +9293,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  d0be0ed8156718a0e84dac151a25a336
+TraceId:  49f244256d003422868260e44c4e291d
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER KubeContext
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER KubeContext
+.PARAMETER Output
 
 
 
@@ -8617,19 +9330,32 @@ function Get-RadiusVersion
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[switch]$CLI,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$CLI
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         CLI = @{
+               OriginalName = '--cli'
+               OriginalPosition = '1'
+               Position = '2147483647'
+               ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8637,9 +9363,9 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         CLI = @{
-               OriginalName = '--cli'
-               OriginalPosition = '0'
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8650,7 +9376,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -8662,8 +9388,6 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'version'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -8742,16 +9466,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  b137f79b3e800299a0ac5f7e30c4e84d
+TraceId:  b0b3f18eb0a4b6c3104ece6b47088344
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER CLI
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER CLI
+.PARAMETER Output
 
 
 
@@ -8775,19 +9503,22 @@ function Get-RadiusWorkspace
 param(
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+         Workspace = @{
+               OriginalName = '--workspace'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8795,9 +9526,19 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8808,7 +9549,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -8821,8 +9562,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'workspace'
     $__commandArgs += 'list'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -8901,16 +9640,20 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  75b8bbdb261ab3c5f081e7306325b4bf
+TraceId:  112a3d2e1cb426ab6dad354e3775aacd
 
 
 .DESCRIPTION See help for rad
+
+.PARAMETER Workspace
+
+
 
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -8937,10 +9680,13 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -8949,17 +9695,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8969,7 +9705,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8980,7 +9736,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -8993,8 +9749,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'workspace'
     $__commandArgs += 'show'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -9073,7 +9827,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  6bb68ad58bd921d62a0372b4fa04d96c
+TraceId:  b57e51ab66ad09c8aaa207418d087087
 
 
 .DESCRIPTION See help for rad
@@ -9082,11 +9836,15 @@ TraceId:  6bb68ad58bd921d62a0372b4fa04d96c
 
 
 
+.PARAMETER Workspace
+
+
+
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -9113,22 +9871,25 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Context,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Environment,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[boolean]$Force,
+[switch]$Force,
 [Parameter()]
 [PSDefaultValue(Value="")]
 [string]$Group,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Workspace,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -9137,17 +9898,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9157,7 +9908,7 @@ BEGIN {
                }
          Context = @{
                OriginalName = '--context'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9167,7 +9918,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9177,9 +9928,9 @@ BEGIN {
                }
          Force = @{
                OriginalName = '--force'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
-               ParameterType = 'boolean'
+               ParameterType = 'switch'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -9187,7 +9938,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9197,7 +9948,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '7'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '8'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9208,7 +9979,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -9222,8 +9993,6 @@ PROCESS {
     $__commandArgs += 'workspace'
     $__commandArgs += 'create'
     $__commandArgs += 'kubernetes'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -9302,16 +10071,12 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  6137481a68367b69fd76b12a752fe828
+TraceId:  034f5a926822a2490df1f24da6eba261
 
 
 .DESCRIPTION See help for rad
 
 .PARAMETER Name
-
-
-
-.PARAMETER Config
 
 
 
@@ -9332,6 +10097,14 @@ TraceId:  6137481a68367b69fd76b12a752fe828
 
 
 .PARAMETER Workspace
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -9358,13 +10131,16 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
-[Parameter()]
-[PSDefaultValue(Value="")]
 [string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[switch]$Yes
+[switch]$Yes,
+[Parameter()]
+[PSDefaultValue(Value="")]
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -9373,17 +10149,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9393,7 +10159,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9403,9 +10169,29 @@ BEGIN {
                }
          Yes = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'switch'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '4'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -9414,7 +10200,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -9427,8 +10213,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'workspace'
     $__commandArgs += 'delete'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -9507,7 +10291,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  1a5a93a6bb2e03f5be52e71ee73f54a4
+TraceId:  92d4fbec4984803f43d28ba6f81f0ed2
 
 
 .DESCRIPTION See help for rad
@@ -9516,15 +10300,19 @@ TraceId:  1a5a93a6bb2e03f5be52e71ee73f54a4
 
 
 
-.PARAMETER Config
-
-
-
 .PARAMETER Workspace
 
 
 
 .PARAMETER Yes
+
+
+
+.PARAMETER Config
+
+
+
+.PARAMETER Output
 
 
 
@@ -9551,10 +10339,13 @@ param(
 [string]$Name,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Config,
+[string]$Workspace,
 [Parameter()]
 [PSDefaultValue(Value="")]
-[string]$Workspace
+[string]$Config,
+[Parameter()]
+[PSDefaultValue(Value="json")]
+[string]$Output = "json"
     )
 
 BEGIN {
@@ -9563,17 +10354,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Config = @{
-               OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9583,7 +10364,27 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Config = @{
+               OriginalName = '--config'
+               OriginalPosition = '3'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
+         Output = @{
+               OriginalName = '--output'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9594,7 +10395,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $True; Handler = { $input | ConvertFrom-Json -Depth 25 } }
+        Default = @{ StreamOutput = $False; Handler = 'Parser' }
     }
 }
 
@@ -9607,8 +10408,6 @@ PROCESS {
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'workspace'
     $__commandArgs += 'switch'
-    $__commandArgs += '--output'
-    $__commandArgs += 'json'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -9687,7 +10486,7 @@ PROCESS {
 .SYNOPSIS
 Error: unknown shorthand flag: '?' in -?
 
-TraceId:  3b81ed4d4b31da6d9dfdc085f85139da
+TraceId:  e12b2b2274cace3b76702b7938e7b57a
 
 
 .DESCRIPTION See help for rad
@@ -9696,11 +10495,15 @@ TraceId:  3b81ed4d4b31da6d9dfdc085f85139da
 
 
 
+.PARAMETER Workspace
+
+
+
 .PARAMETER Config
 
 
 
-.PARAMETER Workspace
+.PARAMETER Output
 
 
 
@@ -9716,3 +10519,18 @@ Original Command: rad workspace switch
 }
 
 
+function Parser {
+    param(
+        [Parameter(Mandatory)]
+        $cmdResults
+    )
+
+    $data = ($cmdResults | Out-String)
+
+    if (Test-Json -Json $data -ErrorAction SilentlyContinue) {
+        $data | ConvertFrom-Json
+    }
+    else {
+        Write-Output $data
+    }
+}

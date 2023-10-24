@@ -7,9 +7,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
-                "list",
-                "--output",
-                "json"
+                "list"
             ],
             "Platform": [
                 "Windows",
@@ -21,27 +19,35 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
-                },
-                {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 2,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 3,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -58,9 +64,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
-                "show",
-                "--output",
-                "json"
+                "show"
             ],
             "Platform": [
                 "Windows",
@@ -76,31 +80,39 @@
                     "OriginalName": "",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": true
-                },
-                {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 3,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 4,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -118,9 +130,7 @@
             "OriginalCommandElements": [
                 "workspace",
                 "create",
-                "kubernetes",
-                "--output",
-                "json"
+                "kubernetes"
             ],
             "Platform": [
                 "Windows",
@@ -136,23 +146,15 @@
                     "OriginalName": "",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": true
-                },
-                {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
                 },
                 {
                     "Name": "Context",
                     "OriginalName": "--context",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
@@ -160,15 +162,15 @@
                     "OriginalName": "--environment",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
                     "Name": "Force",
                     "OriginalName": "--force",
                     "DefaultValue": "",
-                    "ParameterType": "boolean",
-                    "OriginalPosition": 0,
+                    "ParameterType": "switch",
+                    "OriginalPosition": 4,
                     "Mandatory": false
                 },
                 {
@@ -176,7 +178,7 @@
                     "OriginalName": "--group",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 5,
                     "Mandatory": false
                 },
                 {
@@ -184,15 +186,31 @@
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 6,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 7,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 8,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -209,9 +227,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
-                "delete",
-                "--output",
-                "json"
+                "delete"
             ],
             "Platform": [
                 "Windows",
@@ -227,23 +243,15 @@
                     "OriginalName": "",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": true
-                },
-                {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
@@ -251,15 +259,31 @@
                     "OriginalName": "--yes",
                     "DefaultValue": "",
                     "ParameterType": "switch",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 3,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 4,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 5,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -276,9 +300,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
-                "switch",
-                "--output",
-                "json"
+                "switch"
             ],
             "Platform": [
                 "Windows",
@@ -294,31 +316,39 @@
                     "OriginalName": "",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": true
-                },
-                {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 3,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 4,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
