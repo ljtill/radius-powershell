@@ -7,9 +7,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "recipe",
-                "list",
-                "--output",
-                "json"
+                "list"
             ],
             "Platform": [
                 "Windows",
@@ -21,19 +19,11 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
-                },
-                {
                     "Name": "Environment",
                     "OriginalName": "--environment",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": false
                 },
                 {
@@ -41,7 +31,7 @@
                     "OriginalName": "--group",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
@@ -49,15 +39,31 @@
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 3,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 4,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 5,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -74,9 +80,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "recipe",
-                "show",
-                "--output",
-                "json"
+                "show"
             ],
             "Platform": [
                 "Windows",
@@ -92,23 +96,15 @@
                     "OriginalName": "",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": true
-                },
-                {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
                 },
                 {
                     "Name": "Environment",
                     "OriginalName": "--environment",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
@@ -116,7 +112,7 @@
                     "OriginalName": "--group",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
@@ -124,7 +120,7 @@
                     "OriginalName": "--resource-type",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 4,
                     "Mandatory": false
                 },
                 {
@@ -132,15 +128,31 @@
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 5,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 6,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 7,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -157,9 +169,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "recipe",
-                "register",
-                "--output",
-                "json"
+                "register"
             ],
             "Platform": [
                 "Windows",
@@ -175,23 +185,15 @@
                     "OriginalName": "",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": true
-                },
-                {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
                 },
                 {
                     "Name": "Environment",
                     "OriginalName": "--environment",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
@@ -199,7 +201,7 @@
                     "OriginalName": "--group",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
@@ -207,7 +209,7 @@
                     "OriginalName": "--parameters",
                     "DefaultValue": "",
                     "ParameterType": "string[]",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 4,
                     "Mandatory": false
                 },
                 {
@@ -215,7 +217,7 @@
                     "OriginalName": "--resource-type",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 5,
                     "Mandatory": false
                 },
                 {
@@ -223,7 +225,7 @@
                     "OriginalName": "--template-kind",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 6,
                     "Mandatory": false
                 },
                 {
@@ -231,7 +233,7 @@
                     "OriginalName": "--template-path",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 7,
                     "Mandatory": false
                 },
                 {
@@ -239,7 +241,7 @@
                     "OriginalName": "--template-version",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 8,
                     "Mandatory": false
                 },
                 {
@@ -247,15 +249,31 @@
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 9,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 10,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 11,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
@@ -272,9 +290,7 @@
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "recipe",
-                "unregister",
-                "--output",
-                "json"
+                "unregister"
             ],
             "Platform": [
                 "Windows",
@@ -290,23 +306,15 @@
                     "OriginalName": "",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 1,
                     "Mandatory": true
-                },
-                {
-                    "Name": "Config",
-                    "OriginalName": "--config",
-                    "DefaultValue": "",
-                    "ParameterType": "string",
-                    "OriginalPosition": 0,
-                    "Mandatory": false
                 },
                 {
                     "Name": "Environment",
                     "OriginalName": "--environment",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
@@ -314,7 +322,7 @@
                     "OriginalName": "--group",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 3,
                     "Mandatory": false
                 },
                 {
@@ -322,7 +330,7 @@
                     "OriginalName": "--resource-type",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 4,
                     "Mandatory": false
                 },
                 {
@@ -330,15 +338,31 @@
                     "OriginalName": "--workspace",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 5,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Config",
+                    "OriginalName": "--config",
+                    "DefaultValue": "",
+                    "ParameterType": "string",
+                    "OriginalPosition": 6,
+                    "Mandatory": false
+                },
+                {
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 7,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [

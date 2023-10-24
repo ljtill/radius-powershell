@@ -6,9 +6,7 @@
             "Noun": "Radius",
             "OriginalName": "rad",
             "OriginalCommandElements": [
-                "init",
-                "--output",
-                "json"
+                "init"
             ],
             "Platform": [
                 "Windows",
@@ -20,27 +18,35 @@
             "NoInvocation": false,
             "Parameters": [
                 {
+                    "Name": "Full",
+                    "OriginalName": "--full",
+                    "DefaultValue": "",
+                    "ParameterType": "switch",
+                    "OriginalPosition": 1,
+                    "Mandatory": false
+                },
+                {
                     "Name": "Config",
                     "OriginalName": "--config",
                     "DefaultValue": "",
                     "ParameterType": "string",
-                    "OriginalPosition": 0,
+                    "OriginalPosition": 2,
                     "Mandatory": false
                 },
                 {
-                    "Name": "Full",
-                    "OriginalName": "--full",
-                    "DefaultValue": "",
-                    "ParameterType": "boolean",
-                    "OriginalPosition": 0,
+                    "Name": "Output",
+                    "OriginalName": "--output",
+                    "DefaultValue": "json",
+                    "ParameterType": "string",
+                    "OriginalPosition": 3,
                     "Mandatory": false
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Script",
-                    "Handler": "handlers/Parse.ps1"
+                    "HandlerType": "Function",
+                    "Handler": "Parser"
                 }
             ],
             "Examples": [
