@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/27/2023 00:59:13
+# Generated at: 10/30/2023 10:50:10
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -9315,12 +9315,13 @@ function Parser {
                     Write-Verbose "TraceId: $traceId"
                 }
 
-                # Write an error with the custom exception message
-                Write-Error -Message "$exceptionMessage"
+                # Throw an exception with the custom error message
+                throw "$exceptionMessage"
             }
             else {
                 # If it's not JSON or an error message, assume it's standard output
-                return ($result -split "`n")[0]
+                # return ($result -split "`n")
+                return $result.Trim("`r", "`n")
             }
         }
     }
