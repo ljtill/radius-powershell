@@ -35,14 +35,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Uninstalls Radius onto a Kubernetes cluster",

@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/30/2023 12:23:17
+# Generated at: 10/30/2023 16:12:32
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -43,12 +43,13 @@ function Get-RadiusApplication
 [CmdletBinding()]
 
 param(
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -230,14 +231,13 @@ function Get-RadiusApplicationDetail
 param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
-[Parameter()]
-[string]$Application,
 [Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -249,17 +249,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Application = @{
-               OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -407,10 +397,6 @@ Show Radius Application details
 
 
 
-.PARAMETER Application
-
-
-
 .PARAMETER Group
 
 
@@ -448,8 +434,6 @@ param(
 [Parameter()]
 [string]$Name,
 [Parameter()]
-[string]$Application,
-[Parameter()]
 [string]$Environment,
 [Parameter()]
 [string]$Group,
@@ -457,6 +441,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -468,17 +453,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Application = @{
-               OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -636,10 +611,6 @@ Shows the Connections for Radius Application
 
 
 
-.PARAMETER Application
-
-
-
 .PARAMETER Environment
 
 
@@ -681,13 +652,12 @@ param(
 [Parameter()]
 [string]$Name,
 [Parameter()]
-[string]$Application,
-[Parameter()]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -699,17 +669,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Application = @{
-               OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -857,10 +817,6 @@ Show Radius Application status
 
 
 
-.PARAMETER Application
-
-
-
 .PARAMETER Group
 
 
@@ -898,11 +854,10 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter()]
-[string]$Application,
-[Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -914,17 +869,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Application = @{
-               OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1062,10 +1007,6 @@ Switch the default Radius Application
 
 
 
-.PARAMETER Application
-
-
-
 .PARAMETER Workspace
 
 
@@ -1098,9 +1039,7 @@ function Remove-RadiusApplication
 param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
-[Parameter()]
-[string]$Application,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -1108,6 +1047,7 @@ param(
 [switch]$Force,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -1119,17 +1059,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Application = @{
-               OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1190,7 +1120,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -1202,6 +1132,7 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'application'
+    $__commandArgs += 'delete'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -1286,10 +1217,6 @@ Delete Radius Application
 
 
 
-.PARAMETER Application
-
-
-
 .PARAMETER Group
 
 
@@ -1330,6 +1257,7 @@ function Install-RadiusBicep
 param(
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -1362,7 +1290,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -1483,6 +1411,7 @@ function Uninstall-RadiusBicep
 param(
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -1515,7 +1444,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -1640,6 +1569,7 @@ param(
 [string]$Target,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -1692,7 +1622,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -1823,6 +1753,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -1995,6 +1926,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -2006,7 +1938,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Provider = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2187,6 +2119,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -2198,7 +2131,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Provider = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2415,6 +2348,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -2426,7 +2360,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Provider = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2598,6 +2532,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -2776,6 +2711,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -2787,7 +2723,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3010,14 +2946,13 @@ function Get-RadiusEnvironment
 [CmdletBinding()]
 
 param(
-[Parameter()]
-[string]$Environment,
 [Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -3027,16 +2962,6 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Environment = @{
-               OriginalName = '--environment'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          Group = @{
                OriginalName = '--group'
                OriginalPosition = '0'
@@ -3173,10 +3098,6 @@ PROCESS {
 .DESCRIPTION
 List environments
 
-.PARAMETER Environment
-
-
-
 .PARAMETER Group
 
 
@@ -3213,14 +3134,13 @@ function Get-RadiusEnvironmentDetail
 param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
-[Parameter()]
-[string]$Environment,
 [Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -3232,17 +3152,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Environment = @{
-               OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3390,10 +3300,6 @@ Show environment details
 
 
 
-.PARAMETER Environment
-
-
-
 .PARAMETER Group
 
 
@@ -3430,8 +3336,6 @@ function New-RadiusEnvironment
 param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
-[Parameter()]
-[string]$Environment,
 [Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
@@ -3440,6 +3344,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -3451,17 +3356,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Environment = @{
-               OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3619,10 +3514,6 @@ Create a new Radius Environment
 
 
 
-.PARAMETER Environment
-
-
-
 .PARAMETER Group
 
 
@@ -3663,9 +3554,7 @@ function Remove-RadiusEnvironment
 param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
-[Parameter()]
-[string]$Environment,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -3673,6 +3562,7 @@ param(
 [switch]$Force,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -3684,17 +3574,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Environment = @{
-               OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3755,7 +3635,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -3852,10 +3732,6 @@ Delete environment
 
 
 
-.PARAMETER Environment
-
-
-
 .PARAMETER Group
 
 
@@ -3897,11 +3773,10 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter()]
-[string]$Environment,
-[Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -3913,17 +3788,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Environment = @{
-               OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4061,10 +3926,6 @@ Switch the current environment
 
 
 
-.PARAMETER Environment
-
-
-
 .PARAMETER Workspace
 
 
@@ -4110,13 +3971,12 @@ param(
 [Parameter()]
 [switch]$ClearAzure,
 [Parameter()]
-[string]$Environment,
-[Parameter()]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -4128,7 +3988,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4191,16 +4051,6 @@ BEGIN {
                OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'switch'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Environment = @{
-               OriginalName = '--environment'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
                ArgumentTransform = '$args'
@@ -4370,10 +4220,6 @@ Update environment configuration
 
 
 
-.PARAMETER Environment
-
-
-
 .PARAMETER Group
 
 
@@ -4412,6 +4258,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -4583,6 +4430,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -4594,7 +4442,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4765,11 +4613,10 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter()]
-[string]$Group,
-[Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -4781,17 +4628,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Group = @{
-               OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4929,10 +4766,6 @@ List resource groups within current/specified workspace
 
 
 
-.PARAMETER Group
-
-
-
 .PARAMETER Workspace
 
 
@@ -4966,13 +4799,12 @@ param(
 [Parameter()]
 [string]$Name,
 [Parameter()]
-[string]$Group,
-[Parameter()]
 [string]$Workspace,
 [Parameter()]
 [switch]$Force,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -4984,17 +4816,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Group = @{
-               OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5045,7 +4867,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -5142,10 +4964,6 @@ Delete a resource group
 
 
 
-.PARAMETER Group
-
-
-
 .PARAMETER Workspace
 
 
@@ -5183,11 +5001,10 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter()]
-[string]$Group,
-[Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -5199,17 +5016,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Group = @{
-               OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5347,10 +5154,6 @@ Switch default resource group scope
 
 
 
-.PARAMETER Group
-
-
-
 .PARAMETER Workspace
 
 
@@ -5385,6 +5188,7 @@ param(
 [switch]$Full,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -5559,6 +5363,7 @@ param(
 [array]$Set,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -5631,7 +5436,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -5774,6 +5579,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -5979,6 +5785,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -5990,7 +5797,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6220,6 +6027,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -6231,7 +6039,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6509,6 +6317,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -6520,7 +6329,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6740,6 +6549,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -6751,7 +6561,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6959,6 +6769,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -6970,7 +6781,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6980,7 +6791,7 @@ BEGIN {
                }
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7198,6 +7009,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -7209,7 +7021,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7219,7 +7031,7 @@ BEGIN {
                }
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7465,7 +7277,7 @@ param(
 [string]$ResourceType,
 [Parameter(Mandatory=$true)]
 [string]$Name,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -7473,6 +7285,7 @@ param(
 [switch]$Force,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -7484,7 +7297,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          ResourceType = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7494,7 +7307,7 @@ BEGIN {
                }
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7555,7 +7368,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -7708,6 +7521,7 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -7719,7 +7533,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7946,6 +7760,7 @@ param(
 [string]$KubeContext,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -7988,7 +7803,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -8115,6 +7930,7 @@ param(
 [switch]$CLI,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -8280,8 +8096,6 @@ function Get-RadiusWorkspace
 
 param(
 [Parameter()]
-[string]$Workspace,
-[Parameter()]
 [string]$Config,
 [Parameter()]
 [PSDefaultValue(Value="table")]
@@ -8292,16 +8106,6 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
          Config = @{
                OriginalName = '--config'
                OriginalPosition = '0'
@@ -8418,10 +8222,6 @@ PROCESS {
 .DESCRIPTION
 List local workspaces
 
-.PARAMETER Workspace
-
-
-
 .PARAMETER Config
 
 
@@ -8451,9 +8251,8 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter()]
-[string]$Workspace,
-[Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -8465,17 +8264,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8603,10 +8392,6 @@ Show local workspace
 
 
 
-.PARAMETER Workspace
-
-
-
 .PARAMETER Config
 
 
@@ -8647,9 +8432,8 @@ param(
 [Parameter()]
 [string]$Group,
 [Parameter()]
-[string]$Workspace,
-[Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -8661,7 +8445,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Provider = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8671,7 +8455,7 @@ BEGIN {
                }
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8711,16 +8495,6 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Workspace = @{
-               OriginalName = '--workspace'
                OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
@@ -8869,10 +8643,6 @@ Create a workspace
 
 
 
-.PARAMETER Workspace
-
-
-
 .PARAMETER Config
 
 
@@ -8902,11 +8672,10 @@ param(
 [Parameter()]
 [string]$Name,
 [Parameter()]
-[string]$Workspace,
-[Parameter()]
 [switch]$Force,
 [Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -8918,17 +8687,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8969,7 +8728,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -9066,10 +8825,6 @@ Delete local workspaces
 
 
 
-.PARAMETER Workspace
-
-
-
 .PARAMETER Force
 
 
@@ -9103,9 +8858,8 @@ param(
 [Parameter()]
 [string]$Name,
 [Parameter()]
-[string]$Workspace,
-[Parameter()]
 [string]$Config,
+[ValidateSet('json','table')]
 [Parameter()]
 [PSDefaultValue(Value="json")]
 [string]$Output = "json"
@@ -9117,17 +8871,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '0'
-               Position = '2147483647'
-               ParameterType = 'string'
-               ApplyToExecutable = $False
-               NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
-               }
-         Workspace = @{
-               OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9255,10 +8999,6 @@ Switch current workspace
 
 
 
-.PARAMETER Workspace
-
-
-
 .PARAMETER Config
 
 
@@ -9304,7 +9044,7 @@ function Parser {
                 # Extract the error message and replace newline characters
                 $errorMessage = $pattern.Groups['ErrorMessage'].Value
 
-                if (Test-Json -Json $errorMessage -ErrorSilentlyContinue) {
+                if (Test-Json -Json $errorMessage -ErrorAction SilentlyContinue) {
                     $errorMessage = ($errorMessage | ConvertFrom-Json).message
                 }
 

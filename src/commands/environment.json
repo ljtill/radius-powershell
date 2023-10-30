@@ -19,12 +19,6 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "Environment",
-                    "OriginalName": "--environment",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
                     "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
@@ -47,7 +41,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -86,14 +83,9 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Environment",
-                    "OriginalName": "--environment",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Group",
@@ -118,7 +110,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -157,14 +152,9 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Environment",
-                    "OriginalName": "--environment",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Group",
@@ -195,7 +185,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -234,20 +227,15 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Environment",
-                    "OriginalName": "--environment",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
@@ -272,14 +260,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Delete environment",
@@ -311,14 +301,9 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Environment",
-                    "OriginalName": "--environment",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
@@ -337,7 +322,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -376,6 +364,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -416,12 +405,6 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Environment",
-                    "OriginalName": "--environment",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
                     "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
@@ -444,7 +427,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [

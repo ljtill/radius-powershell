@@ -35,7 +35,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -74,6 +77,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -94,7 +98,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -133,14 +140,9 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Group",
-                    "OriginalName": "--group",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
@@ -159,7 +161,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -198,12 +203,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Group",
-                    "OriginalName": "--group",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
@@ -230,14 +230,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Delete a resource group",
@@ -269,14 +271,9 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Group",
-                    "OriginalName": "--group",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
@@ -295,7 +292,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [

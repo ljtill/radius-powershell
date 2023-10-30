@@ -29,14 +29,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Download the bicep compiler",
@@ -76,14 +78,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Delete installed Bicep compiler",
@@ -135,14 +139,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Publish a Bicep file to an OCI registry",
