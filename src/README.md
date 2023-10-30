@@ -39,8 +39,8 @@
 | ---            | ---                             | ---                              |
 | Initialize     | rad init                        | Initialize-Radius                |
 | ---            | ---                             | ---                              |
-| Install        | rad install kubernetes          | Install-RadiusKubernetes         |
-| Uninstall      | rad uninstall kubernetes        | Uninstall-RadiusKubernetes       |
+| Install        | rad install kubernetes          | Install-Radius                   |
+| Uninstall      | rad uninstall kubernetes        | Uninstall-Radius                 |
 | ---            | ---                             | ---                              |
 | Recipe         | rad recipe list                 | Get-RadiusRecipe                 |
 | Recipe         | rad recipe show                 | Get-RadiusRecipeDetail           |
