@@ -22,10 +22,13 @@ $Params = @{
     PowerShellVersion = "7.2.0"
 }
 
-Write-Verbose -Message "Generating Radius module..."
+Write-Verbose -Message "Generating module source..."
 Export-CrescendoModule -ConfigurationFile $commands -ModuleName "./Radius.psm1" -Force
 
 Write-Verbose -Message "Updating module manifest..."
 Update-ModuleManifest @Params
+
+Write-Verbose -Message "Importing Radius module..."
+Import-Module "./Radius.psd1" -Force
 
 Pop-Location
