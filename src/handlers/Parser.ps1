@@ -17,29 +17,30 @@ function global:Parser {
         }
         else {
             # Check if the result contains an error message
-            if ($result -match 'Error: (?<ErrorMessage>.+)') {
-                # Extract the error message
-                $errorMessage = $matches['ErrorMessage']
+            $pattern = [regex]::Match($result, '(?s)Error: (?<ErrorMessage>.*?)(?=\nTrace|$)')
 
-                # Try to extract the TraceId from the result
-                $traceId = $null
-                $result -match 'TraceId: (?<TraceId>.+)' | Out-Null
-                if ($matches['TraceId']) {
-                    $traceId = $matches['TraceId']
+            if ($pattern.Success) {
+                # Extract the error message and replace newline characters
+                $errorMessage = $pattern.Groups['ErrorMessage'].Value
+
+                if (Test-Json -Json $errorMessage -ErrorSilentlyContinue) {
+                    $errorMessage = ($errorMessage | ConvertFrom-Json).message
                 }
 
-                # Create a custom exception message with explicit line breaks
-                $exceptionMessage = "$errorMessage"
-                if ($traceId) {
+                # Try to extract the TraceId from the result
+                $pattern = [regex]::Match($result, 'TraceId: (?<TraceId>.+)')
+
+                # Write the trace id to the verbose stream
+                if ($pattern.Success) {
+                    $traceId = $pattern.Groups['TraceId'].Value
                     Write-Verbose "TraceId: $traceId"
                 }
 
                 # Throw an exception with the custom error message
-                throw "$exceptionMessage"
+                throw "$errorMessage"
             }
             else {
                 # If it's not JSON or an error message, assume it's standard output
-                # return ($result -split "`n")
                 return $result.Trim("`r", "`n")
             }
         }
