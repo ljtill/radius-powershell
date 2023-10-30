@@ -39,11 +39,12 @@
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "DefaultValue": "json",
+                    "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('json','table')]"
+                        "[ValidateSet('JSON','Table')]"
                     ]
                 }
             ],
@@ -108,11 +109,12 @@
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "DefaultValue": "json",
+                    "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('json','table')]"
+                        "[ValidateSet('JSON','Table')]"
                     ]
                 }
             ],
@@ -183,11 +185,12 @@
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "DefaultValue": "json",
+                    "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('json','table')]"
+                        "[ValidateSet('JSON','Table')]"
                     ]
                 }
             ],
@@ -252,11 +255,12 @@
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "DefaultValue": "json",
+                    "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('json','table')]"
+                        "[ValidateSet('JSON','Table')]"
                     ]
                 }
             ],
@@ -315,11 +319,12 @@
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "DefaultValue": "json",
+                    "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('json','table')]"
+                        "[ValidateSet('JSON','Table')]"
                     ]
                 }
             ],
@@ -390,11 +395,12 @@
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "DefaultValue": "json",
+                    "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('json','table')]"
+                        "[ValidateSet('JSON','Table')]"
                     ]
                 }
             ],

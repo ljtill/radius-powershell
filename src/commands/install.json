@@ -3,11 +3,10 @@
     "commands": [
         {
             "Verb": "Install",
-            "Noun": "RadiusKubernetes",
+            "Noun": "Radius",
             "OriginalName": "rad",
             "OriginalCommandElements": [
-                "install",
-                "kubernetes"
+                "install"
             ],
             "Platform": [
                 "Windows",
@@ -18,6 +17,18 @@
             "SupportsTransactions": false,
             "NoInvocation": false,
             "Parameters": [
+                {
+                    "Name": "Platform",
+                    "OriginalName": "",
+                    "OriginalPosition": 1,
+                    "DefaultValue": "Kubernetes",
+                    "ParameterType": "string",
+                    "Mandatory": true,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('Kubernetes')]"
+                    ]
+                },
                 {
                     "Name": "Chart",
                     "OriginalName": "--chart",
@@ -51,11 +62,12 @@
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "DefaultValue": "json",
+                    "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('json','table')]"
+                        "[ValidateSet('JSON','Table')]"
                     ]
                 }
             ],
