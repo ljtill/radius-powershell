@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/30/2023 16:12:32
+# Generated at: 10/30/2023 21:44:58
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -49,10 +49,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -96,7 +96,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -237,10 +237,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -294,7 +294,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -441,10 +441,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -508,7 +508,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -657,10 +657,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -714,7 +714,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -857,10 +857,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -904,7 +904,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -1047,10 +1047,10 @@ param(
 [switch]$Force,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -1114,7 +1114,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -1257,10 +1257,10 @@ function Install-RadiusBicep
 param(
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -1284,7 +1284,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -1411,10 +1411,10 @@ function Uninstall-RadiusBicep
 param(
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -1438,7 +1438,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -1569,10 +1569,10 @@ param(
 [string]$Target,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -1616,7 +1616,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -1753,10 +1753,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -1790,7 +1790,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -1919,17 +1919,17 @@ function Get-RadiusCredentialDetail
 [CmdletBinding()]
 
 param(
-[ValidateSet('azure','aws')]
+[ValidateSet('Azure','AWS')]
 [Parameter(Mandatory=$true)]
 [string]$Provider,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -1943,7 +1943,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
          Workspace = @{
@@ -1973,7 +1973,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -2106,7 +2106,7 @@ function Register-RadiusCredential
 [CmdletBinding()]
 
 param(
-[ValidateSet('azure','aws')]
+[ValidateSet('Azure','AWS')]
 [Parameter(Mandatory=$true)]
 [string]$Provider,
 [Parameter()]
@@ -2119,10 +2119,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -2136,7 +2136,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
          ClientId = @{
@@ -2196,7 +2196,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -2341,17 +2341,17 @@ function Unregister-RadiusCredential
 [CmdletBinding()]
 
 param(
-[ValidateSet('azure','aws')]
+[ValidateSet('Azure','AWS')]
 [Parameter(Mandatory=$true)]
 [string]$Provider,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -2365,7 +2365,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
          Workspace = @{
@@ -2395,7 +2395,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -2532,10 +2532,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -2569,7 +2569,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -2711,10 +2711,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -2798,7 +2798,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -2952,10 +2952,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -2999,7 +2999,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -3140,10 +3140,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -3197,7 +3197,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -3344,10 +3344,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -3411,7 +3411,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -3562,10 +3562,10 @@ param(
 [switch]$Force,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -3629,7 +3629,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -3776,10 +3776,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -3823,7 +3823,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -3976,10 +3976,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -4093,7 +4093,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -4258,10 +4258,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -4295,7 +4295,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -4430,10 +4430,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -4477,7 +4477,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -4616,10 +4616,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -4663,7 +4663,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -4804,10 +4804,10 @@ param(
 [switch]$Force,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -4861,7 +4861,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -5004,10 +5004,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -5051,7 +5051,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -5188,10 +5188,10 @@ param(
 [switch]$Full,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -5225,7 +5225,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -5347,12 +5347,16 @@ Original Command: rad init
 }
 
 
-function Install-RadiusKubernetes
+function Install-Radius
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[ValidateSet('Kubernetes')]
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="Kubernetes")]
+[string]$Platform = "Kubernetes",
 [Parameter()]
 [string]$Chart,
 [Parameter()]
@@ -5363,16 +5367,26 @@ param(
 [array]$Set,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Platform = @{
+               OriginalName = ''
+               OriginalPosition = '1'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
+               ArgumentTransformType = 'inline'
+               }
          Chart = @{
                OriginalName = '--chart'
                OriginalPosition = '0'
@@ -5430,7 +5444,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -5448,7 +5462,6 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'install'
-    $__commandArgs += 'kubernetes'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -5529,6 +5542,10 @@ PROCESS {
 .DESCRIPTION
 Installs Radius onto a Kubernetes cluster
 
+.PARAMETER Platform
+
+
+
 .PARAMETER Chart
 
 
@@ -5579,10 +5596,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -5636,7 +5653,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -5785,10 +5802,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -5862,7 +5879,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -6027,10 +6044,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -6144,7 +6161,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -6317,10 +6334,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -6394,7 +6411,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -6549,10 +6566,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -6616,7 +6633,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -6769,10 +6786,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -6846,7 +6863,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -7009,10 +7026,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -7116,7 +7133,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -7285,10 +7302,10 @@ param(
 [switch]$Force,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -7362,7 +7379,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -7521,10 +7538,10 @@ param(
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -7608,7 +7625,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -7750,26 +7767,40 @@ Original Command: rad run
 }
 
 
-function Uninstall-RadiusKubernetes
+function Uninstall-Radius
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
 
 param(
+[ValidateSet('Kubernetes')]
+[Parameter(Mandatory=$true)]
+[PSDefaultValue(Value="Kubernetes")]
+[string]$Platform = "Kubernetes",
 [Parameter()]
 [string]$KubeContext,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
+         Platform = @{
+               OriginalName = ''
+               OriginalPosition = '1'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
+               ArgumentTransformType = 'inline'
+               }
          KubeContext = @{
                OriginalName = '--kubecontext'
                OriginalPosition = '0'
@@ -7797,7 +7828,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -7815,7 +7846,6 @@ PROCESS {
     $MyInvocation.MyCommand.Parameters.Values.Where({$_.SwitchParameter -and $_.Name -notmatch "Debug|Whatif|Confirm|Verbose" -and ! $__boundParameters[$_.Name]}).ForEach({$__boundParameters[$_.Name] = [switch]::new($false)})
     if ($__boundParameters["Debug"]){wait-debugger}
     $__commandArgs += 'uninstall'
-    $__commandArgs += 'kubernetes'
     foreach ($paramName in $__boundParameters.Keys|
             Where-Object {!$__PARAMETERMAP[$_].ApplyToExecutable}|
             Where-Object {!$__PARAMETERMAP[$_].ExcludeAsArgument}|
@@ -7896,6 +7926,10 @@ PROCESS {
 .DESCRIPTION
 Uninstalls Radius onto a Kubernetes cluster
 
+.PARAMETER Platform
+
+
+
 .PARAMETER KubeContext
 
 
@@ -7930,10 +7964,10 @@ param(
 [switch]$CLI,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -7967,7 +8001,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -8252,10 +8286,10 @@ param(
 [string]$Name,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -8289,7 +8323,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -8418,9 +8452,10 @@ function New-RadiusWorkspace
 [CmdletBinding()]
 
 param(
-[ValidateSet('kubernetes')]
+[ValidateSet('Kubernetes')]
 [Parameter(Mandatory=$true)]
-[string]$Provider,
+[PSDefaultValue(Value="JSON")]
+[string]$Platform = "JSON",
 [Parameter()]
 [string]$Name,
 [Parameter()]
@@ -8433,24 +8468,24 @@ param(
 [string]$Group,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Provider = @{
+         Platform = @{
                OriginalName = ''
                OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
          Name = @{
@@ -8520,7 +8555,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -8619,7 +8654,7 @@ PROCESS {
 .DESCRIPTION
 Create a workspace
 
-.PARAMETER Provider
+.PARAMETER Platform
 
 
 
@@ -8675,10 +8710,10 @@ param(
 [switch]$Force,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -8722,7 +8757,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
@@ -8859,10 +8894,10 @@ param(
 [string]$Name,
 [Parameter()]
 [string]$Config,
-[ValidateSet('json','table')]
+[ValidateSet('JSON','Table')]
 [Parameter()]
-[PSDefaultValue(Value="json")]
-[string]$Output = "json"
+[PSDefaultValue(Value="JSON")]
+[string]$Output = "JSON"
     )
 
 BEGIN {
@@ -8896,7 +8931,7 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
+               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
                ArgumentTransformType = 'inline'
                }
     }
