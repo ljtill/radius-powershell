@@ -229,7 +229,7 @@
                     "Name": "Name",
                     "OriginalName": "",
                     "ParameterType": "string",
-                    "Mandatory": true
+                    "Mandatory": false
                 },
                 {
                     "Name": "Application",
