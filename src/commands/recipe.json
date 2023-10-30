@@ -47,7 +47,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -86,6 +89,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -124,7 +128,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -163,6 +170,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -225,7 +233,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -264,6 +275,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -302,7 +314,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [

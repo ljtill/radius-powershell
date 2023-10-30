@@ -21,6 +21,7 @@
                 {
                     "Name": "ResourceType",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -53,7 +54,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -92,12 +96,14 @@
                 {
                     "Name": "ResourceType",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -130,7 +136,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -169,12 +178,14 @@
                 {
                     "Name": "ResourceType",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -225,7 +236,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -264,12 +278,14 @@
                 {
                     "Name": "ResourceType",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
@@ -277,7 +293,7 @@
                     "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
@@ -302,14 +318,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Delete a Radius resource",

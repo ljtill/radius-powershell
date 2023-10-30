@@ -19,12 +19,6 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "Workspace",
-                    "OriginalName": "--workspace",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
                     "Name": "Config",
                     "OriginalName": "--config",
                     "ParameterType": "string",
@@ -74,14 +68,9 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Workspace",
-                    "OriginalName": "--workspace",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Config",
@@ -94,7 +83,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -133,6 +125,7 @@
                 {
                     "Name": "Provider",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true,
                     "AdditionalParameterAttributes": [
@@ -142,6 +135,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
@@ -170,12 +164,6 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Workspace",
-                    "OriginalName": "--workspace",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
                     "Name": "Config",
                     "OriginalName": "--config",
                     "ParameterType": "string",
@@ -186,7 +174,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -225,12 +216,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Workspace",
-                    "OriginalName": "--workspace",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
@@ -251,14 +237,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Delete local workspaces",
@@ -290,12 +278,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Workspace",
-                    "OriginalName": "--workspace",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
@@ -310,7 +293,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [

@@ -22,7 +22,7 @@
                     "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
@@ -41,7 +41,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -80,14 +83,9 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Application",
-                    "OriginalName": "--application",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Group",
@@ -112,7 +110,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -151,12 +152,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Application",
-                    "OriginalName": "--application",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
@@ -189,7 +185,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -228,12 +227,7 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "ParameterType": "string",
-                    "Mandatory": false
-                },
-                {
-                    "Name": "Application",
-                    "OriginalName": "--application",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
@@ -260,7 +254,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -299,14 +296,9 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Application",
-                    "OriginalName": "--application",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
@@ -325,7 +317,10 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
@@ -349,7 +344,8 @@
             "Noun": "RadiusApplication",
             "OriginalName": "rad",
             "OriginalCommandElements": [
-                "application"
+                "application",
+                "delete"
             ],
             "Platform": [
                 "Windows",
@@ -363,20 +359,15 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
-                },
-                {
-                    "Name": "Application",
-                    "OriginalName": "--application",
-                    "ParameterType": "string",
-                    "Mandatory": false
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
@@ -401,14 +392,16 @@
                     "OriginalName": "--output",
                     "DefaultValue": "json",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": false,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('json','table')]"
+                    ]
                 }
             ],
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Delete Radius Application",
