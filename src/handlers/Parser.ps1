@@ -23,7 +23,7 @@ function global:Parser {
                 # Extract the error message and replace newline characters
                 $errorMessage = $pattern.Groups['ErrorMessage'].Value
 
-                if (Test-Json -Json $errorMessage -ErrorSilentlyContinue) {
+                if (Test-Json -Json $errorMessage -ErrorAction SilentlyContinue) {
                     $errorMessage = ($errorMessage | ConvertFrom-Json).message
                 }
 
