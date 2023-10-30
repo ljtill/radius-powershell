@@ -23,7 +23,10 @@
                     "OriginalName": "",
                     "OriginalPosition": 1,
                     "ParameterType": "string",
-                    "Mandatory": true
+                    "Mandatory": true,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]"
+                    ]
                 },
                 {
                     "Name": "Application",
@@ -32,7 +35,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Group",
+                    "Name": "ResourceGroup",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true
@@ -99,7 +102,10 @@
                     "OriginalName": "",
                     "OriginalPosition": 1,
                     "ParameterType": "string",
-                    "Mandatory": true
+                    "Mandatory": true,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]"
+                    ]
                 },
                 {
                     "Name": "Name",
@@ -115,7 +121,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Group",
+                    "Name": "ResourceGroup",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true
@@ -181,8 +187,12 @@
                     "Name": "ResourceType",
                     "OriginalName": "",
                     "OriginalPosition": 1,
+                    "DefaultValue": "containers",
                     "ParameterType": "string",
-                    "Mandatory": true
+                    "Mandatory": true,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('containers')]"
+                    ]
                 },
                 {
                     "Name": "Name",
@@ -204,7 +214,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Group",
+                    "Name": "ResourceGroup",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": false
@@ -283,7 +293,10 @@
                     "OriginalName": "",
                     "OriginalPosition": 1,
                     "ParameterType": "string",
-                    "Mandatory": true
+                    "Mandatory": true,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]"
+                    ]
                 },
                 {
                     "Name": "Name",
@@ -293,7 +306,7 @@
                     "Mandatory": true
                 },
                 {
-                    "Name": "Group",
+                    "Name": "ResourceGroup",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true

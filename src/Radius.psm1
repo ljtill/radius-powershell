@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/30/2023 21:44:58
+# Generated at: 10/30/2023 22:34:18
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -44,7 +44,7 @@ function Get-RadiusApplication
 
 param(
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -59,7 +59,7 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -195,7 +195,7 @@ PROCESS {
 .DESCRIPTION
 List Radius Applications
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -232,7 +232,7 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -257,7 +257,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -397,7 +397,7 @@ Show Radius Application details
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -436,7 +436,7 @@ param(
 [Parameter()]
 [string]$Environment,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -471,7 +471,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -615,7 +615,7 @@ Shows the Connections for Radius Application
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -652,7 +652,7 @@ param(
 [Parameter()]
 [string]$Name,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -677,7 +677,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -817,7 +817,7 @@ Show Radius Application status
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -1040,7 +1040,7 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -1067,7 +1067,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -1217,7 +1217,7 @@ Delete Radius Application
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -2703,8 +2703,8 @@ param(
 [string]$Application,
 [Parameter()]
 [string]$Environment,
-[Parameter()]
-[string]$Group,
+[Parameter(Mandatory=$true)]
+[string]$ResourceGroup,
 [Parameter()]
 [array]$Parameters,
 [Parameter()]
@@ -2751,7 +2751,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -2804,7 +2804,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -2908,7 +2908,7 @@ Deploy Bicep file
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -2947,7 +2947,7 @@ function Get-RadiusEnvironment
 
 param(
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -2962,7 +2962,7 @@ BEGIN {
     $PSNativeCommandUseErrorActionPreference = $false
     $__CrescendoNativeErrorQueue = [System.Collections.Queue]::new()
     $__PARAMETERMAP = @{
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -3098,7 +3098,7 @@ PROCESS {
 .DESCRIPTION
 List environments
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -3135,7 +3135,7 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -3160,7 +3160,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -3300,7 +3300,7 @@ Show environment details
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -3337,7 +3337,7 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Namespace,
 [Parameter()]
@@ -3364,7 +3364,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -3514,7 +3514,7 @@ Create a new Radius Environment
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -3555,7 +3555,7 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -3582,7 +3582,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -3732,7 +3732,7 @@ Delete environment
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -3971,7 +3971,7 @@ param(
 [Parameter()]
 [switch]$ClearAzure,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -4056,7 +4056,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -4220,7 +4220,7 @@ Update environment configuration
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -5591,7 +5591,7 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Environment,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -5616,7 +5616,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -5756,7 +5756,7 @@ List recipes
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -5797,7 +5797,7 @@ param(
 [Parameter()]
 [string]$Environment,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter(Mandatory=$true)]
 [string]$Workspace,
 [Parameter()]
@@ -5842,7 +5842,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -5990,7 +5990,7 @@ Show recipe details
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -6029,7 +6029,7 @@ param(
 [Parameter()]
 [string]$Environment,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [array]$Parameters,
 [Parameter()]
@@ -6074,7 +6074,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -6268,7 +6268,7 @@ Add a recipe to an environment
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -6327,7 +6327,7 @@ param(
 [Parameter()]
 [string]$Environment,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$ResourceType,
 [Parameter()]
@@ -6364,7 +6364,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -6518,7 +6518,7 @@ Unregister a recipe from an environment
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -6556,12 +6556,13 @@ function Get-RadiusResource
 [CmdletBinding()]
 
 param(
+[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]
 [Parameter(Mandatory=$true)]
 [string]$ResourceType,
 [Parameter()]
 [string]$Application,
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -6596,7 +6597,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -6740,7 +6741,7 @@ Lists resources
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -6774,6 +6775,7 @@ function Get-RadiusResourceDetail
 [CmdletBinding()]
 
 param(
+[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]
 [Parameter(Mandatory=$true)]
 [string]$ResourceType,
 [Parameter(Mandatory=$true)]
@@ -6781,7 +6783,7 @@ param(
 [Parameter()]
 [string]$Application,
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -6826,7 +6828,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -6974,7 +6976,7 @@ Show Radius resource details
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -7008,8 +7010,10 @@ function Get-RadiusResourceLogs
 [CmdletBinding()]
 
 param(
+[ValidateSet('containers')]
 [Parameter(Mandatory=$true)]
-[string]$ResourceType,
+[PSDefaultValue(Value="containers")]
+[string]$ResourceType = "containers",
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter()]
@@ -7017,7 +7021,7 @@ param(
 [Parameter()]
 [switch]$Follow,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Replica,
 [Parameter()]
@@ -7076,7 +7080,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -7248,7 +7252,7 @@ Read logs from a running containers resource
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -7290,12 +7294,13 @@ function Remove-RadiusResource
 [CmdletBinding()]
 
 param(
+[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]
 [Parameter(Mandatory=$true)]
 [string]$ResourceType,
 [Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter(Mandatory=$true)]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -7332,7 +7337,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -7486,7 +7491,7 @@ Delete a Radius resource
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -7531,7 +7536,7 @@ param(
 [Parameter()]
 [string]$Environment,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [array]$Parameters,
 [Parameter()]
@@ -7578,7 +7583,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -7735,7 +7740,7 @@ Run an application specified by a Bicep file
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 
@@ -8465,7 +8470,7 @@ param(
 [Parameter()]
 [switch]$Force,
 [Parameter()]
-[string]$Group,
+[string]$ResourceGroup,
 [Parameter()]
 [string]$Config,
 [ValidateSet('JSON','Table')]
@@ -8528,7 +8533,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Group = @{
+         ResourceGroup = @{
                OriginalName = '--group'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -8674,7 +8679,7 @@ Create a workspace
 
 
 
-.PARAMETER Group
+.PARAMETER ResourceGroup
 
 
 

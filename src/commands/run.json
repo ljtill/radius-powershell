@@ -37,7 +37,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Group",
+                    "Name": "ResourceGroup",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": false
