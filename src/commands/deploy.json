@@ -37,10 +37,10 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Group",
+                    "Name": "ResourceGroup",
                     "OriginalName": "--group",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Parameters",
@@ -75,8 +75,7 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Deploy Bicep file",
