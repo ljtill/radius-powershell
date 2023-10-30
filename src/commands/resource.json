@@ -19,13 +19,14 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "ResourceType",
+                    "Name": "Type",
                     "OriginalName": "",
                     "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]"
+                        "[ValidateSet('Containers', 'Gateways', 'HttpRoutes', 'PubSubBrokers', 'Extenders', 'MongoDatabases', 'RabbitMQMessageQueues', 'RedisCaches', 'SqlDatabases', 'StateStores', 'SecretStores')]"
                     ]
                 },
                 {
@@ -35,7 +36,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true
@@ -98,13 +99,14 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "ResourceType",
+                    "Name": "Type",
                     "OriginalName": "",
                     "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]"
+                        "[ValidateSet('Containers', 'Gateways', 'HttpRoutes', 'PubSubBrokers', 'Extenders', 'MongoDatabases', 'RabbitMQMessageQueues', 'RedisCaches', 'SqlDatabases', 'StateStores', 'SecretStores')]"
                     ]
                 },
                 {
@@ -121,7 +123,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true
@@ -184,7 +186,7 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "ResourceType",
+                    "Name": "Type",
                     "OriginalName": "",
                     "OriginalPosition": 1,
                     "DefaultValue": "containers",
@@ -214,7 +216,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": false
@@ -289,13 +291,14 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "ResourceType",
+                    "Name": "Type",
                     "OriginalName": "",
                     "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true,
+                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)",
                     "AdditionalParameterAttributes": [
-                        "[ValidateSet('containers', 'gateways', 'httpRoutes', 'pubSubBrokers', 'extenders', 'mongoDatabases', 'rabbitMQMessageQueues', 'redisCaches', 'sqlDatabases', 'stateStores', 'secretStores')]"
+                        "[ValidateSet('Containers', 'Gateways', 'HttpRoutes', 'PubSubBrokers', 'Extenders', 'MongoDatabases', 'RabbitMQMessageQueues', 'RedisCaches', 'SqlDatabases', 'StateStores', 'SecretStores')]"
                     ]
                 },
                 {
@@ -306,7 +309,7 @@
                     "Mandatory": true
                 },
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true

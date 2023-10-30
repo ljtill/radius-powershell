@@ -19,7 +19,7 @@
             "NoInvocation": false,
             "Parameters": [
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true
@@ -89,7 +89,7 @@
                     "Mandatory": true
                 },
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true
@@ -165,7 +165,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": false
@@ -235,7 +235,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": false
@@ -369,7 +369,7 @@
                     "Mandatory": true
                 },
                 {
-                    "Name": "ResourceGroup",
+                    "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
                     "Mandatory": true
