@@ -33,7 +33,7 @@
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "DefaultValue": "json",
+                    "DefaultValue": "table",
                     "ParameterType": "string",
                     "Mandatory": false
                 }
@@ -115,12 +115,11 @@
         },
         {
             "Verb": "New",
-            "Noun": "RadiusWorkspaceKubernetes",
+            "Noun": "RadiusWorkspace",
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "workspace",
-                "create",
-                "kubernetes"
+                "create"
             ],
             "Platform": [
                 "Windows",
@@ -132,10 +131,19 @@
             "NoInvocation": false,
             "Parameters": [
                 {
+                    "Name": "Provider",
+                    "OriginalName": "",
+                    "ParameterType": "string",
+                    "Mandatory": true,
+                    "AdditionalParameterAttributes": [
+                        "[ValidateSet('kubernetes')]"
+                    ]
+                },
+                {
                     "Name": "Name",
                     "OriginalName": "",
                     "ParameterType": "string",
-                    "Mandatory": true
+                    "Mandatory": false
                 },
                 {
                     "Name": "Context",
@@ -218,7 +226,7 @@
                     "Name": "Name",
                     "OriginalName": "",
                     "ParameterType": "string",
-                    "Mandatory": true
+                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
@@ -283,7 +291,7 @@
                     "Name": "Name",
                     "OriginalName": "",
                     "ParameterType": "string",
-                    "Mandatory": true
+                    "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
