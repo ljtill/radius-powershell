@@ -81,15 +81,14 @@ FunctionsToExport = 'Get-RadiusApplication', 'Get-RadiusApplicationDetail',
                'Update-RadiusEnvironment', 'Get-RadiusResourceGroup', 
                'Get-RadiusResourceGroupDetail', 'New-RadiusResourceGroup', 
                'Remove-RadiusResourceGroup', 'Switch-RadiusResourceGroup', 
-               'Initialize-Radius', 'Install-RadiusKubernetes', 'Get-RadiusRecipe', 
+               'Initialize-Radius', 'Install-Radius', 'Get-RadiusRecipe', 
                'Get-RadiusRecipeDetail', 'Register-RadiusRecipe', 
                'Unregister-RadiusRecipe', 'Get-RadiusResource', 
                'Get-RadiusResourceDetail', 'Get-RadiusResourceLogs', 
-               'Remove-RadiusResource', 'Invoke-Radius', 
-               'Uninstall-RadiusKubernetes', 'Get-RadiusVersion', 
-               'Get-RadiusWorkspace', 'Get-RadiusWorkspaceDetail', 
-               'New-RadiusWorkspace', 'Remove-RadiusWorkspace', 
-               'Switch-RadiusWorkspace'
+               'Remove-RadiusResource', 'Invoke-Radius', 'Uninstall-Radius', 
+               'Get-RadiusVersion', 'Get-RadiusWorkspace', 
+               'Get-RadiusWorkspaceDetail', 'New-RadiusWorkspace', 
+               'Remove-RadiusWorkspace', 'Switch-RadiusWorkspace'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()
@@ -112,11 +111,11 @@ AliasesToExport = @()
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
 
-    #CrescendoGenerated of this module
-    CrescendoGenerated = '10/30/2023 16:12:32'
-
     #CrescendoVersion of this module
     CrescendoVersion = '1.1.0'
+
+    #CrescendoGenerated of this module
+    CrescendoGenerated = '10/30/2023 21:44:58'
 
     PSData = @{
 
