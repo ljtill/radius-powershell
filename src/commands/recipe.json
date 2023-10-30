@@ -22,7 +22,7 @@
                     "Name": "Environment",
                     "OriginalName": "--environment",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Group",
@@ -93,7 +93,7 @@
                     "Name": "ResourceType",
                     "OriginalName": "--resource-type",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Environment",
@@ -111,7 +111,7 @@
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Config",

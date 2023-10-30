@@ -93,7 +93,7 @@
                     "Name": "Group",
                     "OriginalName": "--group",
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
@@ -385,7 +385,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Yes",
+                    "Name": "Force",
                     "OriginalName": "--yes",
                     "ParameterType": "switch",
                     "Mandatory": false

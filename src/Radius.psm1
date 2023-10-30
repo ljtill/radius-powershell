@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/30/2023 10:50:10
+# Generated at: 10/30/2023 12:23:17
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -232,7 +232,7 @@ param(
 [string]$Name,
 [Parameter()]
 [string]$Application,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -1105,7 +1105,7 @@ param(
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
-[switch]$Yes,
+[switch]$Force,
 [Parameter()]
 [string]$Config,
 [Parameter()]
@@ -1157,7 +1157,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Yes = @{
+         Force = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -1298,7 +1298,7 @@ Delete Radius Application
 
 
 
-.PARAMETER Yes
+.PARAMETER Force
 
 
 
@@ -3012,7 +3012,7 @@ function Get-RadiusEnvironment
 param(
 [Parameter()]
 [string]$Environment,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -3215,7 +3215,7 @@ param(
 [string]$Name,
 [Parameter()]
 [string]$Environment,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -3432,7 +3432,7 @@ param(
 [string]$Name,
 [Parameter()]
 [string]$Environment,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Namespace,
@@ -3670,7 +3670,7 @@ param(
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
-[switch]$Yes,
+[switch]$Force,
 [Parameter()]
 [string]$Config,
 [Parameter()]
@@ -3722,7 +3722,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Yes = @{
+         Force = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -3864,7 +3864,7 @@ Delete environment
 
 
 
-.PARAMETER Yes
+.PARAMETER Force
 
 
 
@@ -4970,7 +4970,7 @@ param(
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
-[switch]$Yes,
+[switch]$Force,
 [Parameter()]
 [string]$Config,
 [Parameter()]
@@ -5012,7 +5012,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Yes = @{
+         Force = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -5150,7 +5150,7 @@ Delete a resource group
 
 
 
-.PARAMETER Yes
+.PARAMETER Force
 
 
 
@@ -5766,7 +5766,7 @@ function Get-RadiusRecipe
 [CmdletBinding()]
 
 param(
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Environment,
 [Parameter()]
 [string]$Group,
@@ -5969,13 +5969,13 @@ function Get-RadiusRecipeDetail
 param(
 [Parameter(Mandatory=$true)]
 [string]$Name,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$ResourceType,
 [Parameter()]
 [string]$Environment,
 [Parameter()]
 [string]$Group,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Workspace,
 [Parameter()]
 [string]$Config,
@@ -6734,7 +6734,7 @@ param(
 [string]$ResourceType,
 [Parameter()]
 [string]$Application,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -6953,7 +6953,7 @@ param(
 [string]$Name,
 [Parameter()]
 [string]$Application,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -7470,7 +7470,7 @@ param(
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
-[switch]$Yes,
+[switch]$Force,
 [Parameter()]
 [string]$Config,
 [Parameter()]
@@ -7522,7 +7522,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Yes = @{
+         Force = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -7664,7 +7664,7 @@ Delete a Radius resource
 
 
 
-.PARAMETER Yes
+.PARAMETER Force
 
 
 
@@ -8904,7 +8904,7 @@ param(
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
-[switch]$Yes,
+[switch]$Force,
 [Parameter()]
 [string]$Config,
 [Parameter()]
@@ -8936,7 +8936,7 @@ BEGIN {
                ArgumentTransform = '$args'
                ArgumentTransformType = 'inline'
                }
-         Yes = @{
+         Force = @{
                OriginalName = '--yes'
                OriginalPosition = '0'
                Position = '2147483647'
@@ -9070,7 +9070,7 @@ Delete local workspaces
 
 
 
-.PARAMETER Yes
+.PARAMETER Force
 
 
 
@@ -9298,29 +9298,30 @@ function Parser {
         }
         else {
             # Check if the result contains an error message
-            if ($result -match 'Error: (?<ErrorMessage>.+)') {
-                # Extract the error message
-                $errorMessage = $matches['ErrorMessage']
+            $pattern = [regex]::Match($result, '(?s)Error: (?<ErrorMessage>.*?)(?=\nTrace|$)')
 
-                # Try to extract the TraceId from the result
-                $traceId = $null
-                $result -match 'TraceId: (?<TraceId>.+)' | Out-Null
-                if ($matches['TraceId']) {
-                    $traceId = $matches['TraceId']
+            if ($pattern.Success) {
+                # Extract the error message and replace newline characters
+                $errorMessage = $pattern.Groups['ErrorMessage'].Value
+
+                if (Test-Json -Json $errorMessage -ErrorSilentlyContinue) {
+                    $errorMessage = ($errorMessage | ConvertFrom-Json).message
                 }
 
-                # Create a custom exception message with explicit line breaks
-                $exceptionMessage = "$errorMessage"
-                if ($traceId) {
+                # Try to extract the TraceId from the result
+                $pattern = [regex]::Match($result, 'TraceId: (?<TraceId>.+)')
+
+                # Write the trace id to the verbose stream
+                if ($pattern.Success) {
+                    $traceId = $pattern.Groups['TraceId'].Value
                     Write-Verbose "TraceId: $traceId"
                 }
 
                 # Throw an exception with the custom error message
-                throw "$exceptionMessage"
+                throw "$errorMessage"
             }
             else {
                 # If it's not JSON or an error message, assume it's standard output
-                # return ($result -split "`n")
                 return $result.Trim("`r", "`n")
             }
         }

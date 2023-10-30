@@ -214,7 +214,7 @@
                     "Mandatory": false
                 },
                 {
-                    "Name": "Yes",
+                    "Name": "Force",
                     "OriginalName": "--yes",
                     "ParameterType": "switch",
                     "Mandatory": false
