@@ -8,12 +8,13 @@ Describe 'Testing functions' {
         Invoke-Expression -Command "kind create cluster -n radius -q"
 
         # Configuration
-        $configurationData = @{
+        $configuration = @{
             applicationName   = "default"
             credentialName    = "default"
             environmentName   = "default"
             resourceGroupName = "default"
             workspaceName     = "default"
+            containerName     = "default"
         }
 
         # Radius
@@ -25,6 +26,60 @@ Describe 'Testing functions' {
 
         # Kubernetes
         Invoke-Expression -Command "kind delete cluster -n radius -q"
+    }
+
+    BeforeEach {
+        New-RadiusWorkspace `
+            -Platform "Kubernetes" `
+            -Name $configuration.workspaceName `
+            -Force
+        $workspace = $configuration.workspaceName
+
+        New-RadiusResourceGroup `
+            -Name $configuration.resourceGroupName `
+            -Workspace $configuration.workspaceName
+        $resourceGroup = $configuration.resourceGroupName
+
+        New-RadiusEnvironment `
+            -Name $configuration.environmentName `
+            -Group $configuration.resourceGroupName `
+            -Workspace $configuration.workspaceName
+        $environment = $configuration.environmentName
+
+        New-RadiusDeployment `
+            -File $PSScriptRoot/templates/main.bicep `
+            -Environment $configuration.environmentName `
+            -Group $configuration.resourceGroupName `
+            -Workspace $configuration.workspaceName `
+            -Parameters @{ environmentName = $configuration.environmentName; applicationName = $configuration.applicationName; containerName = $configuration.containerName }
+
+        $application = $configuration.applicationName
+        $container = $configuration.containerName
+    }
+    AfterEach {
+        Remove-RadiusApplication `
+            -Name $configuration.applicationName `
+            -Group $configuration.resourceGroupName `
+            -Workspace $configuration.workspaceName `
+            -Force
+        Remove-RadiusEnvironment `
+            -Name $configuration.environmentName `
+            -Group $configuration.resourceGroupName `
+            -Workspace $configuration.workspaceName `
+            -Force
+        Remove-RadiusResourceGroup `
+            -Name $configuration.resourceGroupName `
+            -Workspace $configuration.workspaceName `
+            -Force
+        Remove-RadiusWorkspace `
+            -Name $configuration.workspaceName `
+            -Force
+    }
+
+    Context 'Deploy' {
+        Describe 'New-RadiusDeployment' {
+            # TODO: Implement
+        }
     }
 
     Context 'Workspace' {
@@ -65,16 +120,6 @@ Describe 'Testing functions' {
     }
 
     Context 'Resource Group' {
-        BeforeAll {
-            New-RadiusWorkspace -Platform "Kubernetes" -Name $configurationData.workspaceName
-            # BUG: Command does not return all required data
-            # $workspace = (Get-RadiusWorkspaceDetail -Name $configurationData.workspaceName).connection.context
-            $workspace = $configurationData.workspaceName
-        }
-        AfterAll {
-            Remove-RadiusWorkspace -Name $configurationData.workspaceName -Force
-        }
-
         Describe 'New-RadiusResourceGroup' {
             It 'Creates resource groups' {
                 { New-RadiusResourceGroup -Name 'group-1' -Workspace $workspace } | Should -Not -Throw
@@ -111,19 +156,6 @@ Describe 'Testing functions' {
     }
 
     Context 'Environment' {
-        BeforeAll {
-            New-RadiusWorkspace -Platform "Kubernetes" -Name $configurationData.workspaceName
-            # BUG: Command does not return all required data
-            # $workspace = (Get-RadiusWorkspaceDetail -Name $configurationData.workspaceName).connection.context
-            $workspace = $configurationData.workspaceName
-            New-RadiusResourceGroup -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName
-            $resourceGroup = (Get-RadiusResourceGroupDetail -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName).name
-        }
-        AfterAll {
-            Remove-RadiusResourceGroup -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName -Force
-            Remove-RadiusWorkspace -Name $configurationData.workspaceName -Force
-        }
-
         Describe 'New-RadiusEnvironment' {
             It 'Creates environments' {
                 { New-RadiusEnvironment -Name "environment-1" -Group $resourceGroup -Workspace $workspace } | SHould -Not -Throw
@@ -156,10 +188,10 @@ Describe 'Testing functions' {
             }
         }
         Describe 'Update-RadiusEnvironment' {
-            It 'Clears providers (aws)' {
+            It 'Clears providers' {
                 { Update-RadiusEnvironment -Name "environment-1" -Group $resourceGroup -ClearAWS } | Should -Not -Throw
             }
-            It 'Clears providers (azure)' {
+            It 'Clears providers' {
                 { Update-RadiusEnvironment -Name "environment-1" -Group $resourceGroup -ClearAzure } | Should -Not -Throw
             }
         }
@@ -169,23 +201,9 @@ Describe 'Testing functions' {
                 { Remove-RadiusEnvironment -Name "environment-2" -Group $resourceGroup -Workspace $workspace -Force } | Should -Not -Throw
             }
         }
-
     }
 
     Context 'Recipe' {
-        BeforeAll {
-            New-RadiusWorkspace -Platform "Kubernetes" -Name $configurationData.workspaceName
-            # BUG: Command does not return all required data
-            # $workspace = (Get-RadiusWorkspaceDetail -Name $configurationData.workspaceName).connection.context
-            $workspace = $configurationData.workspaceName
-            New-RadiusResourceGroup -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName
-            $resourceGroup = (Get-RadiusResourceGroupDetail -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName).name
-        }
-        AfterAll {
-            Remove-RadiusResourceGroup -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName -Force
-            Remove-RadiusWorkspace -Name $configurationData.workspaceName -Force
-        }
-
         Describe 'Register-RadiusRecipe' {
             # TODO: Implement
         }
@@ -200,95 +218,44 @@ Describe 'Testing functions' {
         }
     }
 
-    Context 'Deploy' {
-        BeforeAll {}
-        AfterAll {}
-
-        Describe 'New-RadiusDeployment' {
-            It 'Deploys resources' {
-
-            }
-        }
-    }
-
     Context 'Resource' {
-        BeforeAll {
-            New-RadiusWorkspace -Platform "Kubernetes" -Name $configurationData.workspaceName
-            # BUG: Command does not return all required data
-            # $workspace = (Get-RadiusWorkspaceDetail -Name $configurationData.workspaceName).connection.context
-            $workspace = $configurationData.workspaceName
-            New-RadiusResourceGroup -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName
-            $resourceGroup = (Get-RadiusResourceGroupDetail -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName).name
-
-            # TODO: Deploy
-        }
-        AfterAll {
-            Remove-RadiusResourceGroup -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName -Force
-            Remove-RadiusWorkspace -Name $configurationData.workspaceName -Force
-        }
-
         Describe 'Get-RadiusResource' {
             It 'Returns resources' {
-                # $resources = Get-RadiusResource -ResourceType "containers" -Group $resourceGroup -Workspace $workspace
-                # $resources | Should -Not -BeNullOrEmpty
-                # $resources.location | Should -Be "global"
-                # $resources.name | Should -Be "name"
-                # $resources.type | Should -Be "Applications.Core/containers"
+                $resources = Get-RadiusResource -Type "Containers" -Group $resourceGroup -Workspace $workspace
+                $resources | Should -Not -BeNullOrEmpty
             }
         }
         Describe 'Get-RadiusResourceDetail' {
             It 'Returns resource' {
-                # $resource = Get-RadiusResourceDetail -Name "demo" -ResourceType "containers" -Group $resourceGroup -Workspace $workspace
-                # $resource | Should -Not -BeNullOrEmpty
-                # $resources.location | Should -Be "global"
-                # $resources.name | Should -Be "demo"
-                # $resources.type | Should -Be "Applications.Core/containers"
+                $resource = Get-RadiusResourceDetail -Type "Containers" -Name $container -Group $resourceGroup -Workspace $workspace
+                $resource | Should -Not -BeNullOrEmpty
+                $resource.location | Should -Be "global"
+                $resource.name | Should -Be $container
+                $resource.type | Should -Be "Applications.Core/containers"
             }
         }
         Describe 'Get-RadiusResourceLogs' {
-            It 'Returns logs' {
-                # TOOD: Implement
-            }
+            # TOOD: Implement
         }
         Describe 'Remove-RadiusResource' {
-            It 'Removes resource' {
-                # TODO: Implement
-            }
+            # TODO: Implement
         }
     }
 
     Context 'Application' {
-        BeforeAll {
-            New-RadiusWorkspace -Platform "Kubernetes" -Name $configurationData.workspaceName
-            # BUG: Command does not return all required data
-            # $workspace = (Get-RadiusWorkspaceDetail -Name $configurationData.workspaceName).connection.context
-            $workspace = $configurationData.workspaceName
-            New-RadiusResourceGroup -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName
-            $resourceGroup = (Get-RadiusResourceGroupDetail -Name $configurationData.resourceGroupName).name
-            New-RadiusEnvironment -Name $configurationData.environmentName -Group $configurationData.resourceGroupName -Workspace $configurationData.workspaceName
-            $environment = (Get-RadiusEnvironmentDetail -Name $configurationData.environmentName -Group $configurationData.resourceGroupName -Workspace $configurationData.workspaceName)
-
-            # TODO: Deploy
-        }
-        AfterAll {
-            Remove-RadiusEnvironment -Name $configurationData.environmentName -Group $configurationData.resourceGroupName -Workspace $configurationData.workspaceName -Force
-            Remove-RadiusResourceGroup -Name $configurationData.resourceGroupName -Workspace $configurationData.workspaceName -Force
-            Remove-RadiusWorkspace -Name $configurationData.workspaceName -Force
-        }
-
         Describe 'Get-RadiusApplication' {
             It 'Returns applications' {
-                # $applications = Get-RadiusApplication -Group $resourceGroup -Workspace $workspace
-                # $applications | Should -Not -BeNullOrEmpty
+                $applications = Get-RadiusApplication -Group $resourceGroup -Workspace $workspace
+                $applications | Should -Not -BeNullOrEmpty
             }
         }
         Describe 'Get-RadiusApplicationDetail' {
             It 'Returns application' {
-                # $application = Get-RadiusApplicationDetail -Name "application-1" -Group $resourceGroup -Workspace $workspace
-                # $application | Should -Not -BeNullOrEmpty
-                # $application.location | Should -Be "global"
-                # $application.name | Should -Be "application-1"
-                # $application.type | Should -Be "Applications.Core/applications"
+                $application = Get-RadiusApplicationDetail -Name "application-1" -Group $resourceGroup -Workspace $workspace
+                $application | Should -Not -BeNullOrEmpty
+                $application.location | Should -Be "global"
+                $application.name | Should -Be "application-1"
+                $application.type | Should -Be "Applications.Core/applications"
             }
         }
         Describe 'Get-RadiusApplicationConnections' {
@@ -303,10 +270,7 @@ Describe 'Testing functions' {
             }
         }
         Describe 'Get-RadiusApplicationStatus' {
-            It 'Returns an application status' {
-                # $status = Get-RadiusApplicationStatus -Name $applicationName -Group $resourceGroup -Workspace $workspace
-                # $status | Should -Not -BeNullOrEmpty
-            }
+            # TODO: Implement
         }
         Describe 'Switch-RadiusApplication' {
             # TODO: Implement
@@ -317,27 +281,11 @@ Describe 'Testing functions' {
     }
 
     Context 'Credential' {
-        BeforeAll {
-            New-RadiusWorkspace -Platform "Kubernetes" -Name $configurationData.workspaceName
-            # BUG: Command does not return all required data
-            # $workspace = (Get-RadiusWorkspaceDetail -Name $configurationData.workspaceName).connection.context
-            $workspace = $configurationData.workspaceName
-        }
-        AfterAll {
-            Remove-RadiusWorkspace -Name $configurationData.workspaceName -Force
-        }
-
         Describe 'Get-RadiusCredential' {
-            It 'Returns credentials' {
-                # $credentials = Get-RadiusCredential -Workspace $workspace
-                # $credentials | Should -Not -BeNullOrEmpty
-            }
+            # TODO: Implement
         }
         Describe 'Get-RadiusCredentialDetail' {
-            It 'Returns credential' {
-                # $credential = Get-RadiusCredentialDetail -Name $credentialName -Provider "Azure" -Workspace $workspace
-                # $credential | Should -Not -BeNullOrEmpty
-            }
+            # TODO: Implement
         }
         Describe 'Register-RadiusCredential' {
             # TODO: Implment
