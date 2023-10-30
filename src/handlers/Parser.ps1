@@ -34,12 +34,13 @@ function global:Parser {
                     Write-Verbose "TraceId: $traceId"
                 }
 
-                # Write an error with the custom exception message
-                Write-Error -Message "$exceptionMessage"
+                # Throw an exception with the custom error message
+                throw "$exceptionMessage"
             }
             else {
                 # If it's not JSON or an error message, assume it's standard output
-                return ($result -split "`n")[0]
+                # return ($result -split "`n")
+                return $result.Trim("`r", "`n")
             }
         }
     }
