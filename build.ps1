@@ -5,10 +5,10 @@ $rootPath = (Get-Item $PSScriptRoot)
 
 Push-Location -Path $rootPath/src
 
-Write-Verbose -Message "Retrieving configuration manifests..."
+Write-Verbose -Message "Retrieving configuration manifests..." -Verbose
 $commands = (Get-ChildItem "./commands" | Select-Object -ExpandProperty FullName)
 
-Write-Verbose -Message "Initializing handler functions..."
+Write-Verbose -Message "Initializing handler functions..." -Verbose
 . ./handlers/Parser.ps1
 
 $Params = @{
@@ -22,13 +22,13 @@ $Params = @{
     PowerShellVersion = "7.2.0"
 }
 
-Write-Verbose -Message "Generating module source..."
+Write-Verbose -Message "Generating module source..." -Verbose
 Export-CrescendoModule -ConfigurationFile $commands -ModuleName "./Radius.psm1" -Force
 
-Write-Verbose -Message "Updating module manifest..."
+Write-Verbose -Message "Updating module manifest..." -Verbose
 Update-ModuleManifest @Params
 
-Write-Verbose -Message "Importing Radius module..."
+Write-Verbose -Message "Importing Radius module..." -Verbose
 Import-Module "./Radius.psd1" -Force
 
 Pop-Location
