@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 11/01/2023 12:40:38
+# Generated at: 11/01/2023 13:09:22
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -71,7 +71,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -81,7 +81,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -91,7 +91,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -249,7 +249,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -259,7 +259,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -269,7 +269,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -279,7 +279,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -289,7 +289,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -453,7 +453,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -463,7 +463,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -473,7 +473,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -483,7 +483,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -493,7 +493,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -503,7 +503,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -669,7 +669,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -679,7 +679,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -689,7 +689,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -699,7 +699,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -709,7 +709,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -869,7 +869,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -879,7 +879,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -889,7 +889,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -899,7 +899,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1059,7 +1059,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1069,7 +1069,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1079,7 +1079,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1089,7 +1089,7 @@ BEGIN {
                }
          Force = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -1099,7 +1099,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1109,7 +1109,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1279,7 +1279,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1433,7 +1433,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1591,7 +1591,7 @@ BEGIN {
                }
          Target = @{
                OriginalName = '--target'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1601,7 +1601,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1611,7 +1611,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1775,7 +1775,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1785,7 +1785,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1938,7 +1938,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Provider = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1948,7 +1948,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1958,7 +1958,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -1968,7 +1968,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2131,7 +2131,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Provider = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2141,7 +2141,7 @@ BEGIN {
                }
          ClientId = @{
                OriginalName = '--client-id'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2151,7 +2151,7 @@ BEGIN {
                }
          ClientSecret = @{
                OriginalName = '--client-secret'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2161,7 +2161,7 @@ BEGIN {
                }
          TenantId = @{
                OriginalName = '--tenant-id'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2171,7 +2171,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2181,7 +2181,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2191,7 +2191,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2360,7 +2360,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Provider = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2370,7 +2370,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2380,7 +2380,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2390,7 +2390,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2554,7 +2554,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2564,7 +2564,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2723,7 +2723,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2733,7 +2733,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2743,7 +2743,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2753,7 +2753,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2763,7 +2763,7 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'hashtable'
                ApplyToExecutable = $False
@@ -2773,7 +2773,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2783,7 +2783,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2793,7 +2793,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2974,7 +2974,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2984,7 +2984,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2994,7 +2994,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3152,7 +3152,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3162,7 +3162,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3172,7 +3172,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3182,7 +3182,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3192,7 +3192,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3356,7 +3356,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3366,7 +3366,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3376,7 +3376,7 @@ BEGIN {
                }
          Namespace = @{
                OriginalName = '--namespace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3386,7 +3386,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3396,7 +3396,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3406,7 +3406,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3574,7 +3574,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3584,7 +3584,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3594,7 +3594,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3604,7 +3604,7 @@ BEGIN {
                }
          Force = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -3614,7 +3614,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3624,7 +3624,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3788,7 +3788,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3798,7 +3798,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3808,7 +3808,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3818,7 +3818,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3988,7 +3988,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -3998,7 +3998,7 @@ BEGIN {
                }
          AWSAccountId = @{
                OriginalName = '--aws-account-id'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4008,7 +4008,7 @@ BEGIN {
                }
          AWSRegion = @{
                OriginalName = '--aws-region'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4018,7 +4018,7 @@ BEGIN {
                }
          AzureResourceGroup = @{
                OriginalName = '--azure-resource-group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4028,7 +4028,7 @@ BEGIN {
                }
          AzureSubscriptionId = @{
                OriginalName = '--azure-subscription-id'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4038,7 +4038,7 @@ BEGIN {
                }
          ClearAWS = @{
                OriginalName = '--clear-aws'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -4048,7 +4048,7 @@ BEGIN {
                }
          ClearAzure = @{
                OriginalName = '--clear-azure'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -4058,7 +4058,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4068,7 +4068,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '8'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4078,7 +4078,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '9'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4088,7 +4088,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '10'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4280,7 +4280,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4290,7 +4290,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4442,7 +4442,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4452,7 +4452,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4462,7 +4462,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4472,7 +4472,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4628,7 +4628,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4638,7 +4638,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4648,7 +4648,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4658,7 +4658,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4816,7 +4816,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4826,7 +4826,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4836,7 +4836,7 @@ BEGIN {
                }
          Force = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -4846,7 +4846,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -4856,7 +4856,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5016,7 +5016,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5026,7 +5026,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5036,7 +5036,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5046,7 +5046,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5210,7 +5210,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5220,7 +5220,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5379,7 +5379,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Platform = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5389,7 +5389,7 @@ BEGIN {
                }
          Chart = @{
                OriginalName = '--chart'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5399,7 +5399,7 @@ BEGIN {
                }
          KubeContext = @{
                OriginalName = '--kubecontext'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5409,7 +5409,7 @@ BEGIN {
                }
          Reinstall = @{
                OriginalName = '--reinstall'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5419,7 +5419,7 @@ BEGIN {
                }
          Set = @{
                OriginalName = '--set'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'array'
                ApplyToExecutable = $False
@@ -5429,7 +5429,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5439,7 +5439,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5618,7 +5618,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5628,7 +5628,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5638,7 +5638,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5648,7 +5648,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5814,7 +5814,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5824,7 +5824,7 @@ BEGIN {
                }
          ResourceType = @{
                OriginalName = '--resource-type'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5834,7 +5834,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5844,7 +5844,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5854,7 +5854,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5864,7 +5864,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -5874,7 +5874,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6056,7 +6056,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6066,7 +6066,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6076,7 +6076,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6086,7 +6086,7 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'array'
                ApplyToExecutable = $False
@@ -6096,7 +6096,7 @@ BEGIN {
                }
          ResourceType = @{
                OriginalName = '--resource-type'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6106,7 +6106,7 @@ BEGIN {
                }
          TemplateKind = @{
                OriginalName = '--template-kind'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6116,7 +6116,7 @@ BEGIN {
                }
          TemplatePath = @{
                OriginalName = '--template-path'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6126,7 +6126,7 @@ BEGIN {
                }
          TemplateVersion = @{
                OriginalName = '--template-version'
-               OriginalPosition = '0'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6136,7 +6136,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '8'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6146,7 +6146,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '9'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6156,7 +6156,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '10'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6346,7 +6346,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6356,7 +6356,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6366,7 +6366,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6376,7 +6376,7 @@ BEGIN {
                }
          ResourceType = @{
                OriginalName = '--resource-type'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6386,7 +6386,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6396,7 +6396,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6406,7 +6406,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6579,7 +6579,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Type = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6589,7 +6589,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6599,7 +6599,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6609,7 +6609,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6619,7 +6619,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -6629,7 +6629,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7555,7 +7555,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          File = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7565,7 +7565,7 @@ BEGIN {
                }
          Application = @{
                OriginalName = '--application'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7575,7 +7575,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7585,7 +7585,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7595,7 +7595,7 @@ BEGIN {
                }
          Parameters = @{
                OriginalName = '--parameters'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'array'
                ApplyToExecutable = $False
@@ -7605,7 +7605,7 @@ BEGIN {
                }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7615,7 +7615,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7625,7 +7625,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7798,7 +7798,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Platform = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7808,7 +7808,7 @@ BEGIN {
                }
          KubeContext = @{
                OriginalName = '--kubecontext'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7818,7 +7818,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7828,7 +7828,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -7991,7 +7991,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8001,7 +8001,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8157,7 +8157,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8303,7 +8303,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8313,7 +8313,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8323,7 +8323,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8485,7 +8485,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Platform = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8505,7 +8505,7 @@ BEGIN {
                }
          Context = @{
                OriginalName = '--context'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8515,7 +8515,7 @@ BEGIN {
                }
          Environment = @{
                OriginalName = '--environment'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8525,7 +8525,7 @@ BEGIN {
                }
          Force = @{
                OriginalName = '--force'
-               OriginalPosition = '0'
+               OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -8535,7 +8535,7 @@ BEGIN {
                }
          Group = @{
                OriginalName = '--group'
-               OriginalPosition = '0'
+               OriginalPosition = '5'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8545,7 +8545,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8555,7 +8555,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8727,7 +8727,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8737,7 +8737,7 @@ BEGIN {
                }
          Force = @{
                OriginalName = '--yes'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'switch'
                ApplyToExecutable = $False
@@ -8747,7 +8747,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8757,7 +8757,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '3'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8911,7 +8911,7 @@ BEGIN {
     $__PARAMETERMAP = @{
          Name = @{
                OriginalName = ''
-               OriginalPosition = '1'
+               OriginalPosition = '0'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8921,7 +8921,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '0'
+               OriginalPosition = '1'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -8931,7 +8931,7 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '0'
+               OriginalPosition = '2'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -9072,7 +9072,6 @@ function Output {
 
         # Check if the result is valid JSON
         if (Test-Json -Json $result -ErrorAction SilentlyContinue) {
-            Write-Verbose "Converting JSON data"
             # Convert valid JSON to a PowerShell object
             return $result | ConvertFrom-Json
         }
@@ -9108,7 +9107,6 @@ function Output {
     }
     else {
         # Handle the case where command results are null
-        Write-Verbose "Command results are null"
         return
     }
 }
@@ -9116,17 +9114,20 @@ function ArgumentOutput {
     param(
         [Parameter(Mandatory)]
         [AllowNull()]
-        $cmdResults
+        $cmdArguments
     )
 
-    return $cmdResults.ToLower()
+    # Convert command results to lower case
+    Write-Verbose -Message "Lowering $cmdArguments"
+    return $cmdArguments.ToLower()
 }
 function ArgumentParameters {
     param(
         [Parameter(Mandatory)]
         [AllowNull()]
-        $cmdResults
+        $cmdArguments
     )
 
-    return $cmdResults.Values
+    # Convert command results to a string
+    return $cmdArguments.Values
 }

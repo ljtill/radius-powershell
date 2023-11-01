@@ -21,24 +21,28 @@
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 3,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -85,31 +89,35 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 3,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 4,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -156,37 +164,42 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Namespace",
                     "OriginalName": "--namespace",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
+                    "OriginalPosition": 3,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 4,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 5,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -233,37 +246,42 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Force",
                     "OriginalName": "--yes",
+                    "OriginalPosition": 3,
                     "ParameterType": "switch",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 4,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 5,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -309,25 +327,28 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 3,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -374,67 +395,77 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "AWSAccountId",
                     "OriginalName": "--aws-account-id",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "AWSRegion",
                     "OriginalName": "--aws-region",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "AzureResourceGroup",
                     "OriginalName": "--azure-resource-group",
+                    "OriginalPosition": 3,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "AzureSubscriptionId",
                     "OriginalName": "--azure-subscription-id",
+                    "OriginalPosition": 4,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "ClearAWS",
                     "OriginalName": "--clear-aws",
+                    "OriginalPosition": 5,
                     "ParameterType": "switch",
                     "Mandatory": false
                 },
                 {
                     "Name": "ClearAzure",
                     "OriginalName": "--clear-azure",
+                    "OriginalPosition": 6,
                     "ParameterType": "switch",
                     "Mandatory": false
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
+                    "OriginalPosition": 7,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
+                    "OriginalPosition": 8,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 9,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 10,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,

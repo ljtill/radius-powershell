@@ -20,18 +20,21 @@
                 {
                     "Name": "CLI",
                     "OriginalName": "--cli",
+                    "OriginalPosition": 0,
                     "ParameterType": "switch",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 2,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
