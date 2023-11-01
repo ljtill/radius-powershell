@@ -48,7 +48,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -58,7 +59,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "List recipes",
@@ -130,7 +131,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -140,7 +142,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Show recipe details",
@@ -236,7 +238,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -246,7 +249,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Add a recipe to an environment",
@@ -318,7 +321,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -328,7 +332,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Unregister a recipe from an environment",

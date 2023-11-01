@@ -45,7 +45,9 @@
                 {
                     "Name": "Parameters",
                     "OriginalName": "--parameters",
-                    "ParameterType": "array",
+                    "ParameterType": "hashtable",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentParameters",
                     "Mandatory": false
                 },
                 {
@@ -66,7 +68,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentParameters",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -75,7 +78,8 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "ByPass"
+                    "HandlerType": "Function",
+                    "Handler": "Output"
                 }
             ],
             "Description": "Deploy Bicep file",

@@ -36,7 +36,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "List local workspaces",
@@ -84,7 +84,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -94,7 +95,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Show local workspace",
@@ -130,7 +131,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": true,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('Kubernetes')]"
                     ]
@@ -178,7 +180,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -188,7 +191,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Create a workspace",
@@ -242,7 +245,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -299,7 +303,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -309,7 +314,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Switch current workspace",

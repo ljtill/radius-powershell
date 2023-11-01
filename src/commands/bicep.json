@@ -30,7 +30,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -80,7 +81,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -142,7 +144,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
