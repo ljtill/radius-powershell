@@ -42,7 +42,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -52,7 +53,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "List environments",
@@ -112,7 +113,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -122,7 +124,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Show environment details",
@@ -188,7 +190,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -198,7 +201,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Create a new Radius Environment",
@@ -264,7 +267,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -327,7 +331,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -337,7 +342,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Switch the current environment",
@@ -433,7 +438,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -443,7 +449,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Update environment configuration",

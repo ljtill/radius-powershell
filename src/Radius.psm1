@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 10/30/2023 23:26:27
+# Generated at: 11/01/2023 12:40:38
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -96,13 +96,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -294,13 +294,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -508,13 +508,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -714,13 +714,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -904,13 +904,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -1114,8 +1114,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -1284,8 +1284,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -1438,8 +1438,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -1616,8 +1616,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -1790,13 +1790,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -1943,8 +1943,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
          Workspace = @{
                OriginalName = '--workspace'
@@ -1973,13 +1973,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -2136,8 +2136,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
          ClientId = @{
                OriginalName = '--client-id'
@@ -2196,13 +2196,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -2365,8 +2365,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
          Workspace = @{
                OriginalName = '--workspace'
@@ -2395,13 +2395,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -2569,13 +2569,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -2706,7 +2706,7 @@ param(
 [Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
-[array]$Parameters,
+[hashtable]$Parameters,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -2765,11 +2765,11 @@ BEGIN {
                OriginalName = '--parameters'
                OriginalPosition = '0'
                Position = '2147483647'
-               ParameterType = 'array'
+               ParameterType = 'hashtable'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = '$args'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentParameters'
+               ArgumentTransformType = 'Function'
                }
          Workspace = @{
                OriginalName = '--workspace'
@@ -2798,13 +2798,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentParameters'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $true; Handler = $null }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -2999,13 +2999,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -3197,13 +3197,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -3411,13 +3411,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -3629,8 +3629,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -3823,13 +3823,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -4093,13 +4093,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -4295,13 +4295,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -4477,13 +4477,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -4663,13 +4663,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -4861,8 +4861,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -5051,13 +5051,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -5225,8 +5225,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -5384,8 +5384,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
          Chart = @{
                OriginalName = '--chart'
@@ -5444,8 +5444,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -5653,13 +5653,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -5879,13 +5879,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -6161,13 +6161,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -6411,13 +6411,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -6634,13 +6634,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -6865,13 +6865,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -7137,13 +7137,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -7384,8 +7384,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -7630,13 +7630,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -7803,8 +7803,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
          KubeContext = @{
                OriginalName = '--kubecontext'
@@ -7833,8 +7833,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -8006,13 +8006,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -8168,7 +8168,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -8328,13 +8328,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -8490,8 +8490,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
          Name = @{
                OriginalName = ''
@@ -8560,13 +8560,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -8762,8 +8762,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
@@ -8936,13 +8936,13 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.ToLower()'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentOutput'
+               ArgumentTransformType = 'Function'
                }
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Parser' }
+        Default = @{ StreamOutput = $False; Handler = 'Output' }
     }
 }
 
@@ -9059,7 +9059,7 @@ Original Command: rad workspace switch
 }
 
 
-function Parser {
+function Output {
     param(
         [Parameter(Mandatory)]
         [AllowNull()]
@@ -9111,4 +9111,22 @@ function Parser {
         Write-Verbose "Command results are null"
         return
     }
+}
+function ArgumentOutput {
+    param(
+        [Parameter(Mandatory)]
+        [AllowNull()]
+        $cmdResults
+    )
+
+    return $cmdResults.ToLower()
+}
+function ArgumentParameters {
+    param(
+        [Parameter(Mandatory)]
+        [AllowNull()]
+        $cmdResults
+    )
+
+    return $cmdResults.Values
 }

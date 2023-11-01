@@ -1,4 +1,4 @@
-function global:Parser {
+function global:Output {
     param(
         [Parameter(Mandatory)]
         [AllowNull()]
@@ -11,7 +11,6 @@ function global:Parser {
 
         # Check if the result is valid JSON
         if (Test-Json -Json $result -ErrorAction SilentlyContinue) {
-            Write-Verbose "Converting JSON data"
             # Convert valid JSON to a PowerShell object
             return $result | ConvertFrom-Json
         }
@@ -47,7 +46,6 @@ function global:Parser {
     }
     else {
         # Handle the case where command results are null
-        Write-Verbose "Command results are null"
         return
     }
 }

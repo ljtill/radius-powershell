@@ -35,7 +35,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -45,7 +46,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Capture logs from Radius control plane for debugging and diagnostics.",

@@ -36,7 +36,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -46,7 +47,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "List resource groups within current/specified workspace",
@@ -100,7 +101,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -110,7 +112,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Show the details of a resource group",
@@ -164,7 +166,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -174,7 +177,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "List resource groups within current/specified workspace",
@@ -234,7 +237,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -297,7 +301,8 @@
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.ToLower()",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]
@@ -307,7 +312,7 @@
                 {
                     "ParameterSetName": "Default",
                     "HandlerType": "Function",
-                    "Handler": "Parser"
+                    "Handler": "Output"
                 }
             ],
             "Description": "Switch default resource group scope",
