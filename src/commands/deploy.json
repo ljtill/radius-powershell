@@ -20,31 +20,35 @@
                 {
                     "Name": "File",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Application",
                     "OriginalName": "--application",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Environment",
                     "OriginalName": "--environment",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
+                    "OriginalPosition": 3,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Parameters",
                     "OriginalName": "--parameters",
+                    "OriginalPosition": 4,
                     "ParameterType": "hashtable",
                     "ArgumentTransformType": "Function",
                     "ArgumentTransform": "ArgumentParameters",
@@ -53,18 +57,21 @@
                 {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
+                    "OriginalPosition": 5,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 6,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 7,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,

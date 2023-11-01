@@ -21,12 +21,14 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 1,
                     "DefaultValue": "table",
                     "ParameterType": "string",
                     "Mandatory": false
@@ -68,19 +70,21 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 2,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -127,7 +131,7 @@
                 {
                     "Name": "Platform",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": true,
@@ -147,36 +151,42 @@
                 {
                     "Name": "Context",
                     "OriginalName": "--context",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Environment",
                     "OriginalName": "--environment",
+                    "OriginalPosition": 3,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Force",
                     "OriginalName": "--force",
+                    "OriginalPosition": 4,
                     "ParameterType": "switch",
                     "Mandatory": false
                 },
                 {
                     "Name": "Group",
                     "OriginalName": "--group",
+                    "OriginalPosition": 5,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 6,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 7,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -223,25 +233,28 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Force",
                     "OriginalName": "--yes",
+                    "OriginalPosition": 1,
                     "ParameterType": "switch",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 3,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -287,19 +300,21 @@
                 {
                     "Name": "Name",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 2,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,

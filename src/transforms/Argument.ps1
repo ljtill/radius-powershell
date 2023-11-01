@@ -2,20 +2,21 @@ function global:ArgumentOutput {
     param(
         [Parameter(Mandatory)]
         [AllowNull()]
-        $cmdResults
+        $cmdArguments
     )
 
     # Convert command results to lower case
-    return $cmdResults.ToLower()
+    Write-Verbose -Message "Lowering $cmdArguments"
+    return $cmdArguments.ToLower()
 }
 
 function global:ArgumentParameters {
     param(
         [Parameter(Mandatory)]
         [AllowNull()]
-        $cmdResults
+        $cmdArguments
     )
 
     # Convert command results to a string
-    return $cmdResults.Values
+    return $cmdArguments.Values
 }

@@ -21,12 +21,14 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 1,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -72,12 +74,14 @@
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 1,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
@@ -123,24 +127,28 @@
                 {
                     "Name": "File",
                     "OriginalName": "--file",
+                    "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Target",
                     "OriginalName": "--target",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 3,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,

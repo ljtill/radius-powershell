@@ -20,7 +20,7 @@
                 {
                     "Name": "Platform",
                     "OriginalName": "",
-                    "OriginalPosition": 1,
+                    "OriginalPosition": 0,
                     "DefaultValue": "Kubernetes",
                     "ParameterType": "string",
                     "Mandatory": true,
@@ -33,36 +33,42 @@
                 {
                     "Name": "Chart",
                     "OriginalName": "--chart",
+                    "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "KubeContext",
                     "OriginalName": "--kubecontext",
+                    "OriginalPosition": 2,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Reinstall",
                     "OriginalName": "--reinstall",
+                    "OriginalPosition": 3,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Set",
                     "OriginalName": "--set",
+                    "OriginalPosition": 4,
                     "ParameterType": "array",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
+                    "OriginalPosition": 5,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
+                    "OriginalPosition": 6,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
