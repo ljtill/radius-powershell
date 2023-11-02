@@ -9,7 +9,10 @@ Write-Verbose -Message "Retrieving configuration manifests..." -Verbose
 $commands = (Get-ChildItem "./commands" | Select-Object -ExpandProperty FullName)
 
 Write-Verbose -Message "Initializing handler functions..." -Verbose
-. ./handlers/Parser.ps1
+. ./handlers/Output.ps1
+
+Write-Verbose -Message "Initializing transform functions..." -Verbose
+. ./transforms/Argument.ps1
 
 $Params = @{
     Path              = "./Radius.psd1"
