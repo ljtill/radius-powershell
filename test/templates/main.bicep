@@ -1,28 +1,26 @@
 import radius as rad
 
-param environmentName string
-param applicationName string
-param containerName string
-
 resource environment 'Applications.Core/environments@2023-10-01-preview' existing = {
-  name: environmentName
+  name: 'tests'
 }
 
 resource application 'Applications.Core/applications@2023-10-01-preview' = {
-  name: applicationName
+  name: 'tests'
   properties: {
     environment: environment.id
-    extensions: [
-      {
-        kind: 'kubernetesNamespace'
-        namespace: 'apps-default'
-      }
-    ]
+  }
+}
+
+resource database 'Applications.Datastores/mongoDatabases@2023-10-01-preview' = {
+  name: 'tests'
+  properties: {
+    environment: environment.id
+    application: application.id
   }
 }
 
 resource container 'Applications.Core/containers@2023-10-01-preview' = {
-  name: containerName
+  name: 'tests'
   properties: {
     application: application.id
     container: {
@@ -31,6 +29,11 @@ resource container 'Applications.Core/containers@2023-10-01-preview' = {
         web: {
           containerPort: 3000
         }
+      }
+    }
+    connections: {
+      mongodb: {
+        source: database.id
       }
     }
   }
