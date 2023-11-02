@@ -36,7 +36,7 @@
                     "OriginalName": "--environment",
                     "OriginalPosition": 2,
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Group",
@@ -47,7 +47,7 @@
                 },
                 {
                     "Name": "Parameters",
-                    "OriginalName": "--parameters",
+                    "OriginalName": "",
                     "OriginalPosition": 4,
                     "ParameterType": "hashtable",
                     "ArgumentTransformType": "Function",
@@ -55,28 +55,35 @@
                     "Mandatory": false
                 },
                 {
+                    "Name": "ParameterFile",
+                    "OriginalName": "--parameters",
+                    "OriginalPosition": 5,
+                    "ParameterType": "string",
+                    "Mandatory": false
+                },
+                {
                     "Name": "Workspace",
                     "OriginalName": "--workspace",
-                    "OriginalPosition": 5,
+                    "OriginalPosition": 6,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Config",
                     "OriginalName": "--config",
-                    "OriginalPosition": 6,
+                    "OriginalPosition": 7,
                     "ParameterType": "string",
                     "Mandatory": false
                 },
                 {
                     "Name": "Output",
                     "OriginalName": "--output",
-                    "OriginalPosition": 7,
+                    "OriginalPosition": 8,
                     "DefaultValue": "JSON",
                     "ParameterType": "string",
                     "Mandatory": false,
                     "ArgumentTransformType": "Function",
-                    "ArgumentTransform": "ArgumentParameters",
+                    "ArgumentTransform": "ArgumentOutput",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('JSON','Table')]"
                     ]

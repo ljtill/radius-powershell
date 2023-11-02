@@ -3,7 +3,7 @@
     "commands": [
         {
             "Verb": "Get",
-            "Noun": "RadiusResourceGroup",
+            "Noun": "RadiusGroup",
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
@@ -56,7 +56,7 @@
             "Description": "List resource groups within current/specified workspace",
             "Examples": [
                 {
-                    "Command": "Get-RadiusResourceGroup",
+                    "Command": "Get-RadiusGroup",
                     "Description": "List resource groups within current/specified workspace",
                     "OriginalCommand": "rad group list"
                 }
@@ -64,7 +64,7 @@
         },
         {
             "Verb": "Get",
-            "Noun": "RadiusResourceGroupDetail",
+            "Noun": "RadiusGroupDetail",
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
@@ -124,7 +124,7 @@
             "Description": "Show the details of a resource group",
             "Examples": [
                 {
-                    "Command": "Get-RadiusResourceGroupDetail",
+                    "Command": "Get-RadiusGroupDetail",
                     "Description": "Show the details of a resource group",
                     "OriginalCommand": "rad group show"
                 }
@@ -132,7 +132,7 @@
         },
         {
             "Verb": "New",
-            "Noun": "RadiusResourceGroup",
+            "Noun": "RadiusGroup",
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
@@ -192,7 +192,7 @@
             "Description": "List resource groups within current/specified workspace",
             "Examples": [
                 {
-                    "Command": "New-RadiusResourceGroup",
+                    "Command": "New-RadiusGroup",
                     "Description": "List resource groups within current/specified workspace",
                     "OriginalCommand": "rad group create"
                 }
@@ -200,7 +200,7 @@
         },
         {
             "Verb": "Remove",
-            "Noun": "RadiusResourceGroup",
+            "Noun": "RadiusGroup",
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
@@ -266,7 +266,7 @@
             "Description": "Delete a resource group",
             "Examples": [
                 {
-                    "Command": "Remove-RadiusResourceGroup",
+                    "Command": "Remove-RadiusGroup",
                     "Description": "Delete a resource group",
                     "OriginalCommand": "rad group delete"
                 }
@@ -274,7 +274,7 @@
         },
         {
             "Verb": "Switch",
-            "Noun": "RadiusResourceGroup",
+            "Noun": "RadiusGroup",
             "OriginalName": "rad",
             "OriginalCommandElements": [
                 "group",
@@ -334,7 +334,7 @@
             "Description": "Switch default resource group scope",
             "Examples": [
                 {
-                    "Command": "Switch-RadiusResourceGroup",
+                    "Command": "Switch-RadiusGroup",
                     "Description": "Switch default resource group scope",
                     "OriginalCommand": "rad group switch"
                 }
