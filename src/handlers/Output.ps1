@@ -5,7 +5,12 @@ function global:Output {
         $cmdResults
     )
 
-    if ($cmdResults) {
+    process {
+        # Check if the command results are null
+        if ($null -eq $cmdResults) {
+            return
+        }
+
         # Convert the command results to a string
         $result = $cmdResults | Out-String
 
@@ -43,9 +48,6 @@ function global:Output {
                 return $result.Trim("`r", "`n")
             }
         }
-    }
-    else {
-        # Handle the case where command results are null
-        return
+
     }
 }
