@@ -31,11 +31,11 @@
 | Environment    | rad env switch                  | Switch-RadiusEnvironment         |
 | Environment    | rad env set                     | Update-RadiusEnvironment         |
 | ---            | ---                             | ---                              |
-| Resource Group | rad group list                  | Get-RadiusResourceGroup          |
-| Resource Group | rad group show                  | Get-RadiusResourceGroupDetail    |
-| Resource Group | rad group create                | New-RadiusResourceGroup          |
-| Resource Group | rad group delete                | Remove-RadiusResourceGroup       |
-| Resource Group | rad group switch                | Switch-RadiusResourceGroup       |
+| Resource Group | rad group list                  | Get-RadiusGroup                  |
+| Resource Group | rad group show                  | Get-RadiusGroupDetail            |
+| Resource Group | rad group create                | New-RadiusGroup                  |
+| Resource Group | rad group delete                | Remove-RadiusGroup               |
+| Resource Group | rad group switch                | Switch-RadiusGroup               |
 | ---            | ---                             | ---                              |
 | Initialize     | rad init                        | Initialize-Radius                |
 | ---            | ---                             | ---                              |
