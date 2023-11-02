@@ -166,7 +166,7 @@
                     "OriginalName": "",
                     "OriginalPosition": 0,
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Environment",
@@ -180,7 +180,7 @@
                     "OriginalName": "--group",
                     "OriginalPosition": 2,
                     "ParameterType": "string",
-                    "Mandatory": false
+                    "Mandatory": true
                 },
                 {
                     "Name": "Workspace",
@@ -213,8 +213,7 @@
             "OutputHandlers": [
                 {
                     "ParameterSetName": "Default",
-                    "HandlerType": "Function",
-                    "Handler": "Output"
+                    "HandlerType": "ByPass"
                 }
             ],
             "Description": "Shows the Connections for Radius Application",

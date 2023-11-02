@@ -1,7 +1,7 @@
 # Module created by Microsoft.PowerShell.Crescendo
 # Version: 1.1.0
 # Schema: https://aka.ms/PowerShell/Crescendo/Schemas/2022-06
-# Generated at: 11/01/2023 13:09:22
+# Generated at: 11/02/2023 00:14:09
 class PowerShellCustomFunctionAttribute : System.Attribute {
     [bool]$RequiresElevation
     [string]$Source
@@ -431,11 +431,11 @@ function Get-RadiusApplicationConnections
 [CmdletBinding()]
 
 param(
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Name,
 [Parameter()]
 [string]$Environment,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [string]$Workspace,
@@ -514,7 +514,7 @@ BEGIN {
     }
 
     $__outputHandlers = @{
-        Default = @{ StreamOutput = $False; Handler = 'Output' }
+        Default = @{ StreamOutput = $true; Handler = $null }
     }
 }
 
@@ -2701,12 +2701,14 @@ param(
 [string]$File,
 [Parameter()]
 [string]$Application,
-[Parameter()]
+[Parameter(Mandatory=$true)]
 [string]$Environment,
 [Parameter(Mandatory=$true)]
 [string]$Group,
 [Parameter()]
 [hashtable]$Parameters,
+[Parameter()]
+[string]$ParameterFile,
 [Parameter()]
 [string]$Workspace,
 [Parameter()]
@@ -2762,7 +2764,7 @@ BEGIN {
                ArgumentTransformType = 'inline'
                }
          Parameters = @{
-               OriginalName = '--parameters'
+               OriginalName = ''
                OriginalPosition = '4'
                Position = '2147483647'
                ParameterType = 'hashtable'
@@ -2771,9 +2773,19 @@ BEGIN {
                ArgumentTransform = 'ArgumentParameters'
                ArgumentTransformType = 'Function'
                }
+         ParameterFile = @{
+               OriginalName = '--parameters'
+               OriginalPosition = '5'
+               Position = '2147483647'
+               ParameterType = 'string'
+               ApplyToExecutable = $False
+               NoGap = $False
+               ArgumentTransform = '$args'
+               ArgumentTransformType = 'inline'
+               }
          Workspace = @{
                OriginalName = '--workspace'
-               OriginalPosition = '5'
+               OriginalPosition = '6'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2783,7 +2795,7 @@ BEGIN {
                }
          Config = @{
                OriginalName = '--config'
-               OriginalPosition = '6'
+               OriginalPosition = '7'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
@@ -2793,12 +2805,12 @@ BEGIN {
                }
          Output = @{
                OriginalName = '--output'
-               OriginalPosition = '7'
+               OriginalPosition = '8'
                Position = '2147483647'
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'ArgumentParameters'
+               ArgumentTransform = 'ArgumentOutput'
                ArgumentTransformType = 'Function'
                }
     }
@@ -2913,6 +2925,10 @@ Deploy Bicep file
 
 
 .PARAMETER Parameters
+
+
+
+.PARAMETER ParameterFile
 
 
 
@@ -4248,7 +4264,7 @@ Original Command: rad env update
 }
 
 
-function Get-RadiusResourceGroup
+function Get-RadiusGroup
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
@@ -4408,7 +4424,7 @@ List resource groups within current/specified workspace
 
 
 .EXAMPLE
-PS> Get-RadiusResourceGroup
+PS> Get-RadiusGroup
 
 List resource groups within current/specified workspace
 Original Command: rad group list
@@ -4418,7 +4434,7 @@ Original Command: rad group list
 }
 
 
-function Get-RadiusResourceGroupDetail
+function Get-RadiusGroupDetail
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
@@ -4594,7 +4610,7 @@ Show the details of a resource group
 
 
 .EXAMPLE
-PS> Get-RadiusResourceGroupDetail
+PS> Get-RadiusGroupDetail
 
 Show the details of a resource group
 Original Command: rad group show
@@ -4604,7 +4620,7 @@ Original Command: rad group show
 }
 
 
-function New-RadiusResourceGroup
+function New-RadiusGroup
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
@@ -4780,7 +4796,7 @@ List resource groups within current/specified workspace
 
 
 .EXAMPLE
-PS> New-RadiusResourceGroup
+PS> New-RadiusGroup
 
 List resource groups within current/specified workspace
 Original Command: rad group create
@@ -4790,7 +4806,7 @@ Original Command: rad group create
 }
 
 
-function Remove-RadiusResourceGroup
+function Remove-RadiusGroup
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
@@ -4982,7 +4998,7 @@ Delete a resource group
 
 
 .EXAMPLE
-PS> Remove-RadiusResourceGroup
+PS> Remove-RadiusGroup
 
 Delete a resource group
 Original Command: rad group delete
@@ -4992,7 +5008,7 @@ Original Command: rad group delete
 }
 
 
-function Switch-RadiusResourceGroup
+function Switch-RadiusGroup
 {
 [PowerShellCustomFunctionAttribute(RequiresElevation=$False)]
 [CmdletBinding()]
@@ -5168,7 +5184,7 @@ Switch default resource group scope
 
 
 .EXAMPLE
-PS> Switch-RadiusResourceGroup
+PS> Switch-RadiusGroup
 
 Switch default resource group scope
 Original Command: rad group switch
@@ -6584,8 +6600,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentType'
+               ArgumentTransformType = 'Function'
                }
          Application = @{
                OriginalName = '--application'
@@ -6805,8 +6821,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentType'
+               ArgumentTransformType = 'Function'
                }
          Name = @{
                OriginalName = ''
@@ -7324,8 +7340,8 @@ BEGIN {
                ParameterType = 'string'
                ApplyToExecutable = $False
                NoGap = $False
-               ArgumentTransform = 'param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)'
-               ArgumentTransformType = 'inline'
+               ArgumentTransform = 'ArgumentType'
+               ArgumentTransformType = 'Function'
                }
          Name = @{
                OriginalName = ''
@@ -9066,7 +9082,12 @@ function Output {
         $cmdResults
     )
 
-    if ($cmdResults) {
+    process {
+        # Check if the command results are null
+        if ($null -eq $cmdResults) {
+            return
+        }
+
         # Convert the command results to a string
         $result = $cmdResults | Out-String
 
@@ -9104,30 +9125,49 @@ function Output {
                 return $result.Trim("`r", "`n")
             }
         }
-    }
-    else {
-        # Handle the case where command results are null
-        return
+
     }
 }
 function ArgumentOutput {
     param(
         [Parameter(Mandatory)]
         [AllowNull()]
-        $cmdArguments
+        $cmdArgument
     )
 
-    # Convert command results to lower case
-    Write-Verbose -Message "Lowering $cmdArguments"
-    return $cmdArguments.ToLower()
+    process {
+        # Convert command results to lower case
+        Write-Output $cmdArgument.ToLower()
+    }
 }
 function ArgumentParameters {
     param(
         [Parameter(Mandatory)]
         [AllowNull()]
-        $cmdArguments
+        $cmdArgument
     )
 
-    # Convert command results to a string
-    return $cmdArguments.Values
+    process {
+        # Iterate through the hashtable
+        $cmdArgument.GetEnumerator() | ForEach-Object {
+            $key = $_.Key
+            $value = $_.Value
+
+            # Output in the format "--parameters key=value"
+            Write-Output "--parameters"
+            Write-Output "$key=$value"
+        }
+    }
+}
+function ArgumentType {
+    param(
+        [Parameter(Mandatory)]
+        [AllowNull()]
+        $cmdArgument
+    )
+
+    process {
+        # Lower the first letter and join the rest of the string
+        Write-Output $($cmdArgument.Substring(0, 1).ToLower() + $cmdArgument.Substring(1))
+    }
 }

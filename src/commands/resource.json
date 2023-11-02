@@ -24,7 +24,8 @@
                     "OriginalPosition": 0,
                     "ParameterType": "string",
                     "Mandatory": true,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentType",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('Containers', 'Gateways', 'HttpRoutes', 'PubSubBrokers', 'Extenders', 'MongoDatabases', 'RabbitMQMessageQueues', 'RedisCaches', 'SqlDatabases', 'StateStores', 'SecretStores')]"
                     ]
@@ -110,7 +111,8 @@
                     "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentType",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('Containers', 'Gateways', 'HttpRoutes', 'PubSubBrokers', 'Extenders', 'MongoDatabases', 'RabbitMQMessageQueues', 'RedisCaches', 'SqlDatabases', 'StateStores', 'SecretStores')]"
                     ]
@@ -304,7 +306,8 @@
                     "OriginalPosition": 1,
                     "ParameterType": "string",
                     "Mandatory": true,
-                    "ArgumentTransform": "param([string]$cmdArgument) $cmdArgument.Substring(0,1).ToLower() + $cmdArgument.Substring(1)",
+                    "ArgumentTransformType": "Function",
+                    "ArgumentTransform": "ArgumentType",
                     "AdditionalParameterAttributes": [
                         "[ValidateSet('Containers', 'Gateways', 'HttpRoutes', 'PubSubBrokers', 'Extenders', 'MongoDatabases', 'RabbitMQMessageQueues', 'RedisCaches', 'SqlDatabases', 'StateStores', 'SecretStores')]"
                     ]
