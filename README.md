@@ -17,22 +17,6 @@ Get-Command -Module "Radius"
 
 The module has not yet been published on the PowerShell Gallery, so you'll need to import it manually for use.
 
-**Contributing**
-
-Import module
-
-```powershell
-./build.ps1
-Get-Command -Module Radius
-Get-RadiusVersion
-```
-
-Test module
-
-```powershell
-./test.ps1
-```
-
 ---
 
 - [Website](https://radapp.io/)
