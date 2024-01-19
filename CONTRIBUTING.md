@@ -64,6 +64,4 @@ Execute the following command to run the tests:
 ./test.ps1
 ```
 
-The `test.ps1` script is designed to validate the correct behavior of the module. It performs various tests located in the "test" directory to assess the functionality of different components.
-
-By running the test script, you can verify that the module functions as expected and identify any potential issues or bugs introduced by your changes. Please ensure that all tests pass before submitting your contribution.
+The `test.ps1` script is designed to validate the correct behavior of the module. It performs various tests located in the "test" directory to assess the functionality of different components and ensure the shim commands are operating as expected.
