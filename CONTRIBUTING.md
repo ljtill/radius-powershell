@@ -2,7 +2,7 @@
 
 To get started, please follow the steps outlined below.
 
-### Build
+## Build
 
 Before you begin contributing, make sure to build the module. This step is crucial for setting up the necessary environment for development.
 
@@ -54,7 +54,7 @@ release version bicep  commit
 
 This output confirms that the `rad` tool is successfully installed and the PowerShell shim is communicate with it.
 
-### Test
+## Test
 
 To ensure the reliability of your changes and the overall functionality of the module, it's crucial to run the provided tests using the `test.ps1` script. Before running the tests, ensure you have PowerShell version 7.0 or higher installed, as well as the Pester module.
 
